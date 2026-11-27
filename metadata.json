@@ -1,0 +1,6 @@
+{
+  "name": "Kritik Sastra dan Esai — Menimbang Karya, Merangkai Gagasan",
+  "description": "Media pembelajaran interaktif Bahasa Indonesia mengenai Kritik Sastra dan Esai dengan pengalaman parallax dan buku interaktif.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
