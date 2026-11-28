@@ -533,15 +533,16 @@
     .flipbook-stage { width: 100%; display: flex; justify-content: center; align-items: center; padding: 16px 0 24px; perspective: 2200px; }
 
     .book-3d {
-      position: relative; width: 840px; max-width: 100%; aspect-ratio: 840 / 540;
+      position: relative; width: 840px; max-width: 100%; aspect-ratio: 840 / 565;
       transform-style: preserve-3d; transition: transform 0.65s var(--ease-editorial); user-select: none;
     }
     .book-3d.is-cover-front { transform: translateX(-25%); }
     .book-3d.is-cover-back { transform: translateX(25%); }
-    .book-3d__base-left, .book-3d__base-right { position: absolute; top: 0; width: 50%; height: 100%; border-radius: 3px; pointer-events: none; }
-    .book-3d__base-left { left: 0; background: #14100c; box-shadow: -10px 24px 55px rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.4s ease; }
-    .book-3d.is-open .book-3d__base-left { opacity: 1; }
-    .book-3d__base-right { right: 0; background: #14100c; box-shadow: 10px 24px 55px rgba(0,0,0,0.65); }
+    .book-3d__base-left, .book-3d__base-right { position: absolute; top: 0; width: 50%; height: 100%; border-radius: 3px; pointer-events: none; transition: opacity 0.4s ease; }
+    .book-3d__base-left { left: 0; background: #14100c; box-shadow: -10px 24px 55px rgba(0,0,0,0.6); opacity: 0; }
+    .book-3d.is-open .book-3d__base-left, .book-3d.is-cover-back .book-3d__base-left { opacity: 1; }
+    .book-3d__base-right { right: 0; background: #14100c; box-shadow: 10px 24px 55px rgba(0,0,0,0.65); opacity: 0; }
+    .book-3d.is-cover-front .book-3d__base-right, .book-3d.is-open .book-3d__base-right { opacity: 1; }
     .book-3d__spine {
       position: absolute; top: 0; bottom: 0; left: 50%; width: 18px; transform: translateX(-50%);
       background: linear-gradient(to right, rgba(0,0,0,0.42), rgba(255,255,255,0.06) 50%, rgba(0,0,0,0.42));
@@ -567,7 +568,7 @@
     .page-parchment {
       background: radial-gradient(circle at 80% 20%, rgba(255,250,240,0.45), transparent 55%),
                   linear-gradient(135deg, #efe4cf 0%, #e5d6b9 60%, #dbc8a4 100%);
-      color: var(--parchment-ink); padding: 26px 28px 22px;
+      color: var(--parchment-ink); padding: 24px 28px 20px;
       border: 1px solid rgba(120,92,54,0.25); height: 100%;
       display: flex; flex-direction: column; justify-content: space-between;
     }
@@ -577,10 +578,10 @@
       border-bottom: 1px solid rgba(90,72,55,0.22); padding-bottom: 8px; margin-bottom: 12px;
       font-family: var(--font-ui); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--parchment-muted);
     }
-    .page-parchment__body { flex: 1; overflow-y: auto; padding-right: 4px; }
-    .page-parchment__title { font-family: var(--font-display); font-size: 1.52rem; font-weight: 700; line-height: 1.16; color: #1c130d; margin-bottom: 8px; }
-    .page-parchment__subtitle { font-family: var(--font-body); font-style: italic; font-size: 0.84rem; color: #6b5239; margin-bottom: 10px; }
-    .page-parchment__text { font-size: 0.85rem; line-height: 1.65; color: #2b2017; }
+    .page-parchment__body { flex: 1; overflow: hidden; }
+    .page-parchment__title { font-family: var(--font-display); font-size: 1.44rem; font-weight: 700; line-height: 1.16; color: #1c130d; margin-bottom: 8px; }
+    .page-parchment__subtitle { font-family: var(--font-body); font-style: italic; font-size: 0.83rem; color: #6b5239; margin-bottom: 10px; }
+    .page-parchment__text { font-size: 0.84rem; line-height: 1.64; color: #2b2017; }
     .page-parchment__text p { margin-bottom: 9px; }
     .page-parchment__text ul { padding-left: 18px; margin: 8px 0; }
     .page-parchment__text li { margin-bottom: 5px; }
@@ -609,7 +610,14 @@
     .page-cover__ornament::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(185,154,98,0.25); pointer-events: none; }
     .page-cover__edition { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
     .page-cover__title { font-family: var(--font-display); font-size: clamp(1.75rem, 2.8vw, 2.45rem); font-weight: 600; line-height: 1.12; color: var(--parchment); margin: 10px 0; }
-    .page-cover__subtitle { font-family: var(--font-body); font-style: italic; font-size: 0.94rem; color: var(--gold-bright); max-width: 24ch; }
+    .page-cover__subtitle { font-family: var(--font-body); font-style: italic; font-size: 0.92rem; color: var(--gold-bright); max-width: 26ch; }
+    .page-cover__sources { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; position: relative; z-index: 2; }
+    .page-cover__source-link {
+      display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px;
+      border: 1px solid rgba(185,154,98,0.45); border-radius: 3px;
+      font-family: var(--font-ui); font-size: 0.68rem; color: var(--parchment); transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .page-cover__source-link:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
     .page-cover__crest { width: 48px; height: 48px; color: var(--gold); margin: 6px 0; }
     .page-cover__action { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
 
@@ -626,13 +634,16 @@
 
     @media (max-width: 760px) {
       .flipbook-stage { perspective: 1600px; }
-      .book-3d { width: 100%; max-width: 400px; aspect-ratio: 3 / 4.25; transform: none !important; }
+      .book-3d { width: 100%; max-width: 400px; aspect-ratio: 3 / 5.05; transform: none !important; }
       .book-3d__base-left, .book-3d__spine { display: none; }
-      .book-3d__base-right { width: 100%; }
+      .book-3d__base-right { width: 100%; opacity: 1; }
       .book-leaf { left: 0; width: 100%; }
       .book-face--front { border-radius: 4px; }
       .book-leaf.is-mobile-hidden { display: none; }
-      .page-parchment { padding: 20px 18px 18px; }
+      .page-parchment { padding: 18px 16px 16px; }
+      .page-parchment__title { font-size: 1.22rem; margin-bottom: 6px; }
+      .page-parchment__subtitle { font-size: 0.78rem; margin-bottom: 8px; }
+      .page-parchment__text { font-size: 0.78rem; line-height: 1.54; }
     }
 
     /* ==========================================================================
@@ -948,7 +959,7 @@
           <p class="section-kicker">02 · Buku Interaktif I</p>
           <h2 class="section-title">Contoh &amp; Praktik Kritik Sastra</h2>
           <p class="section-subtitle">
-            Buka sampul buku untuk membaca daftar isi dan 10 contoh kritik sastra—mulai dari novel, puisi, film, cerpen, drama, syair, hingga kritik mimetik dan feminisme.
+            Buka sampul buku untuk membaca keseluruhan teks kritik sastra novel “Gadis Kretek” secara utuh, lalu lanjutkan ke halaman terpisah untuk melihat analisisnya.
           </p>
         </div>
         <div class="flipbook-hint">Klik halaman, tombol di bawah buku, panah keyboard, atau usap layar.</div>
@@ -985,7 +996,7 @@
           <p class="section-kicker">04 · Buku Interaktif II</p>
           <h2 class="section-title">Contoh &amp; Praktik Menulis Esai</h2>
           <p class="section-subtitle">
-            Buka sampul buku untuk membaca daftar isi dan 6 tema esai pilihan—masing-masing berisi satu contoh dari tema kesehatan mental, antikorupsi, pengalaman pribadi, ulasan film, karakter Pancasila, hingga dampak media sosial.
+            Buka sampul buku untuk membaca keseluruhan teks esai bertema “Dampak Media Sosial” secara utuh, lalu lanjutkan ke halaman terpisah untuk melihat analisisnya.
           </p>
         </div>
         <div class="flipbook-hint">Bisa dibuka dan dibalik terpisah dari buku pertama.</div>
@@ -1433,70 +1444,39 @@
       id: 'criticismBook',
       coverTheme: 'criticism',
       coverTitle: 'Kritik Sastra',
-      coverSubtitle: '10 Contoh Ragam Karya Sastra',
-      editionLabel: 'EDISI KLASIK · 10 CONTOH KRITIK',
+      coverSubtitle: 'Analisis Novel “Gadis Kretek”',
+      editionLabel: 'KRITIK SASTRA FEMINISME',
       pages: [
-        { pageNumber: 1, isCover: true, title: 'Kritik Sastra', subtitle: '10 Contoh Ragam Karya Sastra' },
+        { pageNumber: 1, isCover: true, title: 'Kritik Sastra', subtitle: 'Analisis Novel “Gadis Kretek”' },
         {
-          pageNumber: 2, runningHead: 'Daftar Isi', title: 'Daftar Isi 10 Contoh Kritik', subtitle: 'Ragam Karya dari Brain Academy',
-          html: `<p>Buku ini merangkum 10 contoh kritik sastra dari berbagai ragam karya dan pendekatan yang dapat dijadikan acuan belajar:</p><ul><li><strong>Hal. 03</strong> — 01. Novel: “Sang Pemimpi” (Andrea Hirata)</li><li><strong>Hal. 04</strong> — 02. Puisi: “Aku” (Chairil Anwar)</li><li><strong>Hal. 05</strong> — 03. Film: “Laskar Pelangi”</li><li><strong>Hal. 06</strong> — 04. Cerpen: “Robohnya Surau Kami” (A.A. Navis)</li><li><strong>Hal. 07</strong> — 05. Kritik Singkat: “Filosofi Teras” (Henry Manampiring)</li><li><strong>Hal. 08</strong> — 06. Novel Historis: “Bumi Manusia” (Pramoedya Ananta Toer)</li><li><strong>Hal. 09</strong> — 07. Drama: “Keong Mas”</li><li><strong>Hal. 10</strong> — 08. Kritik Mimetik: “Barangkali Karena Bulan” (W.S. Rendra)</li><li><strong>Hal. 11</strong> — 09. Syair: “Gurindam Dua Belas” (Raja Ali Haji)</li><li><strong>Hal. 12</strong> — 10. Kritik Feminisme: “Gadis Kretek” (Ratih Kumala)</li></ul>`,
-          sources: [{ label: 'Brain Academy — 10 Contoh Kritik Sastra', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
+          pageNumber: 2, runningHead: 'Naskah Lengkap · 1/4', title: 'Analisis Kritik Terhadap Novel “Gadis Kretek”', subtitle: 'Karya Ratih Kumala · Teks Asli Utuh (Paragraf 1)',
+          html: `<p>Novel Gadis Kretek karya Ratih Kumala adalah cerita yang mengisahkan tentang sejarah industri rokok kretek di Indonesia, tetapi juga memiliki unsur drama keluarga dan cinta. Salah satu hal menarik dalam novel ini adalah bagaimana perempuan digambarkan bukan hanya sebagai tokoh pendamping, tetapi juga sebagai sosok yang berpengaruh. Novel ini menghadirkan perspektif feminisme, meski masih ada batasan sosial yang mereka hadapi.</p>`
         },
         {
-          pageNumber: 3, runningHead: '01 · Kritik Novel', title: 'Novel “Sang Pemimpi”', subtitle: 'Karya Andrea Hirata · Tetralogi Laskar Pelangi',
-          html: `<p>Novel <em>Sang Pemimpi</em> mengisahkan perjuangan tiga sahabat—Arai, Ikal, dan Jimbron—setelah menamatkan SMP hingga bermimpi kuliah ke Prancis dengan cinta, pengorbanan, dan doa.</p><p>Kelebihannya terletak pada nilai kehidupan yang kuat: pembaca diajak selalu bersyukur, pantang menyerah meski hidup serba terbatas, berusaha keras, serta patuh kepada nasihat orang tua.</p><p>Kekurangannya, terdapat pemakaian kosakata daerah dan bahasa Inggris tanpa glosarium—misalnya kutipan <em>“Lalu kami beralih menjadi part time office boy di kompleks kantor pemerintah”</em>—sehingga penulis sebaiknya melengkapinya agar pembaca tidak bingung.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Novel', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
+          pageNumber: 3, runningHead: 'Naskah Lengkap · 2/4', title: 'Isi Keseluruhan Teks (Lanjutan)', subtitle: 'Paragraf 2–3 · Pendekatan & Tokoh Jeng Yah',
+          html: `<p>Melalui pendekatan kritik sastra feminisme, kita bisa melihat bagaimana novel ini menunjukkan perjuangan perempuan dalam menghadapi aturan sosial yang membatasi peran mereka. Kritik sastra feminisme sendiri adalah cara menganalisis karya sastra dengan melihat bagaimana perempuan digambarkan dalam cerita dan apakah mereka diberikan kebebasan untuk menentukan hidupnya sendiri.</p><p>Salah satu tokoh utama perempuan dalam novel ini adalah Jeng Yah. Ia bukan perempuan biasa yang hanya mengikuti perintah atau menunggu nasib. Jeng Yah adalah sosok perempuan cerdas dan mandiri yang berani mengambil peran dalam industri kretek, padahal pada zaman itu bisnis lebih didominasi oleh laki-laki.</p>`
         },
         {
-          pageNumber: 4, runningHead: '02 · Kritik Puisi', title: 'Puisi “Aku”', subtitle: 'Karya Chairil Anwar · Semangat Individualisme & Kebebasan',
-          html: `<p>Puisi “Aku” karya Chairil Anwar sangat terkenal karena mengusung tema keberanian dan perlawanan terhadap keterbatasan hidup—sosok “aku” menolak tunduk pada takdir dan memilih jalannya sendiri.</p><p>Gaya bahasanya lugas dan bertenaga lewat diksi tegas seperti <em>“Aku ini binatang jalang”</em>, ditambah metafora, simbolisme, serta ritme kalimat pendek yang membuat emosi puisi terasa dinamis.</p><p>Meski sebagian kritikus menilai sikap “melawan segala sesuatu” terkesan terlalu individualistis, puisi ini tetap relevan sebagai simbol keberanian dan semangat hidup.</p>`,
-          sources: [
-            { label: 'Brain Academy — Contoh Kritik Puisi', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
-            { label: 'Ensiklopedia Sastra: Chairil Anwar', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Chairil_Anwar' }
-          ]
+          pageNumber: 4, runningHead: 'Naskah Lengkap · 3/4', title: 'Isi Keseluruhan Teks (Lanjutan)', subtitle: 'Paragraf 4–5 · Perjuangan & Kesetaraan',
+          html: `<p>Melalui kisah Jeng Yah, Gadis Kretek menunjukkan bahwa perempuan bisa menjadi lebih dari sekadar istri atau ibu rumah tangga. Mereka bisa memiliki impian, mengambil keputusan sendiri, dan berjuang untuk apa yang mereka yakini.</p><p>Dalam novel ini, kita bisa melihat bahwa perempuan sering kali menghadapi batasan dari masyarakat, tetapi mereka juga memiliki kekuatan untuk melawan dan membuktikan bahwa mereka mampu. Hal ini sesuai dengan pandangan feminisme yang ingin agar perempuan memiliki hak yang sama dengan laki-laki dalam berbagai aspek kehidupan.</p>`
         },
         {
-          pageNumber: 5, runningHead: '03 · Kritik Film', title: 'Film “Laskar Pelangi”', subtitle: 'Adaptasi Novel Andrea Hirata · Pendidikan & Persahabatan',
-          html: `<p>Film <em>Laskar Pelangi</em> menceritakan anak-anak dari keluarga sederhana di Belitung yang tetap berjuang meraih pendidikan walau serba terbatas.</p><p>Kekuatannya ada pada karakter yang unik—seperti Ikal yang penuh semangat, Lintang yang cerdas, Mahar yang kreatif, dan Bu Muslimah yang berdedikasi—serta visual alam Belitung yang autentik.</p><p>Walau beberapa bagian di tengah cerita terasa berjalan agak lambat, alurnya tetap menyentuh dan inspiratif dalam menanamkan nilai kerja keras serta arti mimpi bagi pelajar.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Film', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
+          pageNumber: 5, runningHead: 'Naskah Lengkap · 4/4', title: 'Isi Keseluruhan Teks (Penutup)', subtitle: 'Paragraf 6 · Pesan Penutup Naskah',
+          html: `<p>Melalui kritik sastra feminisme, dari novel ini, kita bisa belajar bahwa perempuan harus berani memperjuangkan apa yang mereka inginkan dan tidak takut menghadapi tantangan. Ini menjadi pesan penting, terutama bagi generasi muda, bahwa setiap orang, baik laki-laki maupun perempuan, punya hak yang sama untuk mengejar impian mereka.</p>`,
+          sources: [{ label: 'Brain Academy — Contoh Kritik Sastra Feminisme', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
         },
         {
-          pageNumber: 6, runningHead: '04 · Kritik Cerpen', title: 'Cerpen “Robohnya Surau Kami”', subtitle: 'Karya A.A. Navis · Kritik Ibadah & Tanggung Jawab Sosial',
-          html: `<p>Cerpen ini mengisahkan seorang kakek penjaga surau yang rajin beribadah namun mengabaikan urusan dunia dan tidak bekerja. A.A. Navis mengkritik pola pikir yang hanya memikirkan akhirat tanpa memberi manfaat sosial di masyarakat.</p><p>Tokoh Kakek yang taat tetapi pasrah dibangun melalui alur maju dengan kejutan di akhir cerita yang memancing pembaca merenung lebih dalam.</p><p>Bahasa dialog dan narasinya sederhana namun tajam, sehingga pesan bahwa ibadah harus sejalan dengan kerja keras tetap sangat relevan.</p>`,
-          sources: [
-            { label: 'Brain Academy — Contoh Kritik Cerpen', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
-            { label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
-          ]
+          pageNumber: 6, runningHead: 'Halaman Analisis · 1/2', title: 'Analisis Struktur Kritik Sastra', subtitle: 'Bedah bagian teks “Gadis Kretek” secara terpisah',
+          html: `<ul><li><strong>Tesis / Pendapat Awal (Paragraf 1):</strong> Mengenalkan novel Gadis Kretek karya Ratih Kumala dan menegaskan fokus utama kritik, yaitu tokoh perempuan berpengaruh dalam perspektif feminisme.</li><li><strong>Rangkaian Argumen &amp; Bukti (Paragraf 2–5):</strong> Menjelaskan konsep kritik sastra feminisme lalu membuktikannya melalui ketokohan Jeng Yah yang cerdas, mandiri, dan berani terjun di industri kretek.</li><li><strong>Penegasan Ulang / Simpulan (Paragraf 6):</strong> Merangkum nilai perjuangan dan kesetaraan hak sebagai pesan penting bagi generasi muda dari pembacaan novel.</li></ul>`
         },
         {
-          pageNumber: 7, runningHead: '05 · Kritik Singkat', title: '“Filosofi Teras”', subtitle: 'Karya Henry Manampiring · Tema Filosofi & Spirit Sosial',
-          html: `<p>Karya Henry Manampiring ini mengangkat tema filosofi hidup dan perilaku manusia—seperti keadilan, kebaikan, dan kebenaran—yang dipadukan dengan contoh nyata dalam kehidupan sehari-hari.</p><p>Gaya bahasanya sederhana dan mudah dicerna, sehingga pembaca tanpa latar belakang filsafat pun dapat memahami filsafat kuno dalam konteks kehidupan modern.</p><p>Penokohannya terasa hidup dan membangun kedekatan emosional, menjadikan karya ini bermanfaat sebagai bahan refleksi bagi pembaca umum.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Singkat', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
+          pageNumber: 7, runningHead: 'Halaman Analisis · 2/2', title: 'Analisis Pendekatan & Kebahasaan', subtitle: 'Ciri kritik sastra pada naskah di halaman sebelumnya',
+          html: `<ul><li><strong>Pendekatan Sastra:</strong> Memadukan kritik sastra feminisme (peran dan kebebasan perempuan) dengan pendekatan mimetik yang menyoroti realitas sosial industri kretek.</li><li><strong>Verba Mental &amp; Pernyataan Persuasif:</strong> Tampak pada ungkapan “bisa melihat”, “menunjukkan”, “diyakini”, serta dorongan bernilai pada kalimat “harus berani memperjuangkan”.</li><li><strong>Konjungsi &amp; Istilah Sastra:</strong> Memakai konjungsi pertentangan/penjelas (“tetapi”, “meski”, “padahal”) serta istilah sastra seperti novel, tokoh utama, dan perspektif.</li></ul>`,
+          sources: [{ label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }]
         },
         {
-          pageNumber: 8, runningHead: '06 · Novel Historis', title: 'Novel “Bumi Manusia”', subtitle: 'Karya Pramoedya Ananta Toer · Latar Masa Kolonial',
-          html: `<p><em>Bumi Manusia</em> menggambarkan diskriminasi masyarakat pribumi di era kolonial Belanda melalui perjuangan Minke—seorang intelektual muda pribumi yang melawan ketidakadilan lewat pendidikan dan pemikiran modern.</p><p>Selain Minke, tokoh Nyai Ontosoroh hadir sebagai sosok perempuan pribumi yang cerdas, tangguh, dan sangat menginspirasi.</p><p>Dengan gaya bahasa yang lugas dan penuh makna, Pramoedya tidak sekadar menceritakan sejarah, melainkan mengajak pembaca berpikir kritis tentang hak asasi manusia.</p>`,
-          sources: [{ label: 'Brain Academy — Kritik Novel Historis', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
-        },
-        {
-          pageNumber: 9, runningHead: '07 · Kritik Drama', title: 'Drama “Keong Mas”', subtitle: 'Adaptasi Cerita Rakyat · Pesan Kesabaran & Ketulusan',
-          html: `<p>Drama <em>Keong Mas</em> mengisahkan seorang putri yang dikutuk menjadi keong oleh ibu tirinya yang jahat hingga akhirnya bebas berkat pertolongan seorang nenek tua.</p><p>Penokohannya lugas—putri digambarkan baik hati dan sabar, sedangkan ibu tiri bersifat iri—sehingga watak tokoh mudah dikenali penonton.</p><p>Alurnya sederhana (awal bahagia, konflik kutukan, lalu akhir bahagia) dan sarat pesan moral bahwa kesabaran serta kebaikan akan mengalahkan kejahatan.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Drama', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
-        },
-        {
-          pageNumber: 10, runningHead: '08 · Kritik Mimetik', title: 'Puisi “Barangkali Karena Bulan”', subtitle: 'Karya W.S. Rendra · Pendekatan Mimetik',
-          html: `<p>Puisi karya W.S. Rendra ini menghadirkan suasana emosional tentang pencarian makna hidup, rindu, kesedihan, dan harapan melalui simbol-simbol alam seperti bulan, angin, bintang, dan langit.</p><p>Gaya bahasanya sederhana tetapi puitis, menggunakan perumpamaan dan pengulangan kata tanpa terikat pola rima tertentu sehingga tetap mengalir.</p><p>Dari sudut pandang mimetik, puisi ini mencerminkan realitas perasaan manusia, cinta, dan pengalaman hidup secara halus dan menyentuh.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Mimetik', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
-        },
-        {
-          pageNumber: 11, runningHead: '09 · Kritik Syair', title: 'Syair “Gurindam Dua Belas”', subtitle: 'Karya Raja Ali Haji · Nilai Moral & Filosofis',
-          html: `<p><em>Gurindam Dua Belas</em> karya Raja Ali Haji berisi nasihat moral dan ajaran religius Islam yang kuat, misalnya petuah: <em>“Apabila banyak berkata-kata, di situlah jalan masuk dusta.”</em></p><p>Dari segi struktur, penggunaan pola rima berpasangan di setiap bait menciptakan irama pembacaan yang khas sekaligus mudah diingat.</p><p>Dibandingkan syair lain, isinya lebih filosofis dan layak dikaji secara sosiologis agar nilai etikanya terus relevan bagi masyarakat modern.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Syair', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
-        },
-        {
-          pageNumber: 12, runningHead: '10 · Kritik Feminisme', title: 'Novel “Gadis Kretek”', subtitle: 'Karya Ratih Kumala · Perspektif Kritik Feminisme',
-          html: `<p>Berlatar sejarah industri rokok kretek Indonesia dan drama keluarga, novel <em>Gadis Kretek</em> menyoroti perjuangan perempuan menghadapi batasan aturan sosial pada zamannya.</p><p>Melalui tokoh Jeng Yah—perempuan cerdas dan mandiri yang berani terjun ke bisnis kretek yang saat itu didominasi laki-laki—novel ini menegaskan bahwa perempuan mampu menentukan pilihan hidupnya sendiri.</p><p>Lewat kritik feminisme, kisah ini memberi pesan kuat bahwa laki-laki maupun perempuan memiliki hak yang sama untuk mengejar impian.</p>`,
-          sources: [{ label: 'Brain Academy — Contoh Kritik Feminisme', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
+          pageNumber: 8, isBackCover: true, title: 'Akhir Bacaan', subtitle: 'Naskah Lengkap & Analisis · Novel “Gadis Kretek” Karya Ratih Kumala',
+          sources: [{ label: 'Brain Academy — Contoh Kritik Sastra', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }]
         }
       ]
     };
@@ -1506,44 +1486,39 @@
       id: 'essayBook',
       coverTheme: 'essay',
       coverTitle: 'Seni Menulis Esai',
-      coverSubtitle: '6 Tema Pilihan & Contohnya',
-      editionLabel: 'SERI PERSPEKTIF · 6 TEMA ESAI',
+      coverSubtitle: 'Tema Dampak Media Sosial',
+      editionLabel: 'CONTOH ESAI · ERA DIGITAL',
       pages: [
-        { pageNumber: 1, isCover: true, title: 'Seni Menulis Esai', subtitle: '6 Tema Pilihan & Contohnya' },
+        { pageNumber: 1, isCover: true, title: 'Seni Menulis Esai', subtitle: 'Tema Dampak Media Sosial' },
         {
-          pageNumber: 2, runningHead: 'Daftar Isi', title: 'Daftar Isi 6 Tema Esai', subtitle: 'Satu Contoh Pilihan untuk Tiap Tema (Brain Academy)',
-          html: `<p>Buku mini ini menyajikan enam tema dan ragam esai—masing-masing dilengkapi satu contoh nyata dari Brain Academy:</p><ul><li><strong>Hal. 03</strong> — Tema 1 · Esai Deskriptif (Kesehatan Mental): “Anxiety”</li><li><strong>Hal. 04</strong> — Tema 2 · Esai Tajuk (Antikorupsi): “Korupsi Mampu Menghancurkan Negara”</li><li><strong>Hal. 05</strong> — Tema 3 · Esai Pribadi (Empati &amp; Sosial): “Sukarelawan di Panti Asuhan”</li><li><strong>Hal. 06</strong> — Tema 4 · Esai Kritik (Film &amp; Sejarah): “Soe Hok Gie”</li><li><strong>Hal. 07</strong> — Tema 5 · Esai Reflektif (Kebangsaan): “Karakter Pancasila”</li><li><strong>Hal. 08</strong> — Tema 6 · Esai Sosial-Digital (Media Sosial): “Dampak Media Sosial”</li></ul>`,
-          sources: [{ label: 'Brain Academy — 15 Contoh Esai Berbagai Tema', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 2, runningHead: 'Naskah Lengkap · 1/4', title: 'Contoh Esai Tema Dampak Media Sosial', subtitle: 'Teks Asli Utuh (Paragraf 1)',
+          html: `<p>Media sosial telah menjadi bagian tak terpisahkan dari kehidupan masyarakat di era digital. Platform seperti Facebook, Instagram, dan Twitter telah mengubah cara kita berkomunikasi, mengakses informasi, dan bahkan bersosialisasi. Namun, di balik kemudahan dan manfaat yang ditawarkan, media sosial juga memiliki sisi negatif yang perlu diwaspadai.</p>`
         },
         {
-          pageNumber: 3, runningHead: 'Tema 01 · Esai Deskriptif', title: 'Tema Kesehatan Mental: “Anxiety”', subtitle: 'Contoh Esai Deskriptif · Mengulas Fenomena Self-Diagnose',
-          html: `<p>Istilah kesehatan jiwa seperti <em>anxiety</em>, depresi, dan bipolar semakin sering dibicarakan anak muda. Namun, masih banyak yang melakukan <em>self-diagnose</em> hanya berdasarkan artikel internet sehingga berisiko menimbulkan salah paham.</p><p>Secara awam, <em>anxiety</em> sering dianggap sekadar rasa cemas biasa. Padahal, gangguan kecemasan merupakan rasa takut, gelisah, dan gugup berlebih hingga mengganggu aktivitas sehari-hari.</p><p>Pemicunya tidak hanya kejadian besar seperti ujian atau rapat penting, tetapi juga asumsi negatif yang muncul berulang kali di pikiran dan kerap disalahpahami orang lain.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Deskriptif (Anxiety)', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 3, runningHead: 'Naskah Lengkap · 2/4', title: 'Isi Keseluruhan Teks (Lanjutan)', subtitle: 'Paragraf 2–3 · Dampak Positif & Negatif',
+          html: `<p>Di satu sisi, media sosial memiliki banyak dampak positif. Media sosial dapat menjadi sarana untuk menjalin komunikasi dan membangun koneksi dengan orang lain, baik di dalam maupun luar negeri. Platform ini juga dapat menjadi sumber informasi yang cepat dan mudah diakses. Media sosial dapat dimanfaatkan untuk berbagai tujuan positif, seperti edukasi, promosi bisnis, dan penggalangan dana.</p><p>Namun, di sisi lain, media sosial juga memiliki dampak negatif yang tidak dapat diabaikan. Salah satu dampak negatif yang paling sering dijumpai adalah cyberbullying. Cyberbullying dapat memberikan dampak psikologis yang serius bagi korbannya, seperti kecemasan, depresi, dan bahkan bunuh diri. Media sosial juga dapat menjadi wadah penyebaran informasi hoax dan ujaran kebencian yang dapat memicu konflik dan perpecahan di masyarakat.</p>`
         },
         {
-          pageNumber: 4, runningHead: 'Tema 02 · Esai Tajuk', title: 'Tema Antikorupsi: “Korupsi Mampu Menghancurkan Negara”', subtitle: 'Contoh Esai Tajuk · Oleh Eko Edhi Caroko',
-          html: `<p>Peringatan Hari Antikorupsi Dunia (Hakordia) setiap 9 Desember mengingatkan bahwa menurut PBB, korupsi adalah kejahatan sosial, politik, dan ekonomi yang dapat merusak institusi demokratis hingga membuat negara kuat terpuruk.</p><p>Di Indonesia, kerugian negara akibat korupsi mencapai puluhan hingga ratusan triliun rupiah (seperti kasus penyerobotan lahan Rp104,1 triliun menurut audit BPK), sehingga tepat digolongkan sebagai <em>extraordinary crime</em>.</p><p>Sulitnya pemberantasan terjadi karena kejahatan ini terorganisir rapi dan hukumannya belum memberi efek jera. Hakordia semestinya menjadi aksi nyata mencegah kehancuran negara, bukan sekadar acara seremonial.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Tajuk (Antikorupsi)', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 4, runningHead: 'Naskah Lengkap · 3/4', title: 'Isi Keseluruhan Teks (Lanjutan)', subtitle: 'Paragraf 4–5 · Kecanduan & Sikap Bijak',
+          html: `<p>Selain itu, penggunaan media sosial yang berlebihan dapat menyebabkan kecanduan dan mengganggu aktivitas sehari-hari. Pengguna media sosial yang kecanduan sering kali menghabiskan waktu berjam-jam di depan layar dan mengabaikan aktivitas lain yang lebih penting, seperti belajar, bekerja, dan bersosialisasi di dunia nyata.</p><p>Oleh karena itu, penting untuk menggunakan media sosial dengan bijak dan bertanggung jawab. Kita harus selektif dalam memilih informasi yang dibagikan dan diakses di media sosial. Kita juga harus menjaga privasi dan keamanan data pribadi di media sosial.</p>`
         },
         {
-          pageNumber: 5, runningHead: 'Tema 03 · Esai Pribadi', title: 'Tema Sosial &amp; Empati: “Sukarelawan di Panti Asuhan”', subtitle: 'Contoh Esai Pribadi · Pengalaman Hidup Penulis',
-          html: `<p>Keputusan menjadi sukarelawan di panti asuhan setempat menjadi pengalaman pribadi yang mengubah cara saya memandang dunia. Awalnya saya merasa canggung dan bingung berinteraksi dengan anak-anak di sana.</p><p>Seiring waktu, kecanggungan itu berubah menjadi ikatan kekeluargaan yang hangat. Meski hidup dalam keterbatasan, mereka tetap tersenyum, bermain, dan bersyukur atas apa yang dimiliki.</p><p>Dari mereka saya belajar bahwa kebahagiaan sejati tidak bergantung pada kemewahan materi. Tindakan kecil yang tulus mampu menumbuhkan empati dan memberi dampak besar bagi sesama.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Pribadi (Sukarelawan)', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 5, runningHead: 'Naskah Lengkap · 4/4', title: 'Isi Keseluruhan Teks (Penutup)', subtitle: 'Paragraf 6 · Ajakan Penutup Naskah',
+          html: `<p>Dengan menggunakan media sosial secara bijak, kita dapat memaksimalkan manfaatnya dan meminimalisir dampak negatifnya. Marilah kita jadikan media sosial sebagai alat yang positif untuk membangun interaksi, menyebarkan informasi yang bermanfaat, dan berkontribusi bagi kemajuan bangsa.</p>`,
+          sources: [{ label: 'Brain Academy — Contoh Esai Dampak Media Sosial', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
         },
         {
-          pageNumber: 6, runningHead: 'Tema 04 · Esai Kritik', title: 'Tema Film &amp; Sejarah: “Soe Hok Gie”', subtitle: 'Contoh Esai Kritik · Mengulas Film Biografi',
-          html: `<p>Film “Gie” diangkat dari tulisan autobiografi Soe Hok Gie tentang perjuangannya mengkritisi pemerintahan pada masanya dan mewujudkan perubahan hidup yang lebih adil.</p><p>Kekuatan film ini terletak pada kemampuannya menghadirkan perspektif baru tentang nasionalisme etnis Tionghoa di Indonesia—menunjukkan bahwa rasa cinta tanah air dimiliki setara oleh semua kelompok masyarakat tanpa perlu diskriminasi.</p><p>Gaya penyajiannya klasik dan memikat secara artistik, meski penonton tetap membutuhkan sedikit wawasan latar sejarah agar dapat memahami keseluruhan kisahnya secara utuh.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Kritik (Soe Hok Gie)', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 6, runningHead: 'Halaman Analisis · 1/2', title: 'Analisis Struktur Esai', subtitle: 'Bedah bagian teks “Dampak Media Sosial” secara terpisah',
+          html: `<ul><li><strong>Pendahuluan / Tesis (Paragraf 1):</strong> Mengenalkan peran media sosial di era digital lalu menetapkan tesis: di balik manfaatnya, terdapat sisi negatif yang perlu diwaspadai.</li><li><strong>Isi / Rangkaian Argumen (Paragraf 2–5):</strong> Membandingkan manfaat (komunikasi, edukasi, bisnis) dengan risiko (cyberbullying, hoaks, kecanduan), lalu mengarah pada sikap selektif menjaga privasi.</li><li><strong>Penutup / Penegasan Ulang (Paragraf 6):</strong> Menegaskan ulang pentingnya pemakaian bijak dan menutup esai dengan ajakan membangun ruang digital yang positif.</li></ul>`
         },
         {
-          pageNumber: 7, runningHead: 'Tema 05 · Esai Reflektif', title: 'Tema Kebangsaan: “Karakter Pancasila”', subtitle: 'Contoh Esai Reflektif · Menjaga Nilai Persatuan',
-          html: `<p>Indonesia lahir dari keberagaman suku, budaya, agama, dan adat istiadat yang disatukan kesadaran bersama sebagai bangsa yang berdaulat—perbedaan bukan pemecah ikatan, melainkan kekayaan bangsa.</p><p>Namun, arus globalisasi membuat pemahaman makna Pancasila di kalangan generasi muda kian memudar apabila pendidikan karakter belum sepenuhnya mencerminkan jati diri Indonesia.</p><p>Menanamkan karakter Pancasila di setiap jenjang pendidikan menjadi bekal penting bagi generasi penerus agar cita-cita kemerdekaan 100 tahun pada 2045 terwujud menjadi generasi emas.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Reflektif (Karakter Pancasila)', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 7, runningHead: 'Halaman Analisis · 2/2', title: 'Analisis Sudut Pandang & Kebahasaan', subtitle: 'Ciri esai pada naskah di halaman sebelumnya',
+          html: `<ul><li><strong>Sudut Pandang &amp; Gaya Tutur:</strong> Memakai sudut pandang personal-inklusif (“kita”) dengan bahasa baku yang komunikatif, akrab, dan mudah diikuti pembaca umum.</li><li><strong>Konjungsi Pertentangan &amp; Kausalitas:</strong> Menjaga alur argumen lewat penanda “Di satu sisi”, “Namun, di sisi lain”, “Selain itu”, dan “Oleh karena itu”.</li><li><strong>Ajakan Persuasif &amp; Istilah Topik:</strong> Tampak pada ungkapan “penting untuk menggunakan...” dan “Marilah kita jadikan...”, disertai istilah digital seperti cyberbullying, hoax, dan privasi.</li></ul>`,
+          sources: [{ label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }]
         },
         {
-          pageNumber: 8, runningHead: 'Tema 06 · Dampak Media Sosial', title: 'Tema Sosial-Digital: “Dampak Media Sosial”', subtitle: 'Contoh Esai Opini · Bijak Bermedia di Era Digital',
-          html: `<p>Media sosial seperti Instagram, Facebook, dan X telah mengubah cara masyarakat berkomunikasi dan mengakses informasi. Di sisi positif, platform ini mempermudah koneksi sosial, edukasi, promosi usaha, hingga penggalangan dana.</p><p>Namun di sisi lain, muncul risiko serius seperti <em>cyberbullying</em> yang mengganggu kesehatan mental, penyebaran berita hoaks, ujaran kebencian, serta kecanduan layar yang menggeser aktivitas belajar dan interaksi nyata.</p><p>Oleh karena itu, kita perlu bersikap selektif menyaring informasi serta menjaga privasi data agar media sosial menjadi ruang interaksi yang positif dan bermanfaat.</p>`,
-          sources: [{ label: 'Brain Academy — Esai Tema Dampak Media Sosial', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
+          pageNumber: 8, isBackCover: true, title: 'Akhir Bacaan', subtitle: 'Naskah Lengkap & Analisis · Tema Dampak Media Sosial',
+          sources: [{ label: 'Brain Academy — Contoh Esai', url: 'https://www.brainacademy.id/blog/contoh-esai' }]
         }
       ]
     };
@@ -1810,12 +1785,15 @@
 
         function renderPageFace(page, side) {
           if (!page) return '<div class="page-parchment"></div>';
-          if (page.isCover) {
+          if (page.isCover || page.isBackCover) {
             const coverClass = bookData.coverTheme === 'criticism' ? 'page-cover--criticism' : 'page-cover--essay';
+            const coverSourcesHtml = page.isBackCover && page.sources && page.sources.length
+              ? `<div class="page-cover__sources">${page.sources.map((src) => `<a class="page-cover__source-link" href="${src.url}" target="_blank" rel="noopener noreferrer">${src.label} ↗</a>`).join('')}</div>`
+              : '';
             return `
               <div class="page-cover ${coverClass}">
                 <div class="page-cover__ornament">
-                  <span class="page-cover__edition">${bookData.editionLabel}</span>
+                  <span class="page-cover__edition">${page.isBackCover ? 'SAMPUL BELAKANG' : bookData.editionLabel}</span>
                   <div>
                     <svg class="page-cover__crest" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
                       <circle cx="24" cy="24" r="19" />
@@ -1824,8 +1802,9 @@
                     </svg>
                     <h3 class="page-cover__title">${page.title}</h3>
                     <p class="page-cover__subtitle">${page.subtitle}</p>
+                    ${coverSourcesHtml}
                   </div>
-                  <span class="page-cover__action">Klik untuk Membuka →</span>
+                  <span class="page-cover__action">${page.isBackCover ? '← Klik untuk Membuka Kembali' : 'Klik untuk Membuka →'}</span>
                 </div>
               </div>
             `;
@@ -1881,7 +1860,7 @@
             const leaf = document.createElement('div');
             leaf.className = 'book-leaf';
             leaf.innerHTML = `<div class="book-face book-face--front">${renderPageFace(page, 'front')}</div><div class="book-face book-face--back"><div class="page-parchment"></div></div>`;
-            leaf.querySelectorAll('.page-parchment__source-link').forEach((link) => {
+            leaf.querySelectorAll('.page-parchment__source-link, .page-cover__source-link').forEach((link) => {
               link.addEventListener('click', (e) => e.stopPropagation());
             });
             leaf.addEventListener('click', () => { if (mobilePage < totalPages - 1) goNext(); });
@@ -1892,7 +1871,7 @@
             const leaf = document.createElement('div');
             leaf.className = 'book-leaf';
             leaf.innerHTML = `<div class="book-face book-face--front">${renderPageFace(pair.front, 'front')}</div><div class="book-face book-face--back">${renderPageFace(pair.back, 'back')}</div>`;
-            leaf.querySelectorAll('.page-parchment__source-link').forEach((link) => {
+            leaf.querySelectorAll('.page-parchment__source-link, .page-cover__source-link').forEach((link) => {
               link.addEventListener('click', (e) => e.stopPropagation());
             });
             leaf.addEventListener('click', () => { if (idx >= desktopLeaf) goNext(); else goPrev(); });
@@ -1911,7 +1890,11 @@
             });
             prevBtn.disabled = mobilePage === 0;
             nextBtn.disabled = mobilePage === totalPages - 1;
-            statusEl.textContent = `Halaman ${mobilePage + 1} dari ${totalPages}`;
+            statusEl.textContent = mobilePage === 0
+              ? `Halaman 1 dari ${totalPages} (Sampul Depan)`
+              : bookData.pages[mobilePage]?.isBackCover
+                ? `Halaman ${totalPages} dari ${totalPages} (Sampul Belakang)`
+                : `Halaman ${mobilePage + 1} dari ${totalPages}`;
             return;
           }
           bookEl.classList.toggle('is-cover-front', desktopLeaf === 0);
@@ -1925,7 +1908,7 @@
           });
           prevBtn.disabled = desktopLeaf === 0;
           nextBtn.disabled = desktopLeaf === totalLeaves;
-          statusEl.textContent = desktopLeaf === 0 ? `Halaman 1 dari ${totalPages} (Sampul)` : desktopLeaf === totalLeaves ? `Halaman ${totalPages} dari ${totalPages}` : `Halaman ${desktopLeaf * 2}–${desktopLeaf * 2 + 1} dari ${totalPages}`;
+          statusEl.textContent = desktopLeaf === 0 ? `Halaman 1 dari ${totalPages} (Sampul Depan)` : desktopLeaf === totalLeaves ? `Halaman ${totalPages} dari ${totalPages} (Sampul Belakang)` : `Halaman ${desktopLeaf * 2}–${desktopLeaf * 2 + 1} dari ${totalPages}`;
         }
 
         function lockAnimation(turningIndex) {

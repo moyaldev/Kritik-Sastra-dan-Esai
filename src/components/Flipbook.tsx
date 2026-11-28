@@ -93,7 +93,7 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
       return <div className="page-parchment h-full w-full" />;
     }
 
-    if (page.isCover) {
+    if (page.isCover || page.isBackCover) {
       const coverBg =
         book.coverTheme === 'criticism'
           ? 'bg-[linear-gradient(155deg,#3c1c18_0%,#24100e_65%,#160a08_100%)]'
@@ -106,7 +106,7 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
           <div className="h-full border border-[#B99A62]/55 px-5 py-6 flex flex-col justify-between items-center text-center relative">
             <div className="absolute inset-1.5 border border-[#B99A62]/25 pointer-events-none" />
             <span className="font-ui text-[0.68rem] tracking-[0.22em] uppercase text-[#B99A62]">
-              {book.editionLabel}
+              {page.isBackCover ? 'SAMPUL BELAKANG' : book.editionLabel}
             </span>
             <div className="flex flex-col items-center">
               <svg
@@ -124,10 +124,26 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
               <h3 className="font-display text-[clamp(1.65rem,2.6vw,2.45rem)] font-semibold leading-[1.12] text-[#E8DCC5] my-2">
                 {page.title}
               </h3>
-              <p className="font-body italic text-sm text-[#D3B47A] max-w-[24ch]">{page.subtitle}</p>
+              <p className="font-body italic text-sm text-[#D3B47A] max-w-[26ch]">{page.subtitle}</p>
+              {page.isBackCover && page.sources && page.sources.length > 0 && (
+                <div className="mt-4 flex flex-wrap justify-center gap-2 relative z-10">
+                  {page.sources.map((src) => (
+                    <a
+                      key={src.url}
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 px-3 py-1 border border-[#B99A62]/45 rounded-[3px] font-ui text-[0.68rem] text-[#E8DCC5] hover:border-[#D3B47A] hover:text-[#D3B47A] transition-colors"
+                    >
+                      {src.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
             <span className="font-ui text-[0.68rem] tracking-[0.16em] uppercase text-[#B99A62]">
-              Klik untuk Membuka →
+              {page.isBackCover ? '← Klik untuk Membuka Kembali' : 'Klik untuk Membuka →'}
             </span>
           </div>
         </div>
@@ -142,16 +158,16 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
             <span>{page.runningHead || ''}</span>
           </div>
 
-          <div className="page-parchment-scroll flex-1 overflow-y-auto pr-1">
-            <h4 className="font-display text-[1.4rem] sm:text-[1.55rem] font-bold leading-[1.16] text-[#1c130d] mb-2">
+          <div className="flex-1 overflow-hidden">
+            <h4 className="font-display text-[1.22rem] sm:text-[1.46rem] font-bold leading-[1.16] text-[#1c130d] mb-1.5 sm:mb-2">
               {page.title}
             </h4>
             {page.subtitle && (
-              <div className="font-body italic text-[0.84rem] text-[#6b5239] mb-3">
+              <div className="font-body italic text-[0.78rem] sm:text-[0.83rem] text-[#6b5239] mb-2.5 sm:mb-3">
                 {page.subtitle}
               </div>
             )}
-            <div className="font-body text-[0.85rem] leading-[1.65] text-[#2b2017] space-y-2.5">
+            <div className="font-body text-[0.78rem] sm:text-[0.84rem] leading-[1.54] sm:leading-[1.64] text-[#2b2017] space-y-2 sm:space-y-2.5">
               {page.paragraphs?.map((p, idx) => (
                 <p key={idx}>{p}</p>
               ))}
@@ -201,11 +217,15 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
   };
 
   const statusText = isMobile
-    ? `Halaman ${mobilePage + 1} dari ${totalPages}`
+    ? mobilePage === 0
+      ? `Halaman 1 dari ${totalPages} (Sampul Depan)`
+      : book.pages[mobilePage]?.isBackCover
+        ? `Halaman ${totalPages} dari ${totalPages} (Sampul Belakang)`
+        : `Halaman ${mobilePage + 1} dari ${totalPages}`
     : desktopLeaf === 0
-      ? `Halaman 1 dari ${totalPages} (Sampul)`
+      ? `Halaman 1 dari ${totalPages} (Sampul Depan)`
       : desktopLeaf === totalLeaves
-        ? `Halaman ${totalPages} dari ${totalPages}`
+        ? `Halaman ${totalPages} dari ${totalPages} (Sampul Belakang)`
         : `Halaman ${desktopLeaf * 2}–${desktopLeaf * 2 + 1} dari ${totalPages}`;
 
   const isPrevDisabled = isMobile ? mobilePage === 0 : desktopLeaf === 0;
@@ -248,7 +268,11 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
                   desktopLeaf > 0 ? 'opacity-100' : 'opacity-0'
                 }`}
               />
-              <div className="absolute top-0 right-0 w-1/2 h-full rounded-[3px] bg-[#14100c] shadow-[10px_24px_55px_rgba(0,0,0,0.65)] pointer-events-none" />
+              <div
+                className={`absolute top-0 right-0 w-1/2 h-full rounded-[3px] bg-[#14100c] shadow-[10px_24px_55px_rgba(0,0,0,0.65)] pointer-events-none transition-opacity duration-300 ${
+                  desktopLeaf < totalLeaves ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
               <div
                 className={`absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[18px] bg-[linear-gradient(to_right,rgba(0,0,0,0.42),rgba(255,255,255,0.06)_50%,rgba(0,0,0,0.42))] z-40 pointer-events-none transition-opacity duration-300 ${
                   desktopLeaf > 0 && desktopLeaf < totalLeaves ? 'opacity-100' : 'opacity-0'

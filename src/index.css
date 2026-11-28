@@ -139,7 +139,7 @@ body {
   position: relative;
   width: 840px;
   max-width: 100%;
-  aspect-ratio: 840 / 540;
+  aspect-ratio: 840 / 565;
   transform-style: preserve-3d;
   transition: transform 0.65s var(--ease-editorial);
   user-select: none;
@@ -227,7 +227,7 @@ body {
   .book-3d {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 3 / 4.25;
+    aspect-ratio: 3 / 5.05;
     transform: none !important;
   }
   .book-leaf {

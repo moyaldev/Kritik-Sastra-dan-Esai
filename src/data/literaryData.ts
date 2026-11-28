@@ -21,6 +21,7 @@ export interface ChapterItem {
 export interface FlipbookPage {
   pageNumber: number;
   isCover?: boolean;
+  isBackCover?: boolean;
   runningHead?: string;
   title: string;
   subtitle?: string;
@@ -512,179 +513,106 @@ export const criticismBook: FlipbookData = {
   id: 'criticismBook',
   coverTheme: 'criticism',
   coverTitle: 'Kritik Sastra',
-  coverSubtitle: '10 Contoh Ragam Karya Sastra',
-  editionLabel: 'EDISI KLASIK · 10 CONTOH KRITIK',
+  coverSubtitle: 'Analisis Novel “Gadis Kretek”',
+  editionLabel: 'KRITIK SASTRA FEMINISME',
   pages: [
     {
       pageNumber: 1,
       isCover: true,
       title: 'Kritik Sastra',
-      subtitle: '10 Contoh Ragam Karya Sastra'
+      subtitle: 'Analisis Novel “Gadis Kretek”'
     },
     {
       pageNumber: 2,
-      runningHead: 'Daftar Isi',
-      title: 'Daftar Isi 10 Contoh Kritik',
-      subtitle: 'Ragam Karya dari Brain Academy',
+      runningHead: 'Naskah Lengkap · 1/4',
+      title: 'Analisis Kritik Terhadap Novel “Gadis Kretek”',
+      subtitle: 'Karya Ratih Kumala · Teks Asli Utuh (Paragraf 1)',
       paragraphs: [
-        'Buku ini merangkum 10 contoh kritik sastra dari berbagai ragam karya dan pendekatan yang dapat dijadikan acuan belajar:'
-      ],
-      bullets: [
-        { label: 'Hal. 03', text: '01. Novel — “Sang Pemimpi” (Andrea Hirata)' },
-        { label: 'Hal. 04', text: '02. Puisi — “Aku” (Chairil Anwar)' },
-        { label: 'Hal. 05', text: '03. Film — “Laskar Pelangi”' },
-        { label: 'Hal. 06', text: '04. Cerpen — “Robohnya Surau Kami” (A.A. Navis)' },
-        { label: 'Hal. 07', text: '05. Kritik Singkat — “Filosofi Teras” (Henry Manampiring)' },
-        { label: 'Hal. 08', text: '06. Novel Historis — “Bumi Manusia” (Pramoedya Ananta Toer)' },
-        { label: 'Hal. 09', text: '07. Drama — “Keong Mas”' },
-        { label: 'Hal. 10', text: '08. Kritik Mimetik — “Barangkali Karena Bulan” (W.S. Rendra)' },
-        { label: 'Hal. 11', text: '09. Syair — “Gurindam Dua Belas” (Raja Ali Haji)' },
-        { label: 'Hal. 12', text: '10. Kritik Feminisme — “Gadis Kretek” (Ratih Kumala)' }
-      ],
-      sources: [
-        { label: 'Brain Academy — 10 Contoh Kritik Sastra', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+        'Novel Gadis Kretek karya Ratih Kumala adalah cerita yang mengisahkan tentang sejarah industri rokok kretek di Indonesia, tetapi juga memiliki unsur drama keluarga dan cinta. Salah satu hal menarik dalam novel ini adalah bagaimana perempuan digambarkan bukan hanya sebagai tokoh pendamping, tetapi juga sebagai sosok yang berpengaruh. Novel ini menghadirkan perspektif feminisme, meski masih ada batasan sosial yang mereka hadapi.'
       ]
     },
     {
       pageNumber: 3,
-      runningHead: '01 · Kritik Novel',
-      title: 'Novel “Sang Pemimpi”',
-      subtitle: 'Karya Andrea Hirata · Tetralogi Laskar Pelangi',
+      runningHead: 'Naskah Lengkap · 2/4',
+      title: 'Isi Keseluruhan Teks (Lanjutan)',
+      subtitle: 'Paragraf 2–3 · Pendekatan & Tokoh Jeng Yah',
       paragraphs: [
-        'Novel Sang Pemimpi mengisahkan perjuangan tiga sahabat—Arai, Ikal, dan Jimbron—setelah menamatkan SMP hingga bermimpi kuliah ke Prancis dengan cinta, pengorbanan, dan doa.',
-        'Kelebihannya terletak pada nilai kehidupan yang kuat: pembaca diajak selalu bersyukur, pantang menyerah meski hidup serba terbatas, berusaha keras, serta patuh kepada nasihat orang tua.',
-        'Kekurangannya, terdapat pemakaian kosakata daerah dan bahasa Inggris tanpa glosarium—misalnya kutipan “Lalu kami beralih menjadi part time office boy di kompleks kantor pemerintah”—sehingga penulis sebaiknya melengkapinya agar pembaca tidak bingung.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Novel', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+        'Melalui pendekatan kritik sastra feminisme, kita bisa melihat bagaimana novel ini menunjukkan perjuangan perempuan dalam menghadapi aturan sosial yang membatasi peran mereka. Kritik sastra feminisme sendiri adalah cara menganalisis karya sastra dengan melihat bagaimana perempuan digambarkan dalam cerita dan apakah mereka diberikan kebebasan untuk menentukan hidupnya sendiri.',
+        'Salah satu tokoh utama perempuan dalam novel ini adalah Jeng Yah. Ia bukan perempuan biasa yang hanya mengikuti perintah atau menunggu nasib. Jeng Yah adalah sosok perempuan cerdas dan mandiri yang berani mengambil peran dalam industri kretek, padahal pada zaman itu bisnis lebih didominasi oleh laki-laki.'
       ]
     },
     {
       pageNumber: 4,
-      runningHead: '02 · Kritik Puisi',
-      title: 'Puisi “Aku”',
-      subtitle: 'Karya Chairil Anwar · Semangat Individualisme & Kebebasan',
+      runningHead: 'Naskah Lengkap · 3/4',
+      title: 'Isi Keseluruhan Teks (Lanjutan)',
+      subtitle: 'Paragraf 4–5 · Perjuangan & Kesetaraan',
       paragraphs: [
-        'Puisi “Aku” karya Chairil Anwar sangat terkenal karena mengusung tema keberanian dan perlawanan terhadap keterbatasan hidup—sosok “aku” menolak tunduk pada takdir dan memilih jalannya sendiri.',
-        'Gaya bahasanya lugas dan bertenaga lewat diksi tegas seperti “Aku ini binatang jalang”, ditambah metafora, simbolisme, serta ritme kalimat pendek yang membuat emosi puisi terasa dinamis.',
-        'Meski sebagian kritikus menilai sikap “melawan segala sesuatu” terkesan terlalu individualistis, puisi ini tetap relevan sebagai simbol keberanian dan semangat hidup.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Puisi', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
-        { label: 'Ensiklopedia Sastra: Chairil Anwar', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Chairil_Anwar' }
+        'Melalui kisah Jeng Yah, Gadis Kretek menunjukkan bahwa perempuan bisa menjadi lebih dari sekadar istri atau ibu rumah tangga. Mereka bisa memiliki impian, mengambil keputusan sendiri, dan berjuang untuk apa yang mereka yakini.',
+        'Dalam novel ini, kita bisa melihat bahwa perempuan sering kali menghadapi batasan dari masyarakat, tetapi mereka juga memiliki kekuatan untuk melawan dan membuktikan bahwa mereka mampu. Hal ini sesuai dengan pandangan feminisme yang ingin agar perempuan memiliki hak yang sama dengan laki-laki dalam berbagai aspek kehidupan.'
       ]
     },
     {
       pageNumber: 5,
-      runningHead: '03 · Kritik Film',
-      title: 'Film “Laskar Pelangi”',
-      subtitle: 'Adaptasi Novel Andrea Hirata · Pendidikan & Persahabatan',
+      runningHead: 'Naskah Lengkap · 4/4',
+      title: 'Isi Keseluruhan Teks (Penutup)',
+      subtitle: 'Paragraf 6 · Pesan Penutup Naskah',
       paragraphs: [
-        'Film Laskar Pelangi menceritakan anak-anak dari keluarga sederhana di Belitung yang tetap berjuang meraih pendidikan walau serba terbatas.',
-        'Kekuatannya ada pada karakter yang unik—seperti Ikal yang penuh semangat, Lintang yang cerdas, Mahar yang kreatif, dan Bu Muslimah yang berdedikasi—serta visual alam Belitung yang autentik.',
-        'Walau beberapa bagian di tengah cerita terasa berjalan agak lambat, alurnya tetap menyentuh dan inspiratif dalam menanamkan nilai kerja keras serta arti mimpi bagi pelajar.'
+        'Melalui kritik sastra feminisme, dari novel ini, kita bisa belajar bahwa perempuan harus berani memperjuangkan apa yang mereka inginkan dan tidak takut menghadapi tantangan. Ini menjadi pesan penting, terutama bagi generasi muda, bahwa setiap orang, baik laki-laki maupun perempuan, punya hak yang sama untuk mengejar impian mereka.'
       ],
       sources: [
-        { label: 'Brain Academy — Contoh Kritik Film', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+        { label: 'Brain Academy — Contoh Kritik Sastra Feminisme', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     },
     {
       pageNumber: 6,
-      runningHead: '04 · Kritik Cerpen',
-      title: 'Cerpen “Robohnya Surau Kami”',
-      subtitle: 'Karya A.A. Navis · Kritik Ibadah & Tanggung Jawab Sosial',
-      paragraphs: [
-        'Cerpen ini mengisahkan seorang kakek penjaga surau yang rajin beribadah namun mengabaikan urusan dunia dan tidak bekerja. A.A. Navis mengkritik pola pikir yang hanya memikirkan akhirat tanpa memberi manfaat sosial di masyarakat.',
-        'Tokoh Kakek yang taat tetapi pasrah dibangun melalui alur maju dengan kejutan di akhir cerita yang memancing pembaca merenung lebih dalam.',
-        'Bahasa dialog dan narasinya sederhana namun tajam, sehingga pesan bahwa ibadah harus sejalan dengan kerja keras tetap sangat relevan.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Cerpen', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
-        { label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
+      runningHead: 'Halaman Analisis · 1/2',
+      title: 'Analisis Struktur Kritik Sastra',
+      subtitle: 'Bedah bagian teks “Gadis Kretek” secara terpisah',
+      bullets: [
+        {
+          label: 'Tesis / Pendapat Awal (Paragraf 1)',
+          text: 'Mengenalkan novel Gadis Kretek karya Ratih Kumala dan menegaskan fokus utama kritik, yaitu tokoh perempuan berpengaruh dalam perspektif feminisme.'
+        },
+        {
+          label: 'Rangkaian Argumen & Bukti (Paragraf 2–5)',
+          text: 'Menjelaskan konsep kritik sastra feminisme lalu membuktikannya melalui ketokohan Jeng Yah yang cerdas, mandiri, dan berani terjun di industri kretek.'
+        },
+        {
+          label: 'Penegasan Ulang / Simpulan (Paragraf 6)',
+          text: 'Merangkum nilai perjuangan dan kesetaraan hak sebagai pesan penting bagi generasi muda dari pembacaan novel.'
+        }
       ]
     },
     {
       pageNumber: 7,
-      runningHead: '05 · Kritik Singkat',
-      title: '“Filosofi Teras”',
-      subtitle: 'Karya Henry Manampiring · Tema Filosofi & Spirit Sosial',
-      paragraphs: [
-        'Karya Henry Manampiring ini mengangkat tema filosofi hidup dan perilaku manusia—seperti keadilan, kebaikan, dan kebenaran—yang dipadukan dengan contoh nyata dalam kehidupan sehari-hari.',
-        'Gaya bahasanya sederhana dan mudah dicerna, sehingga pembaca tanpa latar belakang filsafat pun dapat memahami filsafat kuno dalam konteks kehidupan modern.',
-        'Penokohannya terasa hidup dan membangun kedekatan emosional, menjadikan karya ini bermanfaat sebagai bahan refleksi bagi pembaca umum.'
+      runningHead: 'Halaman Analisis · 2/2',
+      title: 'Analisis Pendekatan & Kebahasaan',
+      subtitle: 'Ciri kritik sastra pada naskah di halaman sebelumnya',
+      bullets: [
+        {
+          label: 'Pendekatan Sastra',
+          text: 'Memadukan kritik sastra feminisme (peran dan kebebasan perempuan) dengan pendekatan mimetik yang menyoroti realitas sosial industri kretek.'
+        },
+        {
+          label: 'Verba Mental & Pernyataan Persuasif',
+          text: 'Tampak pada ungkapan “bisa melihat”, “menunjukkan”, “diyakini”, serta dorongan bernilai pada kalimat “harus berani memperjuangkan”.'
+        },
+        {
+          label: 'Konjungsi & Istilah Sastra',
+          text: 'Memakai konjungsi pertentangan/penjelas (“tetapi”, “meski”, “padahal”) serta istilah sastra seperti novel, tokoh utama, dan perspektif.'
+        }
       ],
       sources: [
-        { label: 'Brain Academy — Contoh Kritik Singkat', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+        { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }
       ]
     },
     {
       pageNumber: 8,
-      runningHead: '06 · Novel Historis',
-      title: 'Novel “Bumi Manusia”',
-      subtitle: 'Karya Pramoedya Ananta Toer · Latar Masa Kolonial',
-      paragraphs: [
-        'Bumi Manusia menggambarkan diskriminasi masyarakat pribumi di era kolonial Belanda melalui perjuangan Minke—seorang intelektual muda pribumi yang melawan ketidakadilan lewat pendidikan dan pemikiran modern.',
-        'Selain Minke, tokoh Nyai Ontosoroh hadir sebagai sosok perempuan pribumi yang cerdas, tangguh, dan sangat menginspirasi.',
-        'Dengan gaya bahasa yang lugas dan penuh makna, Pramoedya tidak sekadar menceritakan sejarah, melainkan mengajak pembaca berpikir kritis tentang hak asasi manusia.'
-      ],
+      isBackCover: true,
+      title: 'Akhir Bacaan',
+      subtitle: 'Naskah Lengkap & Analisis · Novel “Gadis Kretek” Karya Ratih Kumala',
       sources: [
-        { label: 'Brain Academy — Kritik Novel Historis', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
-      ]
-    },
-    {
-      pageNumber: 9,
-      runningHead: '07 · Kritik Drama',
-      title: 'Drama “Keong Mas”',
-      subtitle: 'Adaptasi Cerita Rakyat · Pesan Kesabaran & Ketulusan',
-      paragraphs: [
-        'Drama Keong Mas mengisahkan seorang putri yang dikutuk menjadi keong oleh ibu tirinya yang jahat hingga akhirnya bebas berkat pertolongan seorang nenek tua.',
-        'Penokohannya lugas—putri digambarkan baik hati dan sabar, sedangkan ibu tiri bersifat iri—sehingga watak tokoh mudah dikenali penonton.',
-        'Alurnya sederhana (awal bahagia, konflik kutukan, lalu akhir bahagia) dan sarat pesan moral bahwa kesabaran serta kebaikan akan mengalahkan kejahatan.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Drama', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
-      ]
-    },
-    {
-      pageNumber: 10,
-      runningHead: '08 · Kritik Mimetik',
-      title: 'Puisi “Barangkali Karena Bulan”',
-      subtitle: 'Karya W.S. Rendra · Pendekatan Mimetik',
-      paragraphs: [
-        'Puisi karya W.S. Rendra ini menghadirkan suasana emosional tentang pencarian makna hidup, rindu, kesedihan, dan harapan melalui simbol-simbol alam seperti bulan, angin, bintang, dan langit.',
-        'Gaya bahasanya sederhana tetapi puitis, menggunakan perumpamaan dan pengulangan kata tanpa terikat pola rima tertentu sehingga tetap mengalir.',
-        'Dari sudut pandang mimetik, puisi ini mencerminkan realitas perasaan manusia, cinta, dan pengalaman hidup secara halus dan menyentuh.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Mimetik', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
-      ]
-    },
-    {
-      pageNumber: 11,
-      runningHead: '09 · Kritik Syair',
-      title: 'Syair “Gurindam Dua Belas”',
-      subtitle: 'Karya Raja Ali Haji · Nilai Moral & Filosofis',
-      paragraphs: [
-        'Gurindam Dua Belas karya Raja Ali Haji berisi nasihat moral dan ajaran religius Islam yang kuat, misalnya petuah: “Apabila banyak berkata-kata, di situlah jalan masuk dusta.”',
-        'Dari segi struktur, penggunaan pola rima berpasangan di setiap bait menciptakan irama pembacaan yang khas sekaligus mudah diingat.',
-        'Dibandingkan syair lain, isinya lebih filosofis dan layak dikaji secara sosiologis agar nilai etikanya terus relevan bagi masyarakat modern.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Syair', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
-      ]
-    },
-    {
-      pageNumber: 12,
-      runningHead: '10 · Kritik Feminisme',
-      title: 'Novel “Gadis Kretek”',
-      subtitle: 'Karya Ratih Kumala · Perspektif Kritik Feminisme',
-      paragraphs: [
-        'Berlatar sejarah industri rokok kretek Indonesia dan drama keluarga, novel Gadis Kretek menyoroti perjuangan perempuan menghadapi batasan aturan sosial pada zamannya.',
-        'Melalui tokoh Jeng Yah—perempuan cerdas dan mandiri yang berani terjun ke bisnis kretek yang saat itu didominasi laki-laki—novel ini menegaskan bahwa perempuan mampu menentukan pilihan hidupnya sendiri.',
-        'Lewat kritik feminisme, kisah ini memberi pesan kuat bahwa laki-laki maupun perempuan memiliki hak yang sama untuk mengejar impian.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Contoh Kritik Feminisme', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+        { label: 'Brain Academy — Contoh Kritik Sastra', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     }
   ]
@@ -694,117 +622,106 @@ export const essayBook: FlipbookData = {
   id: 'essayBook',
   coverTheme: 'essay',
   coverTitle: 'Seni Menulis Esai',
-  coverSubtitle: '6 Tema Pilihan & Contohnya',
-  editionLabel: 'SERI PERSPEKTIF · 6 TEMA ESAI',
+  coverSubtitle: 'Tema Dampak Media Sosial',
+  editionLabel: 'CONTOH ESAI · ERA DIGITAL',
   pages: [
     {
       pageNumber: 1,
       isCover: true,
       title: 'Seni Menulis Esai',
-      subtitle: '6 Tema Pilihan & Contohnya'
+      subtitle: 'Tema Dampak Media Sosial'
     },
     {
       pageNumber: 2,
-      runningHead: 'Daftar Isi',
-      title: 'Daftar Isi 6 Tema Esai',
-      subtitle: 'Satu Contoh Pilihan untuk Tiap Tema (Brain Academy)',
+      runningHead: 'Naskah Lengkap · 1/4',
+      title: 'Contoh Esai Tema Dampak Media Sosial',
+      subtitle: 'Teks Asli Utuh (Paragraf 1)',
       paragraphs: [
-        'Buku mini ini menyajikan enam tema dan ragam esai—masing-masing dilengkapi satu contoh nyata dari Brain Academy:'
-      ],
-      bullets: [
-        { label: 'Hal. 03', text: 'Tema 1 · Esai Deskriptif (Kesehatan Mental): “Anxiety”' },
-        { label: 'Hal. 04', text: 'Tema 2 · Esai Tajuk (Antikorupsi): “Korupsi Mampu Menghancurkan Negara”' },
-        { label: 'Hal. 05', text: 'Tema 3 · Esai Pribadi (Empati & Sosial): “Sukarelawan di Panti Asuhan”' },
-        { label: 'Hal. 06', text: 'Tema 4 · Esai Kritik (Film & Sejarah): “Soe Hok Gie”' },
-        { label: 'Hal. 07', text: 'Tema 5 · Esai Reflektif (Kebangsaan): “Karakter Pancasila”' },
-        { label: 'Hal. 08', text: 'Tema 6 · Esai Sosial-Digital (Media Sosial): “Dampak Media Sosial”' }
-      ],
-      sources: [
-        { label: 'Brain Academy — 15 Contoh Esai Berbagai Tema', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        'Media sosial telah menjadi bagian tak terpisahkan dari kehidupan masyarakat di era digital. Platform seperti Facebook, Instagram, dan Twitter telah mengubah cara kita berkomunikasi, mengakses informasi, dan bahkan bersosialisasi. Namun, di balik kemudahan dan manfaat yang ditawarkan, media sosial juga memiliki sisi negatif yang perlu diwaspadai.'
       ]
     },
     {
       pageNumber: 3,
-      runningHead: 'Tema 01 · Esai Deskriptif',
-      title: 'Tema Kesehatan Mental: “Anxiety”',
-      subtitle: 'Contoh Esai Deskriptif · Mengulas Fenomena Self-Diagnose',
+      runningHead: 'Naskah Lengkap · 2/4',
+      title: 'Isi Keseluruhan Teks (Lanjutan)',
+      subtitle: 'Paragraf 2–3 · Dampak Positif & Negatif',
       paragraphs: [
-        'Istilah kesehatan jiwa seperti anxiety, depresi, dan bipolar semakin sering dibicarakan anak muda. Namun, masih banyak yang melakukan self-diagnose hanya berdasarkan artikel internet sehingga berisiko menimbulkan salah paham.',
-        'Secara awam, anxiety sering dianggap sekadar rasa cemas biasa. Padahal, gangguan kecemasan merupakan rasa takut, gelisah, dan gugup berlebih hingga mengganggu aktivitas sehari-hari.',
-        'Pemicunya tidak hanya kejadian besar seperti ujian atau rapat penting, tetapi juga asumsi negatif yang muncul berulang kali di pikiran dan kerap disalahpahami orang lain.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Esai Deskriptif (Anxiety)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        'Di satu sisi, media sosial memiliki banyak dampak positif. Media sosial dapat menjadi sarana untuk menjalin komunikasi dan membangun koneksi dengan orang lain, baik di dalam maupun luar negeri. Platform ini juga dapat menjadi sumber informasi yang cepat dan mudah diakses. Media sosial dapat dimanfaatkan untuk berbagai tujuan positif, seperti edukasi, promosi bisnis, dan penggalangan dana.',
+        'Namun, di sisi lain, media sosial juga memiliki dampak negatif yang tidak dapat diabaikan. Salah satu dampak negatif yang paling sering dijumpai adalah cyberbullying. Cyberbullying dapat memberikan dampak psikologis yang serius bagi korbannya, seperti kecemasan, depresi, dan bahkan bunuh diri. Media sosial juga dapat menjadi wadah penyebaran informasi hoax dan ujaran kebencian yang dapat memicu konflik dan perpecahan di masyarakat.'
       ]
     },
     {
       pageNumber: 4,
-      runningHead: 'Tema 02 · Esai Tajuk',
-      title: 'Tema Antikorupsi: “Korupsi Mampu Menghancurkan Negara”',
-      subtitle: 'Contoh Esai Tajuk · Oleh Eko Edhi Caroko',
+      runningHead: 'Naskah Lengkap · 3/4',
+      title: 'Isi Keseluruhan Teks (Lanjutan)',
+      subtitle: 'Paragraf 4–5 · Kecanduan & Sikap Bijak',
       paragraphs: [
-        'Peringatan Hari Antikorupsi Dunia (Hakordia) setiap 9 Desember mengingatkan bahwa menurut PBB, korupsi adalah kejahatan sosial, politik, dan ekonomi yang dapat merusak institusi demokratis hingga membuat negara kuat terpuruk.',
-        'Di Indonesia, kerugian negara akibat korupsi mencapai puluhan hingga ratusan triliun rupiah (seperti kasus penyerobotan lahan Rp104,1 triliun menurut audit BPK), sehingga tepat digolongkan sebagai extraordinary crime.',
-        'Sulitnya pemberantasan terjadi karena kejahatan ini terorganisir rapi dan hukumannya belum memberi efek jera. Hakordia semestinya menjadi aksi nyata mencegah kehancuran negara, bukan sekadar acara seremonial.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Esai Tajuk (Antikorupsi)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        'Selain itu, penggunaan media sosial yang berlebihan dapat menyebabkan kecanduan dan mengganggu aktivitas sehari-hari. Pengguna media sosial yang kecanduan sering kali menghabiskan waktu berjam-jam di depan layar dan mengabaikan aktivitas lain yang lebih penting, seperti belajar, bekerja, dan bersosialisasi di dunia nyata.',
+        'Oleh karena itu, penting untuk menggunakan media sosial dengan bijak dan bertanggung jawab. Kita harus selektif dalam memilih informasi yang dibagikan dan diakses di media sosial. Kita juga harus menjaga privasi dan keamanan data pribadi di media sosial.'
       ]
     },
     {
       pageNumber: 5,
-      runningHead: 'Tema 03 · Esai Pribadi',
-      title: 'Tema Sosial & Empati: “Sukarelawan di Panti Asuhan”',
-      subtitle: 'Contoh Esai Pribadi · Pengalaman Hidup Penulis',
+      runningHead: 'Naskah Lengkap · 4/4',
+      title: 'Isi Keseluruhan Teks (Penutup)',
+      subtitle: 'Paragraf 6 · Ajakan Penutup Naskah',
       paragraphs: [
-        'Keputusan menjadi sukarelawan di panti asuhan setempat menjadi pengalaman pribadi yang mengubah cara saya memandang dunia. Awalnya saya merasa canggung dan bingung berinteraksi dengan anak-anak di sana.',
-        'Seiring waktu, kecanggungan itu berubah menjadi ikatan kekeluargaan yang hangat. Meski hidup dalam keterbatasan, mereka tetap tersenyum, bermain, dan bersyukur atas apa yang dimiliki.',
-        'Dari mereka saya belajar bahwa kebahagiaan sejati tidak bergantung pada kemewahan materi. Tindakan kecil yang tulus mampu menumbuhkan empati dan memberi dampak besar bagi sesama.'
+        'Dengan menggunakan media sosial secara bijak, kita dapat memaksimalkan manfaatnya dan meminimalisir dampak negatifnya. Marilah kita jadikan media sosial sebagai alat yang positif untuk membangun interaksi, menyebarkan informasi yang bermanfaat, dan berkontribusi bagi kemajuan bangsa.'
       ],
       sources: [
-        { label: 'Brain Academy — Esai Pribadi (Sukarelawan)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        { label: 'Brain Academy — Contoh Esai Dampak Media Sosial', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 6,
-      runningHead: 'Tema 04 · Esai Kritik',
-      title: 'Tema Film & Sejarah: “Soe Hok Gie”',
-      subtitle: 'Contoh Esai Kritik · Mengulas Film Biografi',
-      paragraphs: [
-        'Film “Gie” diangkat dari tulisan autobiografi Soe Hok Gie tentang perjuangannya mengkritisi pemerintahan pada masanya dan mewujudkan perubahan hidup yang lebih adil.',
-        'Kekuatan film ini terletak pada kemampuannya menghadirkan perspektif baru tentang nasionalisme etnis Tionghoa di Indonesia—menunjukkan bahwa rasa cinta tanah air dimiliki setara oleh semua kelompok masyarakat tanpa perlu diskriminasi.',
-        'Gaya penyajiannya klasik dan memikat secara artistik, meski penonton tetap membutuhkan sedikit wawasan latar sejarah agar dapat memahami keseluruhan kisahnya secara utuh.'
-      ],
-      sources: [
-        { label: 'Brain Academy — Esai Kritik (Soe Hok Gie)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+      runningHead: 'Halaman Analisis · 1/2',
+      title: 'Analisis Struktur Esai',
+      subtitle: 'Bedah bagian teks “Dampak Media Sosial” secara terpisah',
+      bullets: [
+        {
+          label: 'Pendahuluan / Tesis (Paragraf 1)',
+          text: 'Mengenalkan peran media sosial di era digital lalu menetapkan tesis: di balik manfaatnya, terdapat sisi negatif yang perlu diwaspadai.'
+        },
+        {
+          label: 'Isi / Rangkaian Argumen (Paragraf 2–5)',
+          text: 'Membandingkan manfaat (komunikasi, edukasi, bisnis) dengan risiko (cyberbullying, hoaks, kecanduan), lalu mengarah pada sikap selektif menjaga privasi.'
+        },
+        {
+          label: 'Penutup / Penegasan Ulang (Paragraf 6)',
+          text: 'Menegaskan ulang pentingnya pemakaian bijak dan menutup esai dengan ajakan membangun ruang digital yang positif.'
+        }
       ]
     },
     {
       pageNumber: 7,
-      runningHead: 'Tema 05 · Esai Reflektif',
-      title: 'Tema Kebangsaan: “Karakter Pancasila”',
-      subtitle: 'Contoh Esai Reflektif · Menjaga Nilai Persatuan',
-      paragraphs: [
-        'Indonesia lahir dari keberagaman suku, budaya, agama, dan adat istiadat yang disatukan kesadaran bersama sebagai bangsa yang berdaulat—perbedaan bukan pemecah ikatan, melainkan kekayaan bangsa.',
-        'Namun, arus globalisasi membuat pemahaman makna Pancasila di kalangan generasi muda kian memudar apabila pendidikan karakter belum sepenuhnya mencerminkan jati diri Indonesia.',
-        'Menanamkan karakter Pancasila di setiap jenjang pendidikan menjadi bekal penting bagi generasi penerus agar cita-cita kemerdekaan 100 tahun pada 2045 terwujud menjadi generasi emas.'
+      runningHead: 'Halaman Analisis · 2/2',
+      title: 'Analisis Sudut Pandang & Kebahasaan',
+      subtitle: 'Ciri esai pada naskah di halaman sebelumnya',
+      bullets: [
+        {
+          label: 'Sudut Pandang & Gaya Tutur',
+          text: 'Memakai sudut pandang personal-inklusif (“kita”) dengan bahasa baku yang komunikatif, akrab, dan mudah diikuti pembaca umum.'
+        },
+        {
+          label: 'Konjungsi Pertentangan & Kausalitas',
+          text: 'Menjaga alur argumen lewat penanda “Di satu sisi”, “Namun, di sisi lain”, “Selain itu”, dan “Oleh karena itu”.'
+        },
+        {
+          label: 'Ajakan Persuasif & Istilah Topik',
+          text: 'Tampak pada ungkapan “penting untuk menggunakan...” dan “Marilah kita jadikan...”, disertai istilah digital seperti cyberbullying, hoax, dan privasi.'
+        }
       ],
       sources: [
-        { label: 'Brain Academy — Esai Reflektif (Karakter Pancasila)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
       ]
     },
     {
       pageNumber: 8,
-      runningHead: 'Tema 06 · Dampak Media Sosial',
-      title: 'Tema Sosial-Digital: “Dampak Media Sosial”',
-      subtitle: 'Contoh Esai Opini · Bijak Bermedia di Era Digital',
-      paragraphs: [
-        'Media sosial seperti Instagram, Facebook, dan X telah mengubah cara masyarakat berkomunikasi dan mengakses informasi. Di sisi positif, platform ini mempermudah koneksi sosial, edukasi, promosi usaha, hingga penggalangan dana.',
-        'Namun di sisi lain, muncul risiko serius seperti cyberbullying yang mengganggu kesehatan mental, penyebaran berita hoaks, ujaran kebencian, serta kecanduan layar yang menggeser aktivitas belajar dan interaksi nyata.',
-        'Oleh karena itu, kita perlu bersikap selektif menyaring informasi serta menjaga privasi data agar media sosial menjadi ruang interaksi yang positif dan bermanfaat.'
-      ],
+      isBackCover: true,
+      title: 'Akhir Bacaan',
+      subtitle: 'Naskah Lengkap & Analisis · Tema Dampak Media Sosial',
       sources: [
-        { label: 'Brain Academy — Esai Tema Dampak Media Sosial', url: 'https://www.brainacademy.id/blog/contoh-esai' }
+        { label: 'Brain Academy — Contoh Esai', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     }
   ]

@@ -736,7 +736,7 @@ export default function App() {
                 Contoh &amp; Praktik Kritik Sastra
               </h2>
               <p className="text-[1.04rem] text-[#B7AA96] max-w-[60ch]">
-                Buka sampul buku untuk membaca daftar isi dan 10 contoh kritik sastra—mulai dari novel, puisi, film, cerpen, drama, syair, hingga kritik mimetik dan feminisme.
+                Buka sampul buku untuk membaca keseluruhan teks kritik sastra novel “Gadis Kretek” secara utuh, lalu lanjutkan ke halaman terpisah untuk melihat analisisnya.
               </p>
             </div>
             <div className="font-ui text-xs tracking-[0.08em] text-[#B7AA96]">
@@ -788,7 +788,7 @@ export default function App() {
                 Contoh &amp; Praktik Menulis Esai
               </h2>
               <p className="text-[1.04rem] text-[#B7AA96] max-w-[60ch]">
-                Buka sampul buku untuk membaca daftar isi dan 6 tema esai pilihan—masing-masing berisi satu contoh dari tema kesehatan mental, antikorupsi, pengalaman pribadi, ulasan film, karakter Pancasila, hingga dampak media sosial.
+                Buka sampul buku untuk membaca keseluruhan teks esai bertema “Dampak Media Sosial” secara utuh, lalu lanjutkan ke halaman terpisah untuk melihat analisisnya.
               </p>
             </div>
             <div className="font-ui text-xs tracking-[0.08em] text-[#B7AA96]">
