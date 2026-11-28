@@ -67,16 +67,24 @@ export const primarySources: SourceLink[] = [
     url: 'https://kbbi.kemendikdasmen.go.id/entri/esai'
   },
   {
-    label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia',
-    url: 'https://buku.kemendikdasmen.go.id/'
+    label: 'SIBI — Buku Bahasa Indonesia Kelas XII',
+    url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII'
   },
   {
-    label: 'Ensiklopedia Sastra Indonesia — Badan Bahasa',
-    url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/'
+    label: 'Ruang Murid — Unsur Kritik & Esai',
+    url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155'
   },
   {
-    label: 'Stanford Encyclopedia of Philosophy — Montaigne',
-    url: 'https://plato.stanford.edu/entries/montaigne/'
+    label: 'Ruang Murid — Menyusun Kritik & Esai',
+    url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c'
+  },
+  {
+    label: 'Ensiklopedia Sastra — Robohnya Surau Kami',
+    url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami'
+  },
+  {
+    label: 'Stanford Encyclopedia — Montaigne (Essais)',
+    url: 'https://plato.stanford.edu/entries/montaigne/#Work'
   }
 ];
 
@@ -116,8 +124,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' },
-      { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
+      { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' },
+      { label: 'Wikipedia: Aspek Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra#Aspek-aspek_dalam_Kritik_Sastra' }
     ]
   },
   {
@@ -140,8 +148,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'Ensiklopedia Sastra Indonesia — Badan Bahasa', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' },
-      { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'Wikipedia: Fungsi Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra#Fungsi_Kritik_Sastra' },
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
     ]
   },
   {
@@ -168,7 +176,7 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/' },
+      { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' },
       { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' }
     ]
   },
@@ -192,8 +200,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/' },
-      { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' },
+      { label: 'Ruang Murid — Menyusun Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c' }
     ]
   },
   {
@@ -220,8 +228,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'M.H. Abrams — The Mirror and the Lamp (1953)', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp' },
-      { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
+      { label: 'M.H. Abrams — Klasifikasi Teori Sastra', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp#Classification_of_literary_theories' },
+      { label: 'Wikipedia: Jenis-jenis Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra#Jenis-jenis_Kritik_Sastra' }
     ]
   },
   {
@@ -248,7 +256,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Modul Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'Ruang Murid — Menyusun Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c' },
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
     ]
   },
   {
@@ -279,8 +288,8 @@ export const criticismContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Kaidah Kebahasaan Kritik & Esai', url: 'https://buku.kemendikdasmen.go.id/' },
-      { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' }
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' },
+      { label: 'Ruang Murid — Menyusun Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c' }
     ]
   }
 ];
@@ -297,7 +306,7 @@ export const essayContent: ChapterItem[] = [
     ],
     sources: [
       { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' },
-      { label: 'Stanford Encyclopedia: Michel de Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' },
+      { label: 'Stanford Encyclopedia: Montaigne (Essais)', url: 'https://plato.stanford.edu/entries/montaigne/#Work' },
       { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
     ]
   },
@@ -321,7 +330,7 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' },
+      { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' },
       { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
     ]
   },
@@ -345,7 +354,8 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' },
+      { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
     ]
   },
   {
@@ -373,7 +383,7 @@ export const essayContent: ChapterItem[] = [
     ],
     sources: [
       { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' },
-      { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }
     ]
   },
   {
@@ -396,8 +406,8 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/' },
-      { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
+      { label: 'Wikipedia: Struktur Esai', url: 'https://id.wikipedia.org/wiki/Esai#Struktur' },
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
     ]
   },
   {
@@ -428,8 +438,8 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'Wikipedia: Esai (Jenis-jenis Esai)', url: 'https://id.wikipedia.org/wiki/Esai' },
-      { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' },
+      { label: 'SIBI — Cakap Berbahasa & Bersastra XII', url: 'https://buku.kemendikdasmen.go.id/katalog/bahasa-indonesia-tingkat-lanjut-cakap-berbahasa-dan-bersastra-indonesia-untuk-smama-kelas-xii' }
     ]
   },
   {
@@ -460,7 +470,8 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Panduan Menulis Esai', url: 'https://buku.kemendikdasmen.go.id/' }
+      { label: 'Wikipedia: Langkah Pembuatan Esai', url: 'https://id.wikipedia.org/wiki/Esai#Langkah-langkah_pembuatan_esai' },
+      { label: 'Ruang Murid — Menyusun Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c' }
     ]
   },
   {
@@ -491,7 +502,7 @@ export const essayContent: ChapterItem[] = [
       }
     ],
     sources: [
-      { label: 'SIBI Kemendikdasmen — Kaidah Kebahasaan Kritik & Esai', url: 'https://buku.kemendikdasmen.go.id/' },
+      { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' },
       { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }
     ]
   }
@@ -501,115 +512,179 @@ export const criticismBook: FlipbookData = {
   id: 'criticismBook',
   coverTheme: 'criticism',
   coverTitle: 'Kritik Sastra',
-  coverSubtitle: 'Menilai Karya dengan Adil',
-  editionLabel: 'EDISI KLASIK · CONTOH KRITIK',
+  coverSubtitle: '10 Contoh Ragam Karya Sastra',
+  editionLabel: 'EDISI KLASIK · 10 CONTOH KRITIK',
   pages: [
     {
       pageNumber: 1,
       isCover: true,
       title: 'Kritik Sastra',
-      subtitle: 'Menilai Karya dengan Adil'
+      subtitle: '10 Contoh Ragam Karya Sastra'
     },
     {
       pageNumber: 2,
       runningHead: 'Daftar Isi',
-      title: 'Daftar Isi Buku Mini',
-      subtitle: 'Contoh Nyata Kritik Cerpen dan Puisi',
+      title: 'Daftar Isi 10 Contoh Kritik',
+      subtitle: 'Ragam Karya dari Brain Academy',
       paragraphs: [
-        'Buku ringkas ini menunjukkan cara menilai dua karya sastra Indonesia yang terkenal dengan bahasa yang mudah diikuti.'
+        'Buku ini merangkum 10 contoh kritik sastra dari berbagai ragam karya dan pendekatan yang dapat dijadikan acuan belajar:'
       ],
       bullets: [
-        { label: 'Hal. 03', text: 'Mengenal Cerpen “Robohnya Surau Kami”' },
-        { label: 'Hal. 04', text: 'Isi Kritik: Sindiran Sosial A.A. Navis' },
-        { label: 'Hal. 05', text: 'Bedah Unsur Intrinsik Cerpen' },
-        { label: 'Hal. 06', text: 'Kelebihan dan Kekurangan Karya' },
-        { label: 'Hal. 07', text: 'Kesimpulan Akhir Kritik' },
-        { label: 'Hal. 08', text: 'Contoh Kritik Puisi “Aku” (Chairil Anwar)' }
+        { label: 'Hal. 03', text: '01. Novel — “Sang Pemimpi” (Andrea Hirata)' },
+        { label: 'Hal. 04', text: '02. Puisi — “Aku” (Chairil Anwar)' },
+        { label: 'Hal. 05', text: '03. Film — “Laskar Pelangi”' },
+        { label: 'Hal. 06', text: '04. Cerpen — “Robohnya Surau Kami” (A.A. Navis)' },
+        { label: 'Hal. 07', text: '05. Kritik Singkat — “Filosofi Teras” (Henry Manampiring)' },
+        { label: 'Hal. 08', text: '06. Novel Historis — “Bumi Manusia” (Pramoedya Ananta Toer)' },
+        { label: 'Hal. 09', text: '07. Drama — “Keong Mas”' },
+        { label: 'Hal. 10', text: '08. Kritik Mimetik — “Barangkali Karena Bulan” (W.S. Rendra)' },
+        { label: 'Hal. 11', text: '09. Syair — “Gurindam Dua Belas” (Raja Ali Haji)' },
+        { label: 'Hal. 12', text: '10. Kritik Feminisme — “Gadis Kretek” (Ratih Kumala)' }
       ],
       sources: [
-        { label: 'Ensiklopedia Sastra Indonesia', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' }
+        { label: 'Brain Academy — 10 Contoh Kritik Sastra', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     },
     {
       pageNumber: 3,
-      runningHead: 'Pengenalan Karya',
-      title: 'Cerpen “Robohnya Surau Kami”',
-      subtitle: 'Karya A.A. Navis (Majalah Kisah, 1955)',
+      runningHead: '01 · Kritik Novel',
+      title: 'Novel “Sang Pemimpi”',
+      subtitle: 'Karya Andrea Hirata · Tetralogi Laskar Pelangi',
       paragraphs: [
-        'Identitas Karya: Pertama kali terbit di majalah Kisah tahun 1955, lalu dibukukan oleh Penerbit NV Nusantara, Bukittinggi pada 1956.',
-        'Ringkasan Cerita: Cerpen ini bercerita tentang seorang kakek penjaga surau (garin) yang tekun beribadah, tetapi hidup menyendiri dari urusan dunia dan keluarga. Suatu hari, tokoh Ajo Sidi bercerita tentang Haji Saleh yang rajin beribadah, namun masuk neraka karena tidak bekerja, tidak mengurus anak cucu, dan membiarkan negerinya melarat.',
-        'Cerita sindiran itu membuat sang Kakek terpukul hingga berakhir tragis di suraunya.'
+        'Novel Sang Pemimpi mengisahkan perjuangan tiga sahabat—Arai, Ikal, dan Jimbron—setelah menamatkan SMP hingga bermimpi kuliah ke Prancis dengan cinta, pengorbanan, dan doa.',
+        'Kelebihannya terletak pada nilai kehidupan yang kuat: pembaca diajak selalu bersyukur, pantang menyerah meski hidup serba terbatas, berusaha keras, serta patuh kepada nasihat orang tua.',
+        'Kekurangannya, terdapat pemakaian kosakata daerah dan bahasa Inggris tanpa glosarium—misalnya kutipan “Lalu kami beralih menjadi part time office boy di kompleks kantor pemerintah”—sehingga penulis sebaiknya melengkapinya agar pembaca tidak bingung.'
       ],
       sources: [
-        { label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
+        { label: 'Brain Academy — Contoh Kritik Novel', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     },
     {
       pageNumber: 4,
-      runningHead: 'Analisis & Tafsiran',
-      title: 'Makna Satir A.A. Navis',
-      subtitle: 'Keseimbangan Ibadah dan Kerja Nyata',
+      runningHead: '02 · Kritik Puisi',
+      title: 'Puisi “Aku”',
+      subtitle: 'Karya Chairil Anwar · Semangat Individualisme & Kebebasan',
       paragraphs: [
-        'Melalui cerpen ini, A.A. Navis tidak sedang mengejek orang yang rajin beribadah. Ia justru mengkritik sikap egois: beribadah hanya demi keselamatan diri sendiri sambil melupakan tanggung jawab sosial di masyarakat.',
-        'Lewat kisah Haji Saleh, Navis menyentil pembaca dengan pesan sederhana: agama seharusnya membuat manusia rajin bekerja, peduli pada sesama, dan ikut memajukan lingkungannya.',
-        'Kekuatan ide seperti inilah yang membuat cerpen pendek ini terus dibaca dan didiskusikan puluhan tahun setelah terbit.'
+        'Puisi “Aku” karya Chairil Anwar sangat terkenal karena mengusung tema keberanian dan perlawanan terhadap keterbatasan hidup—sosok “aku” menolak tunduk pada takdir dan memilih jalannya sendiri.',
+        'Gaya bahasanya lugas dan bertenaga lewat diksi tegas seperti “Aku ini binatang jalang”, ditambah metafora, simbolisme, serta ritme kalimat pendek yang membuat emosi puisi terasa dinamis.',
+        'Meski sebagian kritikus menilai sikap “melawan segala sesuatu” terkesan terlalu individualistis, puisi ini tetap relevan sebagai simbol keberanian dan semangat hidup.'
       ],
       sources: [
-        { label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
+        { label: 'Brain Academy — Contoh Kritik Puisi', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
+        { label: 'Ensiklopedia Sastra: Chairil Anwar', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Chairil_Anwar' }
       ]
     },
     {
       pageNumber: 5,
-      runningHead: 'Bedah Unsur',
-      title: 'Unsur Intrinsik Cerpen',
-      subtitle: 'Melihat Cara Cerita Dibangun',
-      bullets: [
-        { label: 'Tema', text: 'Pentingnya keseimbangan antara ibadah pribadi, kerja keras, dan kepedulian sosial.' },
-        { label: 'Alur', text: 'Menggunakan alur campuran dengan teknik cerita di dalam cerita melalui kisah Ajo Sidi.' },
-        { label: 'Tokoh', text: 'Kakek (polos dan mudah terpukul), Ajo Sidi (kritis dan jenaka), Haji Saleh (gambaran sindiran).' },
-        { label: 'Gaya Bahasa', text: 'Banyak memakai kalimat sindiran (satir) dan dialog yang terasa alami.' }
+      runningHead: '03 · Kritik Film',
+      title: 'Film “Laskar Pelangi”',
+      subtitle: 'Adaptasi Novel Andrea Hirata · Pendidikan & Persahabatan',
+      paragraphs: [
+        'Film Laskar Pelangi menceritakan anak-anak dari keluarga sederhana di Belitung yang tetap berjuang meraih pendidikan walau serba terbatas.',
+        'Kekuatannya ada pada karakter yang unik—seperti Ikal yang penuh semangat, Lintang yang cerdas, Mahar yang kreatif, dan Bu Muslimah yang berdedikasi—serta visual alam Belitung yang autentik.',
+        'Walau beberapa bagian di tengah cerita terasa berjalan agak lambat, alurnya tetap menyentuh dan inspiratif dalam menanamkan nilai kerja keras serta arti mimpi bagi pelajar.'
       ],
       sources: [
-        { label: 'SIBI Kemendikdasmen — Unsur Intrinsik', url: 'https://buku.kemendikdasmen.go.id/' }
+        { label: 'Brain Academy — Contoh Kritik Film', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     },
     {
       pageNumber: 6,
-      runningHead: 'Penilaian Seimbang',
-      title: 'Kelebihan & Kekurangan',
-      subtitle: 'Menilai Karya Tanpa Memihak',
-      bullets: [
-        { label: 'Kelebihan 1', text: 'Ide ceritanya berani dan disampaikan lewat humor sindiran yang halus, bukan ceramah.' },
-        { label: 'Kelebihan 2', text: 'Konflik batin tokohnya kuat dan memancing pembaca untuk merenung setelah selesai membaca.' },
-        { label: 'Kekurangan 1', text: 'Bagian awal cerita bergerak agak pelan sebelum masuk ke kisah Haji Saleh.' },
-        { label: 'Kekurangan 2', text: 'Beberapa kata serapan atau istilah lokal tahun 1950-an butuh penjelasan singkat untuk pembaca muda.' }
-      ]
-    },
-    {
-      pageNumber: 7,
-      runningHead: 'Penegasan Ulang',
-      title: 'Kesimpulan Kritik Cerpen',
-      subtitle: 'Layak Dibaca Lintas Generasi',
+      runningHead: '04 · Kritik Cerpen',
+      title: 'Cerpen “Robohnya Surau Kami”',
+      subtitle: 'Karya A.A. Navis · Kritik Ibadah & Tanggung Jawab Sosial',
       paragraphs: [
-        'Secara keseluruhan, “Robohnya Surau Kami” adalah salah satu cerpen terbaik Indonesia karena berhasil menyatukan cerita yang memikat dengan pesan kehidupan yang dalam.',
-        'Tempo awal yang agak lambat sama sekali tidak mengurangi kekuatan pesannya. Cerpen ini sangat pas dibaca siswa SMA untuk belajar melihat cara sastrawan mengkritik masalah sosial lewat fiksi.'
+        'Cerpen ini mengisahkan seorang kakek penjaga surau yang rajin beribadah namun mengabaikan urusan dunia dan tidak bekerja. A.A. Navis mengkritik pola pikir yang hanya memikirkan akhirat tanpa memberi manfaat sosial di masyarakat.',
+        'Tokoh Kakek yang taat tetapi pasrah dibangun melalui alur maju dengan kejutan di akhir cerita yang memancing pembaca merenung lebih dalam.',
+        'Bahasa dialog dan narasinya sederhana namun tajam, sehingga pesan bahwa ibadah harus sejalan dengan kerja keras tetap sangat relevan.'
       ],
       sources: [
+        { label: 'Brain Academy — Contoh Kritik Cerpen', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' },
         { label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
       ]
     },
     {
-      pageNumber: 8,
-      runningHead: 'Kritik Puisi',
-      title: 'Kritik Puisi “Aku” (Chairil Anwar)',
-      subtitle: 'Ditulis Maret 1943 · Semangat Angkatan ’45',
+      pageNumber: 7,
+      runningHead: '05 · Kritik Singkat',
+      title: '“Filosofi Teras”',
+      subtitle: 'Karya Henry Manampiring · Tema Filosofi & Spirit Sosial',
       paragraphs: [
-        'Puisi “Aku” karya Chairil Anwar (1943) membawa napas baru dalam puisi Indonesia. Chairil meninggalkan gaya bahasa lama yang mendayu-dayu dan memilih kata-kata pendek yang tegas dan penuh tenaga.',
-        'Larik “Aku ini binatang jalang / Dari kumpulannya terbuang” menunjukkan keberanian dan tekad hidup yang bebas, dipertegas lagi oleh penutup “Aku mau hidup seribu tahun lagi”.',
-        'Bagi sebagian pembaca awam, nada puisinya kadang terkesan terlalu mementingkan diri sendiri. Namun dalam konteks masa penjajahan tahun 1943, puisi ini justru menyuarakan semangat merdeka yang menyala-nyala.'
+        'Karya Henry Manampiring ini mengangkat tema filosofi hidup dan perilaku manusia—seperti keadilan, kebaikan, dan kebenaran—yang dipadukan dengan contoh nyata dalam kehidupan sehari-hari.',
+        'Gaya bahasanya sederhana dan mudah dicerna, sehingga pembaca tanpa latar belakang filsafat pun dapat memahami filsafat kuno dalam konteks kehidupan modern.',
+        'Penokohannya terasa hidup dan membangun kedekatan emosional, menjadikan karya ini bermanfaat sebagai bahan refleksi bagi pembaca umum.'
       ],
       sources: [
-        { label: 'Ensiklopedia Sastra: Chairil Anwar', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Chairil_Anwar' }
+        { label: 'Brain Academy — Contoh Kritik Singkat', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+      ]
+    },
+    {
+      pageNumber: 8,
+      runningHead: '06 · Novel Historis',
+      title: 'Novel “Bumi Manusia”',
+      subtitle: 'Karya Pramoedya Ananta Toer · Latar Masa Kolonial',
+      paragraphs: [
+        'Bumi Manusia menggambarkan diskriminasi masyarakat pribumi di era kolonial Belanda melalui perjuangan Minke—seorang intelektual muda pribumi yang melawan ketidakadilan lewat pendidikan dan pemikiran modern.',
+        'Selain Minke, tokoh Nyai Ontosoroh hadir sebagai sosok perempuan pribumi yang cerdas, tangguh, dan sangat menginspirasi.',
+        'Dengan gaya bahasa yang lugas dan penuh makna, Pramoedya tidak sekadar menceritakan sejarah, melainkan mengajak pembaca berpikir kritis tentang hak asasi manusia.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Kritik Novel Historis', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+      ]
+    },
+    {
+      pageNumber: 9,
+      runningHead: '07 · Kritik Drama',
+      title: 'Drama “Keong Mas”',
+      subtitle: 'Adaptasi Cerita Rakyat · Pesan Kesabaran & Ketulusan',
+      paragraphs: [
+        'Drama Keong Mas mengisahkan seorang putri yang dikutuk menjadi keong oleh ibu tirinya yang jahat hingga akhirnya bebas berkat pertolongan seorang nenek tua.',
+        'Penokohannya lugas—putri digambarkan baik hati dan sabar, sedangkan ibu tiri bersifat iri—sehingga watak tokoh mudah dikenali penonton.',
+        'Alurnya sederhana (awal bahagia, konflik kutukan, lalu akhir bahagia) dan sarat pesan moral bahwa kesabaran serta kebaikan akan mengalahkan kejahatan.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Contoh Kritik Drama', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+      ]
+    },
+    {
+      pageNumber: 10,
+      runningHead: '08 · Kritik Mimetik',
+      title: 'Puisi “Barangkali Karena Bulan”',
+      subtitle: 'Karya W.S. Rendra · Pendekatan Mimetik',
+      paragraphs: [
+        'Puisi karya W.S. Rendra ini menghadirkan suasana emosional tentang pencarian makna hidup, rindu, kesedihan, dan harapan melalui simbol-simbol alam seperti bulan, angin, bintang, dan langit.',
+        'Gaya bahasanya sederhana tetapi puitis, menggunakan perumpamaan dan pengulangan kata tanpa terikat pola rima tertentu sehingga tetap mengalir.',
+        'Dari sudut pandang mimetik, puisi ini mencerminkan realitas perasaan manusia, cinta, dan pengalaman hidup secara halus dan menyentuh.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Contoh Kritik Mimetik', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+      ]
+    },
+    {
+      pageNumber: 11,
+      runningHead: '09 · Kritik Syair',
+      title: 'Syair “Gurindam Dua Belas”',
+      subtitle: 'Karya Raja Ali Haji · Nilai Moral & Filosofis',
+      paragraphs: [
+        'Gurindam Dua Belas karya Raja Ali Haji berisi nasihat moral dan ajaran religius Islam yang kuat, misalnya petuah: “Apabila banyak berkata-kata, di situlah jalan masuk dusta.”',
+        'Dari segi struktur, penggunaan pola rima berpasangan di setiap bait menciptakan irama pembacaan yang khas sekaligus mudah diingat.',
+        'Dibandingkan syair lain, isinya lebih filosofis dan layak dikaji secara sosiologis agar nilai etikanya terus relevan bagi masyarakat modern.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Contoh Kritik Syair', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
+      ]
+    },
+    {
+      pageNumber: 12,
+      runningHead: '10 · Kritik Feminisme',
+      title: 'Novel “Gadis Kretek”',
+      subtitle: 'Karya Ratih Kumala · Perspektif Kritik Feminisme',
+      paragraphs: [
+        'Berlatar sejarah industri rokok kretek Indonesia dan drama keluarga, novel Gadis Kretek menyoroti perjuangan perempuan menghadapi batasan aturan sosial pada zamannya.',
+        'Melalui tokoh Jeng Yah—perempuan cerdas dan mandiri yang berani terjun ke bisnis kretek yang saat itu didominasi laki-laki—novel ini menegaskan bahwa perempuan mampu menentukan pilihan hidupnya sendiri.',
+        'Lewat kritik feminisme, kisah ini memberi pesan kuat bahwa laki-laki maupun perempuan memiliki hak yang sama untuk mengejar impian.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Contoh Kritik Feminisme', url: 'https://www.brainacademy.id/blog/contoh-kritik-sastra' }
       ]
     }
   ]
@@ -619,96 +694,117 @@ export const essayBook: FlipbookData = {
   id: 'essayBook',
   coverTheme: 'essay',
   coverTitle: 'Seni Menulis Esai',
-  coverSubtitle: 'Berbagi Gagasan yang Jernih',
-  editionLabel: 'SERI PERSPEKTIF · CONTOH ESAI',
+  coverSubtitle: '6 Tema Pilihan & Contohnya',
+  editionLabel: 'SERI PERSPEKTIF · 6 TEMA ESAI',
   pages: [
     {
       pageNumber: 1,
       isCover: true,
       title: 'Seni Menulis Esai',
-      subtitle: 'Berbagi Gagasan yang Jernih'
+      subtitle: '6 Tema Pilihan & Contohnya'
     },
     {
       pageNumber: 2,
-      runningHead: 'Pengantar',
-      title: 'Mengenal Esai Lebih Dekat',
-      subtitle: 'Mengubah Pengamatan Menjadi Tulisan',
+      runningHead: 'Daftar Isi',
+      title: 'Daftar Isi 6 Tema Esai',
+      subtitle: 'Satu Contoh Pilihan untuk Tiap Tema (Brain Academy)',
       paragraphs: [
-        'Menulis esai itu mirip seperti mengobrol secara tertib dengan pembaca. Penulis tidak wajib membahas segala hal dari A sampai Z; cukup pilih satu hal menarik di sekitar kita lalu ceritakan sudut pandangmu dengan alasan yang jelas.',
-        'Di buku mini ini, kamu akan melihat struktur esai dan dua contoh esai ringan yang dekat dengan kehidupan sehari-hari.'
+        'Buku mini ini menyajikan enam tema dan ragam esai—masing-masing dilengkapi satu contoh nyata dari Brain Academy:'
+      ],
+      bullets: [
+        { label: 'Hal. 03', text: 'Tema 1 · Esai Deskriptif (Kesehatan Mental): “Anxiety”' },
+        { label: 'Hal. 04', text: 'Tema 2 · Esai Tajuk (Antikorupsi): “Korupsi Mampu Menghancurkan Negara”' },
+        { label: 'Hal. 05', text: 'Tema 3 · Esai Pribadi (Empati & Sosial): “Sukarelawan di Panti Asuhan”' },
+        { label: 'Hal. 06', text: 'Tema 4 · Esai Kritik (Film & Sejarah): “Soe Hok Gie”' },
+        { label: 'Hal. 07', text: 'Tema 5 · Esai Reflektif (Kebangsaan): “Karakter Pancasila”' },
+        { label: 'Hal. 08', text: 'Tema 6 · Esai Sosial-Digital (Media Sosial): “Dampak Media Sosial”' }
       ],
       sources: [
-        { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }
+        { label: 'Brain Academy — 15 Contoh Esai Berbagai Tema', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 3,
-      runningHead: 'Struktur',
-      title: 'Susunan Esai yang Rapi',
-      subtitle: 'Pembuka · Isi · Penutup',
-      bullets: [
-        { label: '1. Pembuka & Tesis', text: 'Mulai dengan pengamatan sehari-hari atau pertanyaan menarik, lalu nyatakan pendapat utamamu.' },
-        { label: '2. Isi Argumen', text: 'Tiap paragraf membahas satu alasan pendukung yang dilengkapi contoh nyata atau fakta.' },
-        { label: '3. Penutup', text: 'Tarik kesimpulan singkat dengan kalimat penutup yang membuat pembaca ikut berpikir.' }
+      runningHead: 'Tema 01 · Esai Deskriptif',
+      title: 'Tema Kesehatan Mental: “Anxiety”',
+      subtitle: 'Contoh Esai Deskriptif · Mengulas Fenomena Self-Diagnose',
+      paragraphs: [
+        'Istilah kesehatan jiwa seperti anxiety, depresi, dan bipolar semakin sering dibicarakan anak muda. Namun, masih banyak yang melakukan self-diagnose hanya berdasarkan artikel internet sehingga berisiko menimbulkan salah paham.',
+        'Secara awam, anxiety sering dianggap sekadar rasa cemas biasa. Padahal, gangguan kecemasan merupakan rasa takut, gelisah, dan gugup berlebih hingga mengganggu aktivitas sehari-hari.',
+        'Pemicunya tidak hanya kejadian besar seperti ujian atau rapat penting, tetapi juga asumsi negatif yang muncul berulang kali di pikiran dan kerap disalahpahami orang lain.'
       ],
       sources: [
-        { label: 'SIBI Kemendikdasmen — Struktur Esai', url: 'https://buku.kemendikdasmen.go.id/' }
+        { label: 'Brain Academy — Esai Deskriptif (Anxiety)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 4,
-      runningHead: 'Contoh Esai 1',
-      title: 'Membaca Pelan di Era Gawai',
-      subtitle: 'Tentang Kebiasaan Membaca Sehari-hari',
+      runningHead: 'Tema 02 · Esai Tajuk',
+      title: 'Tema Antikorupsi: “Korupsi Mampu Menghancurkan Negara”',
+      subtitle: 'Contoh Esai Tajuk · Oleh Eko Edhi Caroko',
       paragraphs: [
-        'Setiap hari jari kita menempuh jarak puluhan meter di layar ponsel, melompat dari satu judul berita ke video singkat berdurasi lima belas detik. Sayangnya, waktu kita untuk membaca gagasan secara utuh makin berkurang.',
-        'Terbiasa membaca cepat membuat kita ingin jawaban serba instan, tetapi mudah lelah saat menghadapi bacaan yang agak panjang. Padahal, meluangkan waktu sebentar untuk membaca buku atau esai utuh membantu pikiran kita jadi lebih tenang dan tidak mudah terpancing kabar sepintas.'
+        'Peringatan Hari Antikorupsi Dunia (Hakordia) setiap 9 Desember mengingatkan bahwa menurut PBB, korupsi adalah kejahatan sosial, politik, dan ekonomi yang dapat merusak institusi demokratis hingga membuat negara kuat terpuruk.',
+        'Di Indonesia, kerugian negara akibat korupsi mencapai puluhan hingga ratusan triliun rupiah (seperti kasus penyerobotan lahan Rp104,1 triliun menurut audit BPK), sehingga tepat digolongkan sebagai extraordinary crime.',
+        'Sulitnya pemberantasan terjadi karena kejahatan ini terorganisir rapi dan hukumannya belum memberi efek jera. Hakordia semestinya menjadi aksi nyata mencegah kehancuran negara, bukan sekadar acara seremonial.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Esai Tajuk (Antikorupsi)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 5,
-      runningHead: 'Tips Argumen',
-      title: 'Cara Memperkuat Pendapat',
-      subtitle: 'Agar Esai Tidak Sekadar Curhat',
-      paragraphs: ['Supaya pendapatmu di dalam esai lebih meyakinkan, coba pakai tiga cara sederhana ini:'],
-      bullets: [
-        { label: 'Pakai contoh nyata', text: 'Sertakan kejadian sehari-hari yang mudah dibayangkan dan dirasakan oleh pembaca.' },
-        { label: 'Buat perbandingan', text: 'Bandingkan dua hal yang akrab—misalnya menggulir layar cepat vs membaca buku dengan tenang.' },
-        { label: 'Akui sisi lain', text: 'Akui manfaat teknologi sebelum menjelaskan alasanmu, sehingga tulisan terasa adil dan dewasa.' }
+      runningHead: 'Tema 03 · Esai Pribadi',
+      title: 'Tema Sosial & Empati: “Sukarelawan di Panti Asuhan”',
+      subtitle: 'Contoh Esai Pribadi · Pengalaman Hidup Penulis',
+      paragraphs: [
+        'Keputusan menjadi sukarelawan di panti asuhan setempat menjadi pengalaman pribadi yang mengubah cara saya memandang dunia. Awalnya saya merasa canggung dan bingung berinteraksi dengan anak-anak di sana.',
+        'Seiring waktu, kecanggungan itu berubah menjadi ikatan kekeluargaan yang hangat. Meski hidup dalam keterbatasan, mereka tetap tersenyum, bermain, dan bersyukur atas apa yang dimiliki.',
+        'Dari mereka saya belajar bahwa kebahagiaan sejati tidak bergantung pada kemewahan materi. Tindakan kecil yang tulus mampu menumbuhkan empati dan memberi dampak besar bagi sesama.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Esai Pribadi (Sukarelawan)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 6,
-      runningHead: 'Contoh Esai 2',
-      title: 'Kebiasaan Kecil untuk Bumi',
-      subtitle: 'Lingkungan Hidup Dimulai dari Rumah',
+      runningHead: 'Tema 04 · Esai Kritik',
+      title: 'Tema Film & Sejarah: “Soe Hok Gie”',
+      subtitle: 'Contoh Esai Kritik · Mengulas Film Biografi',
       paragraphs: [
-        'Isu perubahan iklim sering dibahas lewat angka-angka besar dan konferensi dunia yang terasa jauh dari hidup kita. Akibatnya, banyak orang merasa usaha satu orang tidak akan ada artinya.',
-        'Padahal, perubahan kebiasaan selalu dimulai dari langkah kecil di rumah: membawa botol minum sendiri, menghabiskan makanan di piring, atau mengurangi plastik sekali pakai. Hal-hal sederhana itu memang tidak langsung mengubah dunia dalam sehari, tetapi perlahan membentuk budaya hidup yang lebih peduli.'
+        'Film “Gie” diangkat dari tulisan autobiografi Soe Hok Gie tentang perjuangannya mengkritisi pemerintahan pada masanya dan mewujudkan perubahan hidup yang lebih adil.',
+        'Kekuatan film ini terletak pada kemampuannya menghadirkan perspektif baru tentang nasionalisme etnis Tionghoa di Indonesia—menunjukkan bahwa rasa cinta tanah air dimiliki setara oleh semua kelompok masyarakat tanpa perlu diskriminasi.',
+        'Gaya penyajiannya klasik dan memikat secara artistik, meski penonton tetap membutuhkan sedikit wawasan latar sejarah agar dapat memahami keseluruhan kisahnya secara utuh.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Esai Kritik (Soe Hok Gie)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 7,
-      runningHead: 'Ulasan Contoh',
-      title: 'Mengapa Dua Esai Ini Bekerja?',
-      subtitle: 'Melihat Kekuatan Struktur & Gaya',
-      bullets: [
-        { label: '1. Pendapat utamanya jelas', text: 'Esai pertama langsung menegaskan bahwa membaca pelan bukan menolak teknologi, melainkan menjaga fokus pikiran.' },
-        { label: '2. Pembuka langsung mengena', text: 'Esai kedua mengontraskan isu besar dunia dengan kebiasaan di meja makan sehingga terasa dekat.' },
-        { label: '3. Bahasanya ringan namun baku', text: 'Keduanya memakai bahasa Indonesia yang baik tanpa istilah yang terlalu berat.' }
+      runningHead: 'Tema 05 · Esai Reflektif',
+      title: 'Tema Kebangsaan: “Karakter Pancasila”',
+      subtitle: 'Contoh Esai Reflektif · Menjaga Nilai Persatuan',
+      paragraphs: [
+        'Indonesia lahir dari keberagaman suku, budaya, agama, dan adat istiadat yang disatukan kesadaran bersama sebagai bangsa yang berdaulat—perbedaan bukan pemecah ikatan, melainkan kekayaan bangsa.',
+        'Namun, arus globalisasi membuat pemahaman makna Pancasila di kalangan generasi muda kian memudar apabila pendidikan karakter belum sepenuhnya mencerminkan jati diri Indonesia.',
+        'Menanamkan karakter Pancasila di setiap jenjang pendidikan menjadi bekal penting bagi generasi penerus agar cita-cita kemerdekaan 100 tahun pada 2045 terwujud menjadi generasi emas.'
+      ],
+      sources: [
+        { label: 'Brain Academy — Esai Reflektif (Karakter Pancasila)', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     },
     {
       pageNumber: 8,
-      runningHead: 'Penutup Buku',
-      title: 'Menemukan Suaramu Sendiri',
-      subtitle: 'Siapa Pun Bisa Menulis Esai',
+      runningHead: 'Tema 06 · Dampak Media Sosial',
+      title: 'Tema Sosial-Digital: “Dampak Media Sosial”',
+      subtitle: 'Contoh Esai Opini · Bijak Bermedia di Era Digital',
       paragraphs: [
-        'Esai yang bagus tidak harus memakai kata-kata yang sulit dipahami. Justru esai yang paling berkesan lahir dari pengamatan yang jujur dan alur pikiran yang rapi.',
-        'Mulailah dari hal kecil yang sering kamu pikirkan, tuliskan pendapatmu dengan jelas, dan dukung dengan alasan yang masuk akal.'
+        'Media sosial seperti Instagram, Facebook, dan X telah mengubah cara masyarakat berkomunikasi dan mengakses informasi. Di sisi positif, platform ini mempermudah koneksi sosial, edukasi, promosi usaha, hingga penggalangan dana.',
+        'Namun di sisi lain, muncul risiko serius seperti cyberbullying yang mengganggu kesehatan mental, penyebaran berita hoaks, ujaran kebencian, serta kecanduan layar yang menggeser aktivitas belajar dan interaksi nyata.',
+        'Oleh karena itu, kita perlu bersikap selektif menyaring informasi serta menjaga privasi data agar media sosial menjadi ruang interaksi yang positif dan bermanfaat.'
       ],
       sources: [
-        { label: 'Stanford Encyclopedia: Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' }
+        { label: 'Brain Academy — Esai Tema Dampak Media Sosial', url: 'https://www.brainacademy.id/blog/contoh-esai' }
       ]
     }
   ]
@@ -723,7 +819,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Karangan Prosa Personal',
     essayText: 'Menurut KBBI, esai adalah karangan prosa yang membahas suatu masalah secara sepintas lalu dari sudut pandang pribadi penulisnya.',
     criticismWeight: 70,
-    source: { label: 'KBBI VI Daring (Kritik Sastra & Esai)', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }
+    source: { label: 'KBBI VI Daring: Entri Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }
   },
   {
     id: 'tujuan',
@@ -733,7 +829,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Berbagi Sudut Pandang',
     essayText: 'Menyampaikan opini atau refleksi penulis untuk meyakinkan pembaca maupun mengajak mereka melihat suatu isu dari sisi baru.',
     criticismWeight: 62,
-    source: { label: 'SIBI Kemendikdasmen — Modul SMA', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }
   },
   {
     id: 'fokus',
@@ -743,7 +839,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Bebas dan Luas',
     essayText: 'Bisa membahas topik apa saja: kebiasaan harian, pendidikan, budaya, teknologi, lingkungan, hingga persoalan sastra.',
     criticismWeight: 78,
-    source: { label: 'Wikipedia Bahasa Indonesia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
+    source: { label: 'Wikipedia: Aspek Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra#Aspek-aspek_dalam_Kritik_Sastra' }
   },
   {
     id: 'sifat',
@@ -753,7 +849,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Lebih Subjektif',
     essayText: 'Menonjolkan suara, perasaan, dan cara pandang khas penulis, meskipun tetap perlu alasan yang masuk akal.',
     criticismWeight: 80,
-    source: { label: 'SIBI Kemendikdasmen — Kaidah Kritik & Esai', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }
   },
   {
     id: 'struktur',
@@ -763,7 +859,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Pendahuluan · Isi · Penutup',
     essayText: 'Diawali latar masalah dan tesis, dikembangkan lewat paragraf argumen atau contoh nyata, lalu ditutup penegasan ulang.',
     criticismWeight: 55,
-    source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
   },
   {
     id: 'pendekatan',
@@ -773,7 +869,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Memakai Pengamatan & Logika',
     essayText: 'Mengandalkan pengamatan sekitar, contoh konkret, perbandingan, dan renungan penulis tanpa terikat teori sastra baku.',
     criticismWeight: 72,
-    source: { label: 'M.H. Abrams — The Mirror and the Lamp', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp' }
+    source: { label: 'M.H. Abrams — Klasifikasi Teori Sastra', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp#Classification_of_literary_theories' }
   },
   {
     id: 'hasil',
@@ -783,7 +879,7 @@ export const comparisonData: ComparisonItem[] = [
     essayTitle: 'Gagasan atau Perspektif Baru',
     essayText: 'Menghasilkan pemahaman baru atau bahan renungan segar bagi pembaca tentang persoalan yang dibicarakan.',
     criticismWeight: 66,
-    source: { label: 'Wikipedia Bahasa Indonesia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
+    source: { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
   }
 ];
 
@@ -807,28 +903,28 @@ export const faqData: FaqItem[] = [
     category: 'Perbandingan',
     question: 'Apa bedanya kritik sastra dan esai?',
     answer: 'Bedanya ada pada objek dan cara pandangnya. Kritik sastra fokus menilai satu karya sastra secara objektif lengkap dengan kelebihan, kekurangan, dan bukti kutipan. Sedangkan esai bebas membahas isu atau fenomena apa saja dari sudut pandang pribadi penulis.',
-    source: { label: 'SIBI Kemendikdasmen — Modul SMA', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'Ruang Murid — Unsur Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/mengidentifikasi-unsur-kritik-dan-esai-esai-bagian-1-340dfc76-4eba-4b9e-886c-1207cd837155' }
   },
   {
     id: 4,
     category: 'Kritik Sastra',
     question: 'Untuk apa kritik sastra dibuat?',
     answer: 'Kritik sastra membantu pembaca memahami pesan dan keindahan sebuah karya, sekaligus memberi masukan yang adil supaya pengarang bisa membuat karya yang lebih baik lagi.',
-    source: { label: 'Ensiklopedia Sastra Indonesia', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' }
+    source: { label: 'Wikipedia: Fungsi Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra#Fungsi_Kritik_Sastra' }
   },
   {
     id: 5,
     category: 'Kritik Sastra',
     question: 'Apa saja struktur teks kritik sastra?',
     answer: 'Dalam pelajaran Bahasa Indonesia SMA, struktur kritik sastra terdiri atas tiga bagian: (1) Pernyataan pendapat awal (tesis) tentang karya; (2) Rangkaian argumen berupa ringkasan isi dan analisis unsur beserta bukti kutipan; serta (3) Penegasan ulang atau simpulan penilaian.',
-    source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'SIBI — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/katalog/Bahasa-Indonesia-Kelas-XII' }
   },
   {
     id: 6,
     category: 'Esai',
     question: 'Apa saja struktur teks esai?',
     answer: 'Esai juga tersusun dari tiga bagian: (1) Pendahuluan, berisi latar masalah dan pendapat utama (tesis); (2) Isi, berisi alasan, fakta, atau contoh yang mendukung tesis; dan (3) Penutup, berisi kesimpulan singkat yang berkesan.',
-    source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'Wikipedia: Struktur Esai', url: 'https://id.wikipedia.org/wiki/Esai#Struktur' }
   },
   {
     id: 7,
@@ -849,13 +945,13 @@ export const faqData: FaqItem[] = [
     category: 'Penulisan',
     question: 'Bagaimana cara mulai menulis kritik sastra?',
     answer: 'Baca karya sastra sampai selesai, catat identitas bukunya, lalu perhatikan unsur pembangunnya (tokoh, alur, latar, tema, atau gaya bahasa). Kumpulkan kutipan yang mendukung pendapatmu, lalu tulis kelebihan dan kekurangannya dengan bahasa yang adil.',
-    source: { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
+    source: { label: 'Ruang Murid — Menyusun Kritik & Esai', url: 'https://murid.kemendikdasmen.go.id/sumber-belajar/sub-unit/dfcd588b-7596-47ee-8124-b636466d254f/materi/menyusun-kritik-dan-esai-esai-bagian-2-98bac372-2df7-4fd9-863b-678b5036f55c' }
   },
   {
     id: 10,
     category: 'Penulisan',
     question: 'Bagaimana cara membuat esai yang enak dibaca?',
     answer: 'Pilih topik yang spesifik dan dekat dengan pengalaman nyata, tentukan satu pendapat utama (tesis) yang jelas, buka dengan pengamatan menarik, dukung dengan contoh sehari-hari, lalu tutup dengan kalimat renungan yang ringkas.',
-    source: { label: 'Stanford Encyclopedia: Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' }
+    source: { label: 'Wikipedia: Langkah Pembuatan Esai', url: 'https://id.wikipedia.org/wiki/Esai#Langkah-langkah_pembuatan_esai' }
   }
 ];

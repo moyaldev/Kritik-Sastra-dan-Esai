@@ -193,7 +193,7 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
         <div className="flex items-center justify-between border-t border-[#5A4837]/20 pt-2 mt-2.5 font-ui text-[0.68rem] text-[#5A4837] tabular-nums">
           <span>{side === 'front' ? 'Halaman Kanan' : 'Halaman Kiri'}</span>
           <span>
-            Hal. 0{page.pageNumber} / 0{totalPages}
+            Hal. {String(page.pageNumber).padStart(2, '0')} / {String(totalPages).padStart(2, '0')}
           </span>
         </div>
       </div>
