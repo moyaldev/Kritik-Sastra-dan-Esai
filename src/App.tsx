@@ -7,6 +7,7 @@ import {
   essayBook,
   essayContent,
   faqData,
+  primarySources,
   ChapterItem
 } from './data/literaryData';
 
@@ -184,6 +185,28 @@ const EmbeddedReaderFrame: React.FC<EmbeddedReaderFrameProps> = ({
                 </div>
               </div>
             )}
+
+            {activeItem.sources && activeItem.sources.length > 0 && (
+              <div className="mt-7 pt-4 border-t border-[#E8DCC5]/12">
+                <div className="font-ui text-[0.68rem] tracking-[0.14em] uppercase text-[#B99A62] mb-2">
+                  Sumber Rujukan Valid
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {activeItem.sources.map((src) => (
+                    <a
+                      key={src.url}
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#241D17] border border-[#B99A62]/35 rounded-[3px] font-ui text-[0.72rem] text-[#E8DCC5] hover:border-[#D3B47A] hover:text-[#D3B47A] transition-colors"
+                    >
+                      <span>{src.label}</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -198,7 +221,7 @@ const EmbeddedReaderFrame: React.FC<EmbeddedReaderFrameProps> = ({
             ← Sebelumnya
           </button>
           <span className="hidden sm:inline font-ui text-[0.7rem] text-[#B7AA96]">
-            Gulir di dalam panel ini untuk membaca detail materi
+            Gulir di kotak ini untuk membaca materi sampai selesai
           </span>
           <button
             type="button"
@@ -501,7 +524,7 @@ export default function App() {
 
           <div className="hidden md:block border-y border-[#B99A62]/35 py-7">
             <p className="text-[#B7AA96] text-base mb-3.5">
-              Setiap karya sastra menyimpan lapisan makna, dan setiap esai menghadirkan cara pandang personal terhadap realitas manusia.
+              Membaca sastra melatih kita peka pada makna, dan menulis esai membantu kita merangkai pendapat dengan jernih.
             </p>
             <cite className="font-display italic text-xl text-[#D3B47A]">
               Menimbang Karya, Merangkai Gagasan
@@ -579,7 +602,7 @@ export default function App() {
             </h1>
 
             <p className="text-[1.06rem] text-[#B7AA96] max-w-[52ch] mb-8">
-              Media pembelajaran interaktif Bahasa Indonesia untuk menyelami kritik sastra yang membedah nilai estetis sebuah karya, serta esai yang merangkai pandangan personal menjadi argumen yang bernas.
+              Belajar kritik sastra dan esai dengan cara yang ringan dan jelas. Pahami cara menilai karya sastra secara adil serta menyusun tulisan opini yang runtut dan enak dibaca.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -617,7 +640,7 @@ export default function App() {
                         Apresiasi &amp; Makna
                       </div>
                       <div className="font-body italic text-[0.7rem] text-[#D3B47A] mt-1">
-                        Landasan Literasi
+                        Dasar Membaca Sastra
                       </div>
                     </div>
                     <span className="font-ui text-[0.6rem] tracking-[0.22em] text-[#B99A62]">SASTRA</span>
@@ -639,7 +662,7 @@ export default function App() {
                         Kritik Sastra
                       </div>
                       <div className="font-body italic text-xs text-[#D3B47A] mt-1">
-                        Menilai Karya Sastra
+                        Menilai Karya dengan Adil
                       </div>
                     </div>
                     <span className="font-ui text-[0.62rem] tracking-[0.22em] text-[#B99A62]">KLASIK</span>
@@ -661,7 +684,7 @@ export default function App() {
                         Seni Menulis Esai
                       </div>
                       <div className="font-body italic text-[0.7rem] text-[#D3B47A] mt-1">
-                        Gagasan &amp; Perspektif
+                        Berbagi Sudut Pandang
                       </div>
                     </div>
                     <span className="font-ui text-[0.6rem] tracking-[0.22em] text-[#B99A62]">MODERN</span>
@@ -682,10 +705,10 @@ export default function App() {
             01 · Materi Utama I
           </p>
           <h2 className="font-display text-[clamp(2.15rem,4vw,3.35rem)] font-semibold leading-[1.12] text-[#F1E8D8] text-balance mb-4">
-            Seni Mengkaji Karya Sastra
+            Mengenal Kritik Sastra
           </h2>
           <p className="text-[1.04rem] text-[#B7AA96] max-w-[62ch]">
-            Klik subbab di sebelah kiri untuk langsung membacanya pada layar kajian di sebelah kanan tanpa perlu menggulir halaman jauh ke bawah.
+            Pilih topik di sebelah kiri untuk langsung membacanya di kotak sebelah kanan, tanpa perlu menggulir halaman jauh ke bawah.
           </p>
 
           <EmbeddedReaderFrame
@@ -710,14 +733,14 @@ export default function App() {
                 02 · Buku Interaktif I
               </p>
               <h2 className="font-display text-[clamp(2.15rem,4vw,3.35rem)] font-semibold leading-[1.12] text-[#F1E8D8] text-balance mb-3">
-                Antologi &amp; Praktik Kritik Sastra
+                Contoh &amp; Praktik Kritik Sastra
               </h2>
               <p className="text-[1.04rem] text-[#B7AA96] max-w-[60ch]">
-                Buka sampul buku untuk menelaah daftar isi, contoh kritik cerpen “Robohnya Surau Kami” karya A.A. Navis, dan kritik puisi “Aku” karya Chairil Anwar.
+                Buka sampul buku untuk melihat daftar isi, contoh kritik cerpen “Robohnya Surau Kami” karya A.A. Navis, dan kritik puisi “Aku” karya Chairil Anwar.
               </p>
             </div>
             <div className="font-ui text-xs tracking-[0.08em] text-[#B7AA96]">
-              Klik halaman, tombol navigasi, panah keyboard, atau usap layar.
+              Klik halaman, tombol di bawah buku, panah keyboard, atau usap layar.
             </div>
           </div>
 
@@ -734,10 +757,10 @@ export default function App() {
             03 · Materi Utama II
           </p>
           <h2 className="font-display text-[clamp(2.15rem,4vw,3.35rem)] font-semibold leading-[1.12] text-[#F1E8D8] text-balance mb-4">
-            Kekuatan Perspektif Personal
+            Menulis Esai dari Sudut Pandang Pribadi
           </h2>
           <p className="text-[1.04rem] text-[#B7AA96] max-w-[62ch]">
-            Pilih topik pembahasan esai di sebelah kiri untuk menampilkan materinya secara langsung pada panel baca sebelah kanan.
+            Pilih topik esai di sebelah kiri untuk langsung melihat penjelasannya di kotak baca sebelah kanan.
           </p>
 
           <EmbeddedReaderFrame
@@ -762,14 +785,14 @@ export default function App() {
                 04 · Buku Interaktif II
               </p>
               <h2 className="font-display text-[clamp(2.15rem,4vw,3.35rem)] font-semibold leading-[1.12] text-[#F1E8D8] text-balance mb-3">
-                Antologi &amp; Praktik Penulisan Esai
+                Contoh &amp; Praktik Menulis Esai
               </h2>
               <p className="text-[1.04rem] text-[#B7AA96] max-w-[60ch]">
-                Jelajahi pengantar esai, kerangka struktur, strategi pengembangan argumentasi, serta dua contoh esai tematik beserta bedah strukturnya.
+                Baca pengantar esai, susunan struktur, cara memperkuat alasan, serta dua contoh esai ringan beserta ulasannya.
               </p>
             </div>
             <div className="font-ui text-xs tracking-[0.08em] text-[#B7AA96]">
-              Sistem navigasi independen · Dapat dibuka bersamaan.
+              Bisa dibuka dan dibalik terpisah dari buku pertama.
             </div>
           </div>
 
@@ -789,7 +812,7 @@ export default function App() {
             Perbedaan Kritik Sastra dan Esai
           </h2>
           <p className="text-[1.04rem] text-[#B7AA96] max-w-[62ch]">
-            Pilih aspek pembeda di bawah, gunakan tombol navigasi langkah, atau klik salah satu kartu untuk memfokuskan cara pandang kritik sastra dan esai secara interaktif.
+            Pilih salah satu aspek di bawah, pakai tombol panah, atau klik kartu untuk membandingkan kritik sastra dan esai secara ringkas.
           </p>
 
           <div
@@ -979,10 +1002,10 @@ export default function App() {
             <div className="mt-7 pt-5 border-t border-[#E8DCC5]/15">
               <div className="flex flex-wrap justify-between gap-2 font-ui text-[0.72rem] tracking-[0.08em] text-[#B7AA96] mb-2.5 tabular-nums">
                 <span>
-                  Orientasi Objektif · Analisis Karya ({activeComparison.criticismWeight}%)
+                  Fokus pada Karya · Objektif ({activeComparison.criticismWeight}%)
                 </span>
                 <span>
-                  Orientasi Subjektif · Refleksi Gagasan ({100 - activeComparison.criticismWeight}%)
+                  Fokus pada Penulis · Subjektif ({100 - activeComparison.criticismWeight}%)
                 </span>
               </div>
               <div
@@ -1000,9 +1023,20 @@ export default function App() {
               </div>
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                <span className="font-body italic text-sm text-[#B7AA96]">
-                  Tips: gunakan tombol panah kiri/kanan pada papan ketik untuk berpindah antar aspek.
-                </span>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="font-body italic text-sm text-[#B7AA96]">
+                    Tips: pakai tombol panah kiri/kanan di keyboard untuk berpindah aspek.
+                  </span>
+                  <a
+                    href={activeComparison.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-ui text-[0.72rem] text-[#D3B47A] underline decoration-[#B99A62]/45 hover:text-[#F1E8D8] transition-colors"
+                  >
+                    <span>Sumber: {activeComparison.source.label}</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
                 <div className="flex items-center gap-1.5" aria-label="Indikator aspek">
                   {comparisonData.map((item, idx) => (
                     <button
@@ -1036,7 +1070,7 @@ export default function App() {
             Pertanyaan yang Sering Diajukan
           </h2>
           <p className="text-[1.04rem] text-[#B7AA96] max-w-[62ch]">
-            Semua hal penting yang perlu dipahami seputar kritik sastra dan penulisan esai.
+            Jawaban singkat untuk hal-hal yang paling sering ditanyakan soal kritik sastra dan esai.
           </p>
 
           <div className="flex flex-wrap items-center justify-between gap-4 mt-8 mb-6">
@@ -1110,7 +1144,18 @@ export default function App() {
                   >
                     <div className="overflow-hidden">
                       <div className="px-1.5 pb-6 max-w-[72ch] text-[#B7AA96] text-[0.98rem] leading-[1.75]">
-                        {item.answer}
+                        <p>{item.answer}</p>
+                        <div className="mt-3">
+                          <a
+                            href={item.source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 font-ui text-[0.72rem] text-[#D3B47A] underline decoration-[#B99A62]/45 hover:text-[#F1E8D8] transition-colors"
+                          >
+                            <span>Sumber rujukan: {item.source.label}</span>
+                            <span aria-hidden="true">↗</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1152,10 +1197,10 @@ export default function App() {
             Penutup Pembelajaran
           </p>
           <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[1.08] text-[#E8DCC5] text-balance mb-5">
-            Setiap Kata Menyimpan Cara Pandang.
+            Setiap Tulisan Punya Sudut Pandang.
           </h2>
           <p className="text-[1.06rem] text-[#B7AA96] mb-8">
-            Membaca dengan saksama melatih kita memahami manusia dari berbagai zaman, sementara menulis kritik sastra dan esai mengajak kita merawat nalar, kepekaan rasa, serta keberanian menyuarakan pandangan secara bermartabat.
+            Membaca karya sastra membantu kita memahami kehidupan dari banyak sisi. Sementara itu, belajar menulis kritik dan esai melatih kita berpikir jernih, bersikap adil, dan menyampaikan pendapat dengan santun.
           </p>
           <a
             href="#hero"
@@ -1179,8 +1224,8 @@ export default function App() {
               <div className="font-body italic text-sm text-[#B99A62] mt-1">
                 Menimbang Karya, Merangkai Gagasan
               </div>
-              <p className="text-sm text-[#B7AA96] max-w-[42ch] mt-2.5">
-                Website ini merupakan media pembelajaran interaktif Bahasa Indonesia mengenai Kritik Sastra dan Esai.
+              <p className="text-sm text-[#B7AA96] max-w-[44ch] mt-2.5">
+                Media belajar Bahasa Indonesia tentang Kritik Sastra dan Esai dengan bahasa yang ringan serta rujukan resmi yang dapat diklik.
               </p>
             </div>
 
@@ -1202,11 +1247,30 @@ export default function App() {
             </nav>
           </div>
 
+          <div className="py-5 border-b border-[#E8DCC5]/10">
+            <div className="font-ui text-[0.68rem] tracking-[0.14em] uppercase text-[#B99A62] mb-2.5">
+              Sumber Rujukan Utama (Klik untuk Membuka)
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {primarySources.map((src) => (
+                <a
+                  key={src.url}
+                  href={src.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-ui text-xs text-[#B7AA96] hover:text-[#D3B47A] underline decoration-[#B99A62]/35 transition-colors"
+                >
+                  {src.label} ↗
+                </a>
+              ))}
+            </div>
+          </div>
+
           <div className="flex flex-wrap justify-between gap-4 pt-5 font-ui text-xs text-[#B7AA96]">
             <span>
               &copy; {new Date().getFullYear()} Kritik Sastra dan Esai. Media Pembelajaran Sastra Indonesia.
             </span>
-            <span>Disusun dengan pendekatan editorial &amp; literasi kritis.</span>
+            <span>Disusun dengan bahasa yang ringkas dan sumber rujukan resmi.</span>
           </div>
         </div>
       </footer>

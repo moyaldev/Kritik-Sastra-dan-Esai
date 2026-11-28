@@ -492,6 +492,17 @@
     .editorial-excerpt p { font-size: 0.96rem; color: var(--text-secondary); margin-bottom: 12px; }
     .editorial-excerpt p:last-child { margin-bottom: 0; }
 
+    .reader-sources { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--hairline); }
+    .reader-sources__label { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .reader-sources__list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .reader-source-chip {
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+      background-color: var(--bg-secondary); border: 1px solid var(--hairline-gold); border-radius: 3px;
+      font-family: var(--font-ui); font-size: 0.72rem; color: var(--parchment);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .reader-source-chip:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
+
     .reader-frame__foot {
       padding: 12px 20px; background-color: #1E1813; border-top: 1px solid var(--hairline);
       display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-shrink: 0;
@@ -577,6 +588,15 @@
       border-top: 1px solid rgba(90,72,55,0.2); padding-top: 8px; margin-top: 10px;
       font-family: var(--font-ui); font-size: 0.68rem; color: var(--parchment-muted); font-variant-numeric: tabular-nums;
     }
+    .page-parchment__sources { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(90,72,55,0.2); }
+    .page-parchment__sources-label { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--parchment-muted); margin-bottom: 4px; }
+    .page-parchment__sources-list { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+    .page-parchment__source-link {
+      font-family: var(--font-ui); font-size: 0.72rem; color: #6b4423;
+      text-decoration: underline; text-decoration-color: rgba(107, 68, 35, 0.45);
+      transition: color 0.2s ease;
+    }
+    .page-parchment__source-link:hover { color: #1c130d; }
 
     .page-cover { height: 100%; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; color: var(--parchment); border: 1px solid rgba(185,154,98,0.55); }
     .page-cover--criticism { background: radial-gradient(circle at 30% 20%, rgba(185,154,98,0.14), transparent 55%), linear-gradient(155deg, #3c1c18 0%, #24100e 65%, #160a08 100%); }
@@ -707,7 +727,14 @@
     .spectrum-foot {
       margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
     }
+    .spectrum-foot-left { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
     .spectrum-tip { font-style: italic; font-size: 0.9rem; color: var(--text-secondary); }
+    .comp-source-link, .faq-source-link {
+      display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-ui); font-size: 0.72rem;
+      color: var(--gold-bright); text-decoration: underline; text-decoration-color: rgba(185, 154, 98, 0.45);
+      transition: color 0.2s ease;
+    }
+    .comp-source-link:hover, .faq-source-link:hover { color: var(--text-primary); }
     .comp-dots { display: flex; align-items: center; gap: 6px; }
     .comp-dot { height: 8px; width: 8px; border-radius: 999px; background-color: rgba(232, 220, 197, 0.25); transition: all 0.28s ease; }
     .comp-dot.is-active { width: 28px; background-color: var(--gold); }
@@ -731,6 +758,7 @@
     .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
     .faq-panel__inner { overflow: hidden; }
     .faq-panel__content { padding: 0 6px 24px; max-width: 72ch; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.75; }
+    .faq-source-wrap { margin-top: 12px; }
 
     .closing { position: relative; padding: 120px 0; overflow: hidden; border-top: 1px solid var(--hairline-gold); background-color: var(--bg-primary); }
     .closing__bg { position: absolute; inset: -8%; z-index: 0; will-change: transform; background: radial-gradient(circle at 50% 50%, rgba(185,154,98,0.15), #17130F 72%); }
@@ -744,10 +772,15 @@
     .footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--hairline); }
     .footer__brand { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.06em; color: var(--parchment); }
     .footer__tagline { font-family: var(--font-body); font-style: italic; font-size: 0.92rem; color: var(--gold); margin-top: 4px; }
-    .footer__note { font-size: 0.86rem; color: var(--text-secondary); max-width: 42ch; margin-top: 10px; }
+    .footer__note { font-size: 0.86rem; color: var(--text-secondary); max-width: 44ch; margin-top: 10px; }
     .footer__nav { display: flex; flex-wrap: wrap; gap: 20px; }
     .footer__nav a { font-family: var(--font-ui); font-size: 0.76rem; letter-spacing: 0.08em; color: var(--text-secondary); }
     .footer__nav a:hover { color: var(--gold-bright); }
+    .footer__sources { padding: 20px 0; border-bottom: 1px solid rgba(232,220,197,0.1); }
+    .footer__sources-label { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .footer__sources-list { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    .footer__source-link { font-family: var(--font-ui); font-size: 0.75rem; color: var(--text-secondary); text-decoration: underline; text-decoration-color: rgba(185,154,98,0.35); transition: color 0.2s ease; }
+    .footer__source-link:hover { color: var(--gold-bright); }
     .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 22px; font-family: var(--font-ui); font-size: 0.74rem; color: var(--text-secondary); }
   </style>
 </head>
@@ -792,7 +825,7 @@
         <li class="nav-overlay__item"><a href="#faq" data-overlay-link><span class="num">07</span> FAQ</a></li>
       </ul>
       <div class="nav-overlay__aside">
-        <p>Setiap karya sastra menyimpan lapisan makna, dan setiap esai menghadirkan cara pandang personal terhadap realitas manusia.</p>
+        <p>Membaca sastra melatih kita peka pada makna, dan menulis esai membantu kita merangkai pendapat dengan jernih.</p>
         <cite>Menimbang Karya, Merangkai Gagasan</cite>
       </div>
     </div>
@@ -824,7 +857,7 @@
         </div>
         <h1 class="hero__title">Kritik Sastra <em>dan Esai</em></h1>
         <p class="hero__desc">
-          Media pembelajaran interaktif Bahasa Indonesia untuk menyelami kritik sastra yang membedah nilai estetis sebuah karya, serta esai yang merangkai pandangan personal menjadi argumen yang bernas.
+          Belajar kritik sastra dan esai dengan cara yang ringan dan jelas. Pahami cara menilai karya sastra secara adil serta menyusun tulisan opini yang runtut dan enak dibaca.
         </p>
         <div class="hero__actions">
           <a href="#kritik-sastra" class="btn-primary">Mulai Menjelajah</a>
@@ -842,7 +875,7 @@
                 <span class="hero-book__roman">BAGIAN I</span>
                 <div>
                   <div class="hero-book__name">Apresiasi &amp; Makna</div>
-                  <div class="hero-book__sub">Landasan Literasi</div>
+                  <div class="hero-book__sub">Dasar Membaca Sastra</div>
                 </div>
                 <span class="hero-book__roman">SASTRA</span>
               </div>
@@ -859,7 +892,7 @@
                 <span class="hero-book__roman">BAGIAN II</span>
                 <div>
                   <div class="hero-book__name">Kritik Sastra</div>
-                  <div class="hero-book__sub">Menilai Karya Sastra</div>
+                  <div class="hero-book__sub">Menilai Karya dengan Adil</div>
                 </div>
                 <span class="hero-book__roman">KLASIK</span>
               </div>
@@ -876,7 +909,7 @@
                 <span class="hero-book__roman">BAGIAN III</span>
                 <div>
                   <div class="hero-book__name">Seni Menulis Esai</div>
-                  <div class="hero-book__sub">Gagasan &amp; Perspektif</div>
+                  <div class="hero-book__sub">Berbagi Sudut Pandang</div>
                 </div>
                 <span class="hero-book__roman">MODERN</span>
               </div>
@@ -894,9 +927,9 @@
     <div class="container">
       <div class="reveal">
         <p class="section-kicker">01 · Materi Utama I</p>
-        <h2 class="section-title">Seni Mengkaji Karya Sastra</h2>
+        <h2 class="section-title">Mengenal Kritik Sastra</h2>
         <p class="section-subtitle">
-          Klik subbab di sebelah kiri untuk langsung membacanya pada layar kajian di sebelah kanan tanpa perlu menggulir halaman jauh ke bawah.
+          Pilih topik di sebelah kiri untuk langsung membacanya di kotak sebelah kanan, tanpa perlu menggulir halaman jauh ke bawah.
         </p>
       </div>
 
@@ -912,12 +945,12 @@
       <div class="flipbook-section-head reveal">
         <div>
           <p class="section-kicker">02 · Buku Interaktif I</p>
-          <h2 class="section-title">Antologi &amp; Praktik Kritik Sastra</h2>
+          <h2 class="section-title">Contoh &amp; Praktik Kritik Sastra</h2>
           <p class="section-subtitle">
-            Buka sampul buku untuk menelaah daftar isi, contoh kritik cerpen “Robohnya Surau Kami” karya A.A. Navis, dan kritik puisi “Aku” karya Chairil Anwar.
+            Buka sampul buku untuk melihat daftar isi, contoh kritik cerpen “Robohnya Surau Kami” karya A.A. Navis, dan kritik puisi “Aku” karya Chairil Anwar.
           </p>
         </div>
-        <div class="flipbook-hint">Klik halaman, tombol navigasi, panah keyboard, atau usap layar.</div>
+        <div class="flipbook-hint">Klik halaman, tombol di bawah buku, panah keyboard, atau usap layar.</div>
       </div>
 
       <div class="flipbook-wrapper reveal" id="criticismFlipbookMount"></div>
@@ -931,9 +964,9 @@
     <div class="container">
       <div class="reveal">
         <p class="section-kicker">03 · Materi Utama II</p>
-        <h2 class="section-title">Kekuatan Perspektif Personal</h2>
+        <h2 class="section-title">Menulis Esai dari Sudut Pandang Pribadi</h2>
         <p class="section-subtitle">
-          Pilih topik pembahasan esai di sebelah kiri untuk menampilkan materinya secara langsung pada panel baca sebelah kanan.
+          Pilih topik esai di sebelah kiri untuk langsung melihat penjelasannya di kotak baca sebelah kanan.
         </p>
       </div>
 
@@ -949,12 +982,12 @@
       <div class="flipbook-section-head reveal">
         <div>
           <p class="section-kicker">04 · Buku Interaktif II</p>
-          <h2 class="section-title">Antologi &amp; Praktik Penulisan Esai</h2>
+          <h2 class="section-title">Contoh &amp; Praktik Menulis Esai</h2>
           <p class="section-subtitle">
-            Jelajahi pengantar esai, kerangka struktur, strategi pengembangan argumentasi, serta dua contoh esai tematik beserta bedah strukturnya.
+            Baca pengantar esai, susunan struktur, cara memperkuat alasan, serta dua contoh esai ringan beserta ulasannya.
           </p>
         </div>
-        <div class="flipbook-hint">Sistem navigasi independen · Dapat dibuka bersamaan.</div>
+        <div class="flipbook-hint">Bisa dibuka dan dibalik terpisah dari buku pertama.</div>
       </div>
 
       <div class="flipbook-wrapper reveal" id="essayFlipbookMount"></div>
@@ -970,7 +1003,7 @@
         <p class="section-kicker">05 · Komparasi Interaktif</p>
         <h2 class="section-title">Perbedaan Kritik Sastra dan Esai</h2>
         <p class="section-subtitle">
-          Pilih aspek pembeda di bawah, gunakan tombol navigasi langkah, atau klik salah satu kartu untuk memfokuskan cara pandang kritik sastra dan esai secara interaktif.
+          Pilih salah satu aspek di bawah, pakai tombol panah, atau klik kartu untuk membandingkan kritik sastra dan esai secara ringkas.
         </p>
       </div>
 
@@ -1020,15 +1053,18 @@
 
         <div class="spectrum-bar-wrap">
           <div class="spectrum-bar-labels">
-            <span id="spectrumLabelLeft">Orientasi Objektif · Analisis Karya</span>
-            <span id="spectrumLabelRight">Orientasi Subjektif · Refleksi Gagasan</span>
+            <span id="spectrumLabelLeft">Fokus pada Karya · Objektif</span>
+            <span id="spectrumLabelRight">Fokus pada Penulis · Subjektif</span>
           </div>
           <div class="spectrum-track" aria-hidden="true">
             <div class="spectrum-fill-left" id="spectrumLeft" style="width: 65%"></div>
             <div class="spectrum-fill-right" id="spectrumRight" style="width: 35%"></div>
           </div>
           <div class="spectrum-foot">
-            <span class="spectrum-tip">Tips: gunakan tombol panah kiri/kanan pada papan ketik untuk berpindah antar aspek.</span>
+            <div class="spectrum-foot-left">
+              <span class="spectrum-tip">Tips: pakai tombol panah kiri/kanan di keyboard untuk berpindah aspek.</span>
+              <a class="comp-source-link" id="compSourceLink" href="https://kbbi.kemendikdasmen.go.id/entri/esai" target="_blank" rel="noopener noreferrer">Sumber ↗</a>
+            </div>
             <div class="comp-dots" id="compDots" aria-label="Indikator aspek"></div>
           </div>
         </div>
@@ -1045,7 +1081,7 @@
         <p class="section-kicker">06 · Tanya Jawab</p>
         <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
         <p class="section-subtitle">
-          Semua hal penting yang perlu dipahami seputar kritik sastra dan penulisan esai.
+          Jawaban singkat untuk hal-hal yang paling sering ditanyakan soal kritik sastra dan esai.
         </p>
       </div>
 
@@ -1074,9 +1110,9 @@
 
     <div class="container closing__content reveal">
       <p class="section-kicker">Penutup Pembelajaran</p>
-      <h2 class="closing__title">Setiap Kata Menyimpan Cara Pandang.</h2>
+      <h2 class="closing__title">Setiap Tulisan Punya Sudut Pandang.</h2>
       <p class="closing__text">
-        Membaca dengan saksama melatih kita memahami manusia dari berbagai zaman, sementara menulis kritik sastra dan esai mengajak kita merawat nalar, kepekaan rasa, serta keberanian menyuarakan pandangan secara bermartabat.
+        Membaca karya sastra membantu kita memahami kehidupan dari banyak sisi. Sementara itu, belajar menulis kritik dan esai melatih kita berpikir jernih, bersikap adil, dan menyampaikan pendapat dengan santun.
       </p>
       <a href="#hero" class="btn-primary">Kembali ke Atas</a>
     </div>
@@ -1092,7 +1128,7 @@
           <div class="footer__brand">Kritik Sastra dan Esai</div>
           <div class="footer__tagline">Menimbang Karya, Merangkai Gagasan</div>
           <p class="footer__note">
-            Website ini merupakan media pembelajaran interaktif Bahasa Indonesia mengenai Kritik Sastra dan Esai.
+            Media belajar Bahasa Indonesia tentang Kritik Sastra dan Esai dengan bahasa yang ringan serta rujukan resmi yang dapat diklik.
           </p>
         </div>
 
@@ -1104,9 +1140,14 @@
         </nav>
       </div>
 
+      <div class="footer__sources">
+        <div class="footer__sources-label">Sumber Rujukan Utama (Klik untuk Membuka)</div>
+        <div class="footer__sources-list" id="footerSourcesList"></div>
+      </div>
+
       <div class="footer__bottom">
         <span>&copy; <span id="currentYear"></span> Kritik Sastra dan Esai. Media Pembelajaran Sastra Indonesia.</span>
-        <span>Disusun dengan pendekatan editorial &amp; literasi kritis.</span>
+        <span>Disusun dengan bahasa yang ringkas dan sumber rujukan resmi.</span>
       </div>
     </div>
   </footer>
@@ -1115,99 +1156,140 @@
        MODULAR DATA & INTERACTIVE SCRIPT (VANILLA JAVASCRIPT)
        ======================================================================== -->
   <script>
+    /* SUMBER RUJUKAN UTAMA */
+    const primarySources = [
+      { label: 'KBBI VI Daring — Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' },
+      { label: 'KBBI VI Daring — Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' },
+      { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia', url: 'https://buku.kemendikdasmen.go.id/' },
+      { label: 'Ensiklopedia Sastra Indonesia — Badan Bahasa', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' },
+      { label: 'Stanford Encyclopedia of Philosophy — Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' }
+    ];
+
     /* DATA 1: MATERI KRITIK SASTRA (8 Topik) */
     const criticismContent = [
       {
         id: 'ks-1',
         num: '01',
         title: 'Pengertian Kritik Sastra',
-        lead: 'Kritik sastra merupakan cabang studi sastra yang berfokus pada kegiatan menganalisis, menafsirkan, dan menilai mutu sebuah karya sastra secara objektif. Istilah kritik berasal dari bahasa Yunani “kritikos” yang bermakna hakim atau pihak yang menimbang.',
+        lead: 'Menurut Kamus Besar Bahasa Indonesia (KBBI), kritik sastra adalah pertimbangan baik dan buruk terhadap suatu hasil karya sastra.',
         paragraphs: [
-          'Dalam pembelajaran Bahasa Indonesia tingkat SMA, kritik sastra dipahami sebagai pertimbangan baik dan buruk suatu karya sastra secara objektif. Artinya, seorang kritikus tidak berhenti pada kesan suka atau tidak suka, melainkan membuktikan penilaiannya melalui pengamatan cermat terhadap unsur pembangun karya tersebut.'
+          'Kata "kritik" berasal dari bahasa Yunani "kritikos", yang artinya hakim atau orang yang menimbang. Jadi, kritik sastra bukan sekadar mencari-cari kesalahan penulis atau menuliskan komentar "bagus" dan "jelek" saja.',
+          'Dalam pelajaran Bahasa Indonesia SMA, kritik sastra berarti membaca karya (seperti puisi, cerpen, novel, atau drama) secara teliti, menafsirkan isinya, lalu memberi penilaian yang adil berdasarkan bukti dari teks karya itu sendiri.'
+        ],
+        sources: [
+          { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' },
+          { label: 'KBBI VI Daring: Kritik', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik' },
+          { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
         ]
       },
       {
         id: 'ks-2',
         num: '02',
         title: 'Tujuan Kritik Sastra',
-        lead: 'Setiap kritik sastra ditulis untuk menyingkap nilai estetis, kedalaman makna, dan kualitas pencapaian artistik suatu karya.',
+        lead: 'Kritik sastra ditulis agar karya sastra bisa dipahami lebih dalam dan dinilai secara jujur.',
         items: [
-          { label: 'Menilai Kualitas Karya secara Adil', desc: 'Menunjukkan kekuatan maupun titik lemah karya berdasarkan argumen rasional dan bukti tekstual.' },
-          { label: 'Memperdalam Pemahaman Pembaca', desc: 'Membantu pembaca menangkap simbol, ironi, latar sosial, atau gagasan tersembunyi di balik teks.' },
-          { label: 'Mendorong Pertumbuhan Sastra', desc: 'Menjadi dialog konstruktif agar pengarang terus mengasah teknik penceritaan, diksi, dan kepekaan tema.' }
+          { label: 'Menilai mutu karya secara adil', desc: 'Menunjukkan bagian mana yang sudah kuat dan bagian mana yang masih kurang dengan alasan yang masuk akal.' },
+          { label: 'Membantu pembaca memahami isi karya', desc: 'Menjelaskan makna tersirat, simbol, konflik, atau pesan cerita yang mungkin terlewat saat dibaca sepintas.' },
+          { label: 'Mendorong karya sastra makin berkembang', desc: 'Memberi masukan yang membangun supaya penulis terus mengasah teknik bercerita dan pilihan katanya.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' },
+          { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
         ]
       },
       {
         id: 'ks-3',
         num: '03',
         title: 'Fungsi Kritik Sastra',
-        lead: 'Kehadiran kritik sastra menghidupkan ekosistem literasi melalui tiga peran yang saling terhubung:',
+        lead: 'Kritik sastra punya peran nyata bagi pembaca, pengarang, dan dunia sastra itu sendiri:',
         items: [
-          { label: 'Fungsi bagi Pembaca', desc: 'Menjadi kompas apresiasi agar pembaca tidak hanya menikmati alur permukaan, tetapi juga memahami mutu nilai kemanusiaan di dalamnya.' },
-          { label: 'Fungsi bagi Pengarang', desc: 'Memberikan umpan balik objektif tentang keberhasilan maupun celah karya sebagai bahan evaluasi kreatif.' },
-          { label: 'Fungsi bagi Perkembangan Ilmu Sastra', desc: 'Menguji teori sastra pada karya nyata sehingga melahirkan pemetaan sejarah, aliran, dan estetika sastra Indonesia.' }
+          { label: 'Untuk pembaca', desc: 'Menjadi panduan dalam memilih bacaan bermutu dan melatih kepekaan saat menikmati sebuah karya.' },
+          { label: 'Untuk pengarang', desc: 'Menjadi cermin atas karya yang dibuat: bagian mana yang berhasil menyentuh pembaca dan mana yang perlu diperbaiki.' },
+          { label: 'Untuk perkembangan sastra', desc: 'Membantu mencatat sejarah sastra, memetakan ciri khas tiap zaman, dan menguji teori sastra pada karya nyata.' }
+        ],
+        sources: [
+          { label: 'Ensiklopedia Sastra Indonesia — Badan Bahasa', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' },
+          { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'ks-4',
         num: '04',
-        title: 'Ciri-ciri Kritik Sastra',
-        lead: 'Agar dapat dibedakan dari ulasan singkat atau opini bebas, kritik sastra memiliki karakter khas berikut:',
+        title: 'Ciri-ciri & Kaidah Bahasa',
+        lead: 'Supaya tidak tertukar dengan ulasan singkat atau komentar bebas di media sosial, kritik sastra punya ciri khas berikut:',
         items: [
-          { label: 'Bersifat Objektif dan Terbuka', desc: 'Penilaian didasarkan pada fakta di dalam teks sastra, bukan sentimen pribadi terhadap pengarang.' },
-          { label: 'Berbasis Bukti Tekstual', desc: 'Setiap klaim keunggulan atau kelemahan disertai kutipan dialog, bait puisi, atau cuplikan adegan.' },
-          { label: 'Menggunakan Bahasa Argumentatif-Lugas', desc: 'Pilihan katanya jelas, runtut, tidak bertele-tele, dan mematuhi kaidah bahasa Indonesia baku.' },
-          { label: 'Memuat Pertimbangan Nilai', desc: 'Tidak hanya meringkas sinopsis, melainkan menimbang keberhasilan estetika serta relevansi tema karya.' }
+          { label: 'Objektif dan seimbang', desc: 'Penilaian berangkat dari isi karya, bukan karena suka atau tidak suka secara pribadi kepada pengarangnya.' },
+          { label: 'Disertai bukti kutipan teks', desc: 'Setiap pendapat harus dibuktikan lewat kutipan dialog, bait puisi, watak tokoh, atau adegan di dalam karya.' },
+          { label: 'Memuat pertimbangan baik dan buruk', desc: 'Tidak berhenti pada ringkasan cerita (sinopsis), melainkan menimbang kelebihan dan kekurangan karya tersebut.' },
+          { label: 'Kaidah bahasa argumentatif', desc: 'Menggunakan kata kerja mental (menilai, menduga), konjungsi sebab-akibat (karena, oleh sebab itu), pernyataan persuasif, serta istilah sastra (alur, latar, diksi).' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Kaidah Kritik & Esai', url: 'https://buku.kemendikdasmen.go.id/' },
+          { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' }
         ]
       },
       {
         id: 'ks-5',
         num: '05',
         title: 'Struktur Kritik Sastra',
-        lead: 'Secara umum, teks kritik sastra disusun mengikuti struktur teks eksposisi-argumentatif yang terdiri atas tiga tahap utama:',
+        lead: 'Dalam buku pelajaran Bahasa Indonesia SMA, teks kritik sastra disusun mengikuti pola teks eksposisi yang terdiri atas tiga bagian:',
         items: [
-          { label: '1. Evaluasi (Pernyataan Pendapat / Tesis)', desc: 'Berisi pengenalan identitas karya (judul, pengarang, penerbit, tahun) disertai penilaian umum atau sudut pandang kritikus terhadap karya tersebut.' },
-          { label: '2. Deskripsi Teks & Tafsiran (Rangkaian Argumen)', desc: 'Memaparkan gambaran singkat isi karya lalu menguraikan analisis unsur intrinsik (tema, alur, penokohan, latar, gaya bahasa, amanat) maupun unsur ekstrinsik dengan kutipan pendukung.' },
-          { label: '3. Penegasan Ulang (Simpulan & Rekomendasi)', desc: 'Merangkum hasil penilaian—baik kelebihan maupun kekurangan—serta menyampaikan rekomendasi kepada pembaca sastra.' }
+          { label: '1. Pernyataan Pendapat (Tesis / Evaluasi Awal)', desc: 'Mengenalkan identitas karya (judul, pengarang, tahun terbit) serta menyampaikan pandangan awal penulis kritik tentang karya tersebut.' },
+          { label: '2. Rangkaian Argumen (Deskripsi & Analisis)', desc: 'Memaparkan sinopsis singkat, lalu mengupas unsur intrinsik (tema, alur, tokoh, latar, gaya bahasa, amanat) maupun ekstrinsik lengkap dengan bukti kutipan.' },
+          { label: '3. Penegasan Ulang (Simpulan)', desc: 'Menegaskan kembali penilaian akhir—baik keunggulan maupun keterbatasan karya—serta rekomendasi bagi pembaca.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/' },
+          { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
         ]
       },
       {
         id: 'ks-6',
         num: '06',
-        title: 'Jenis-jenis Kritik Sastra',
-        lead: 'Berdasarkan orientasi analisis yang dikemukakan oleh M.H. Abrams dan tradisi studi sastra, kritik sastra terbagi menjadi empat pendekatan utama:',
+        title: 'Jenis Pendekatan Kritik Sastra',
+        lead: 'Ahli sastra M.H. Abrams dalam bukunya The Mirror and the Lamp (1953) membagi pendekatan kritik sastra menjadi empat sudut pandang utama:',
         items: [
-          { label: 'Kritik Mimetik', desc: 'Menilai karya berdasarkan sejauh mana karya tersebut merefleksikan realitas sosial, budaya, dan kehidupan masyarakat.' },
-          { label: 'Kritik Pragmatik', desc: 'Menilai keberhasilan karya melalui efek atau manfaat moral, emosional, dan edukatif yang dirasakan pembaca.' },
-          { label: 'Kritik Ekspresif', desc: 'Menelaah karya sebagai ekspresi pengalaman batin, pandangan hidup, dan latar biografis pengarangnya.' },
-          { label: 'Kritik Objektif (Struktural)', desc: 'Memandang karya sastra sebagai dunia otonom yang dinilai semata-mata dari keutuhan unsur intrinsik di dalam teks.' }
+          { label: 'Pendekatan Mimetik (Alam & Realitas)', desc: 'Menilai seberapa jauh karya sastra mencerminkan kehidupan nyata, budaya, dan kondisi masyarakat.' },
+          { label: 'Pendekatan Pragmatik (Pembaca)', desc: 'Menilai karya dari dampaknya kepada pembaca—apakah menghibur, menggerakkan emosi, atau memberi pelajaran moral.' },
+          { label: 'Pendekatan Ekspresif (Pengarang)', desc: 'Melihat karya sebagai cerminan perasaan, pengalaman hidup, dan pemikiran pribadi pengarangnya.' },
+          { label: 'Pendekatan Objektif (Karya Itu Sendiri)', desc: 'Fokus meneliti isi teks secara mandiri lewat keterpaduan unsur intrinsiknya, tanpa mengaitkannya dengan hal di luar teks.' }
+        ],
+        sources: [
+          { label: 'M.H. Abrams — The Mirror and the Lamp (1953)', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp' },
+          { label: 'Wikipedia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' }
         ]
       },
       {
         id: 'ks-7',
         num: '07',
-        title: 'Langkah-langkah Menyusun Kritik Sastra',
-        lead: 'Untuk menghasilkan kritik sastra yang tajam dan bertanggung jawab, ikuti tahapan kerja berikut:',
+        title: 'Langkah Menyusun Kritik Sastra',
+        lead: 'Agar tulisan kritikmu rapi dan meyakinkan, ikuti empat langkah sederhana ini:',
         items: [
-          { label: 'Langkah 1 · Pembacaan Mendalam', desc: 'Baca karya sastra secara penuh tanpa tergesa-gesa, lalu ulangi bagian-bagian kunci untuk menangkap nuansa bahasanya.' },
-          { label: 'Langkah 2 · Pencatatan Identitas & Sinopsis', desc: 'Catat judul, pengarang, tahun terbit, serta rangkum garis besar cerita atau gagasan utama puisi.' },
-          { label: 'Langkah 3 · Analisis Unsur & Pengumpulan Bukti', desc: 'Bedah kekuatan tokoh, konflik, latar, gaya bahasa, dan kumpulkan kutipan langsung sebagai bukti analisis.' },
-          { label: 'Langkah 4 · Perumusan Penilaian Seimbang', desc: 'Susun evaluasi, tafsiran kelebihan-kekurangan, dan simpulan akhir dengan bahasa yang santun namun kritis.' }
+          { label: 'Langkah 1 · Baca karya sampai tuntas', desc: 'Baca puisi, cerpen, atau novel dengan tenang. Tandai bagian yang terasa kuat, unik, atau justru janggal.' },
+          { label: 'Langkah 2 · Catat identitas dan ringkasan isi', desc: 'Tulis judul, nama pengarang, penerbit, tahun terbit, dan garis besar ceritanya.' },
+          { label: 'Langkah 3 · Analisis unsur dan kumpulkan bukti', desc: 'Perhatikan alur, tokoh, latar, atau pilihan kata. Simpan kutipan kalimat dari teks untuk memperkuat pendapatmu.' },
+          { label: 'Langkah 4 · Tulis penilaian secara santun dan berimbang', desc: 'Susun sesuai struktur (tesis, argumen, simpulan) dengan menunjukkan kelebihan sekaligus kekurangannya secara adil.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Modul Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'ks-8',
         num: '08',
         title: 'Contoh Kritik Sastra',
-        lead: 'Berikut cuplikan penerapan struktur kritik sastra terhadap karya sastra Indonesia klasik (pembahasan lengkap tersedia pada Flipbook Kritik Sastra di bawah):',
+        lead: 'Berikut contoh penerapan kritik sastra pada cerpen legendaris Indonesia (versi lebih lengkap ada di Flipbook di bawah):',
         excerpt: {
-          kicker: 'Contoh Analisis Ringkas · Cerpen Indonesia',
-          title: 'Ironi Keberagamaan dalam “Robohnya Surau Kami” karya A.A. Navis',
+          kicker: 'Contoh Ringkas · Cerpen Indonesia',
+          title: 'Sindiran Halus tentang Ibadah dan Tanggung Jawab dalam “Robohnya Surau Kami” karya A.A. Navis',
           paragraphs: [
-            'Cerpen “Robohnya Surau Kami” karya A.A. Navis merupakan salah satu karya pendek paling tajam dalam khazanah sastra Indonesia modern. Melalui tokoh Kakek Garin yang menghabiskan seluruh waktunya di surau tanpa memedulikan kewajiban sosial maupun nafkah keluarga, Navis menghadirkan kritik moral yang bernas tanpa terkesan menggurui.',
-            'Kekuatan utama cerpen ini terletak pada teknik cerita berbingkai yang dibawa oleh tokoh Ajo Sidi. Kisah Haji Saleh yang rajin beribadah namun masuk neraka menjadi cermin satir yang mengguncang kesadaran pembaca. Di sisi lain, bagi pembaca masa kini yang terbiasa dengan alur cepat, dialog pembuka antara tokoh Aku dan Kakek terasa sedikit berjarak sebelum masuk ke inti sindiran Ajo Sidi. Namun secara keseluruhan, kepaduan tema, ironi, dan diksi menjadikan cerpen ini tetap relevan lintas generasi.'
+            'Cerpen “Robohnya Surau Kami” karya A.A. Navis pertama kali terbit di majalah Kisah tahun 1955 dan dibukukan pada 1956. Ceritanya menyoroti tokoh Kakek penjaga surau (garin) yang menghabiskan hidupnya untuk beribadah seorang diri, tetapi abai mengurus keluarga dan bekerja mencari nafkah.',
+            'Daya tarik utama cerpen ini ada pada teknik cerita berbingkai lewat tokoh Ajo Sidi yang berkisah tentang Haji Saleh di akhirat. Melalui sindiran segar tanpa nada menggurui, Navis mengingatkan bahwa kesalehan harus seimbang antara ibadah kepada Tuhan dan kepedulian sosial. Bagi pembaca masa kini, alur pembukanya memang terasa agak lambat dan memuat beberapa kosakata lama. Namun secara keseluruhan, pesan moral dan kekuatan satir cerpen ini tetap tajam dan relevan sampai sekarang.'
           ]
-        }
+        },
+        sources: [
+          { label: 'Ensiklopedia Sastra Indonesia: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }
+        ]
       }
     ];
 
@@ -1217,95 +1299,126 @@
         id: 'es-1',
         num: '01',
         title: 'Pengertian Esai',
-        lead: 'Esai adalah karangan prosa yang membahas suatu masalah secara sepintas lalu dari sudut pandang pribadi penulisnya. Istilah ini berakar dari kata Prancis “essai” yang berarti percobaan atau upaya menimbang suatu gagasan.',
+        lead: 'Menurut KBBI, esai adalah karangan prosa yang membahas suatu masalah secara sepintas lalu dari sudut pandang pribadi penulisnya. Penulisan baku dalam bahasa Indonesia adalah "esai" (bukan esay atau essay).',
         paragraphs: [
-          'Berbeda dengan artikel ilmiah murni yang serba kaku atau kritik sastra yang terikat pada satu objek teks sastra, esai memberi ruang bagi suara personal penulis untuk menafsirkan fenomena kehidupan—mulai dari isu budaya, kebiasaan membaca, ekologi, hingga dunia digital—dengan logika yang jernih dan bahasa yang mengalir.'
+          'Istilah ini dipopulerkan oleh pemikir Prancis Michel de Montaigne pada tahun 1580 lewat bukunya "Essais", yang berarti "percobaan" atau upaya menimbang suatu gagasan secara jujur.',
+          'Artinya, esai tidak berusaha menjadi buku teks yang kaku dan serba lengkap. Esai justru memberi ruang bagi penulis untuk membagikan cara pandangnya terhadap isu sehari-hari—mulai dari kebiasaan membaca, pendidikan, lingkungan, budaya, hingga sastra—dengan bahasa yang mengalir dan alasan yang masuk akal.'
+        ],
+        sources: [
+          { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' },
+          { label: 'Stanford Encyclopedia: Michel de Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' },
+          { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
         ]
       },
       {
         id: 'es-2',
         num: '02',
-        title: 'Tujuan Esai',
-        lead: 'Esai ditulis bukan untuk menggurui pembaca dengan rumus mutlak, melainkan untuk membuka ruang dialog intelektual:',
+        title: 'Tujuan Menulis Esai',
+        lead: 'Esai tidak dibuat untuk menggurui pembaca dengan aturan mutlak, melainkan untuk mengajak berdiskusi lewat tulisan:',
         items: [
-          { label: 'Menyampaikan Perspektif Pribadi', desc: 'Menawarkan sudut pandang unik penulis terhadap persoalan yang mungkin sudah sering dilihat masyarakat.' },
-          { label: 'Meyakinkan melalui Penalaran', desc: 'Mengajak pembaca memahami posisi penulis dengan dukungan fakta, ilustrasi, serta pengalaman empiris.' },
-          { label: 'Memantik Refleksi Pembaca', desc: 'Mendorong pembaca merenungkan kembali kebiasaan atau asumsi yang selama ini dianggap wajar.' }
+          { label: 'Membagikan sudut pandang pribadi', desc: 'Menawarkan cara melihat baru atas persoalan yang mungkin sudah sering ditemui orang banyak.' },
+          { label: 'Meyakinkan pembaca dengan alasan logis', desc: 'Menjelaskan sikap penulis dengan bantuan fakta, contoh nyata, dan pengalaman sehari-hari.' },
+          { label: 'Mengajak pembaca ikut berpikir', desc: 'Memancing rasa ingin tahu agar pembaca mau meninjau ulang kebiasaan atau anggapan yang selama ini terasa biasa saja.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia SMA', url: 'https://buku.kemendikdasmen.go.id/' },
+          { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
         ]
       },
       {
         id: 'es-3',
         num: '03',
         title: 'Fungsi Esai',
-        lead: 'Dalam ruang publik dan dunia pendidikan, esai menjalankan beberapa fungsi penting:',
+        lead: 'Di sekolah maupun media massa, esai punya tiga fungsi penting:',
         items: [
-          { label: 'Fungsi Kritis-Sosial', desc: 'Menjadi suara reflektif atas isu sosial, budaya, dan lingkungan secara persuasif.' },
-          { label: 'Fungsi Edukatif & Literasi', desc: 'Melatih kemampuan merumuskan argumen yang terstruktur, memilih diksi efektif, dan berpikir runtut.' },
-          { label: 'Fungsi Ekspresif', desc: 'Memberi wadah bagi penulis untuk mengekspresikan gaya bahasa dan kepekaan estetisnya secara bebas namun bertanggung jawab.' }
+          { label: 'Menyuarakan gagasan tentang isu sekitar', desc: 'Membahas topik sosial, budaya, teknologi, atau pendidikan dengan bahasa yang mudah dipahami masyarakat.' },
+          { label: 'Melatih berpikir runtut dan kritis', desc: 'Membiasakan penulis menyusun pendapat yang jelas alasannya, tidak asal bicara.' },
+          { label: 'Wadah ekspresi gaya bahasa', desc: 'Memberi kebebasan bagi penulis memakai gaya tutur yang akrab, segar, namun tetap sopan dan masuk akal.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'es-4',
         num: '04',
-        title: 'Ciri-ciri Esai',
-        lead: 'Esai memiliki karakter khas yang membuatnya terasa intim sekaligus berbobot:',
+        title: 'Ciri-ciri & Kaidah Bahasa',
+        lead: 'Esai mudah dikenali lewat beberapa ciri berikut:',
         items: [
-          { label: 'Berbentuk Prosa Ringkas', desc: 'Disajikan secara padat sehingga dapat dibaca tuntas dalam satu kesempatan tanpa kehilangan fokus gagasan.' },
-          { label: 'Subjektif-Personal', desc: 'Menampilkan sikap, perasaan, dan cara pandang khas penulis, meskipun tetap didukung oleh data atau pengamatan nyata.' },
-          { label: 'Selektif dalam Pembahasan', desc: 'Tidak berusaha membahas seluruh aspek masalah seperti buku teks; esai memilih satu sudut tajam yang paling bermakna.' },
-          { label: 'Gaya Bahasa Khas & Komunikatif', desc: 'Menggunakan variasi kalimat yang hidup, metafora yang tepat guna, dan ritme bacaan yang enak diikuti.' }
+          { label: 'Berbentuk prosa singkat', desc: 'Panjangnya pas dan padat, sehingga bisa dibaca tuntas dalam sekali duduk.' },
+          { label: 'Bersifat subjektif atau personal', desc: 'Memperlihatkan opini, sikap, dan suara khas penulisnya, walau tetap perlu alasan yang logis.' },
+          { label: 'Membahas satu sisi menarik (selektif)', desc: 'Tidak harus mengupas semua detail topik seperti laporan ilmiah; penulis cukup memilih bagian yang paling bermakna.' },
+          { label: 'Bahasa baku yang luwes dan persuasif', desc: 'Memakai kalimat yang mengalir, pilihan kata hidup, kata kerja mental, serta kata hubung argumentatif (sebab, namun, oleh karena itu).' }
+        ],
+        sources: [
+          { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' },
+          { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'es-5',
         num: '05',
         title: 'Struktur Esai',
-        lead: 'Keutuhan sebuah esai ditopang oleh tiga bagian utama yang saling mengunci:',
+        lead: 'Sama seperti teks eksposisi, esai yang utuh memiliki tiga bagian utama yang saling tersambung:',
         items: [
-          { label: '1. Pendahuluan (Latar Belakang & Tesis)', desc: 'Membuka tulisan dengan pengamatan menarik, pertanyaan reflektif, atau konteks isu, lalu menegaskan pernyataan tesis sebagai inti gagasan penulis.' },
-          { label: '2. Isi / Pembahasan (Pengembangan Argumen)', desc: 'Menguraikan alasan-alasan yang memperkuat tesis melalui paragraf terstruktur berisi fakta, contoh konkret, perbandingan, atau kutipan ahli.' },
-          { label: '3. Penutup (Simpulan & Refleksi)', desc: 'Menyimpulkan pokok pikiran tanpa mengulang kalimat secara mekanis, lalu menutup dengan gagasan pengingat yang membekas.' }
+          { label: '1. Pendahuluan (Pengantar & Tesis)', desc: 'Membuka tulisan dengan cerita singkat, pengamatan nyata, atau pertanyaan menarik, lalu menyebutkan gagasan utama (tesis) penulis.' },
+          { label: '2. Isi / Pembahasan (Rangkaian Argumen)', desc: 'Menjelaskan alasan-alasan yang mendukung tesis lewat paragraf teratur berisi fakta, contoh sehari-hari, atau perbandingan.' },
+          { label: '3. Penutup (Penegasan Ulang)', desc: 'Menyimpulkan inti gagasan secara singkat tanpa mengulang kalimat mentah-mentah, lalu menutup dengan kalimat yang berkesan.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Buku Bahasa Indonesia Kelas XII', url: 'https://buku.kemendikdasmen.go.id/' },
+          { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' }
         ]
       },
       {
         id: 'es-6',
         num: '06',
         title: 'Jenis-jenis Esai',
-        lead: 'Esai berkembang dalam beragam corak sesuai tujuan dan objek pengamatannya:',
+        lead: 'Berdasarkan isi dan tujuannya, esai sering dikelompokkan menjadi beberapa jenis:',
         items: [
-          { label: 'Esai Deskriptif', desc: 'Melukiskan suasana, tempat, atau fenomena secara rinci untuk memicu imajinasi dan kepekaan pembaca.' },
-          { label: 'Esai Tajuk (Editorial)', desc: 'Mengulas isu hangat di media massa untuk menyatakan sikap atau pandangan redaksi/penulis terhadap peristiwa publik.' },
-          { label: 'Esai Cukilan Watak', desc: 'Menggali sisi kepribadian atau karakter unik seorang tokoh yang memengaruhi gagasan atau zamannya.' },
-          { label: 'Esai Pribadi & Reflektif', desc: 'Bertolak dari pengalaman personal penulis untuk menarik makna universal tentang kehidupan manusia.' },
-          { label: 'Esai Kritik', desc: 'Membahas persoalan seni, sastra, atau kebudayaan secara analitis dengan memadukan sudut pandang pribadi.' }
+          { label: 'Esai Deskriptif', desc: 'Menggambarkan suatu tempat, suasana, atau peristiwa secara hidup agar pembaca ikut merasakannya.' },
+          { label: 'Esai Tajuk (Editorial)', desc: 'Mengulas isu hangat di koran atau media untuk menyampaikan pandangan resmi redaksi terhadap berita terbaru.' },
+          { label: 'Esai Cukilan Watak', desc: 'Menceritakan sisi menarik dari karakter atau kebiasaan seorang tokoh penting.' },
+          { label: 'Esai Pribadi', desc: 'Ditulis langsung dari pengalaman pribadi penulis menggunakan sudut pandang "saya" untuk menarik pelajaran hidup.' },
+          { label: 'Esai Reflektif & Esai Kritik', desc: 'Mengajak pembaca merenungkan persoalan hidup atau mengulas isu seni, sastra, dan budaya secara bebas dari kacamata penulis.' }
+        ],
+        sources: [
+          { label: 'Wikipedia: Esai (Jenis-jenis Esai)', url: 'https://id.wikipedia.org/wiki/Esai' },
+          { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'es-7',
         num: '07',
-        title: 'Langkah-langkah Menyusun Esai',
-        lead: 'Proses menulis esai yang meyakinkan dapat dilakukan melalui lima tahap praktis:',
+        title: 'Langkah Menyusun Esai',
+        lead: 'Menulis esai tidak harus rumit. Kamu bisa mengikuti lima langkah praktis berikut:',
         items: [
-          { label: '1. Menentukan Topik Spesifik', desc: 'Pilih persoalan yang jelas batasannya agar pembahasan tidak melebar ke mana-mana.' },
-          { label: '2. Merumuskan Tesis', desc: 'Tentukan satu gagasan sentral atau sikap yang hendak Anda pertahankan sepanjang tulisan.' },
-          { label: '3. Merancang Kerangka Argumen', desc: 'Buat 2–3 poin penguat tesis lengkap dengan data, contoh keseharian, atau referensi pendukung.' },
-          { label: '4. Menulis Paragraf yang Mengalir', desc: 'Bangun transisi antarpargraf secara halus, gunakan kalimat aktif, dan hindari pengulangan kata yang tidak perlu.' },
-          { label: '5. Menyunting & Memoles Diksi', desc: 'Periksa kembali ketepatan ejaan, ketajaman kalimat pembuka, dan kekuatan kalimat penutup.' }
+          { label: '1. Pilih topik yang spesifik', desc: 'Ambil satu persoalan yang dekat dengan hidupmu supaya pembahasannya fokus dan tidak melebar ke mana-mana.' },
+          { label: '2. Tentukan gagasan utama (tesis)', desc: 'Rumuskan satu kalimat sikap yang jelas: apa pendapatmu tentang topik tersebut?' },
+          { label: '3. Susun 2–3 alasan pendukung', desc: 'Siapkan fakta, contoh kejadian sehari-hari, atau perbandingan sederhana untuk memperkuat pendapatmu.' },
+          { label: '4. Tulis dengan kalimat yang mengalir', desc: 'Pastikan setiap paragraf menyambung halus ke paragraf berikutnya. Pakai kalimat aktif agar terasa segar.' },
+          { label: '5. Baca ulang dan rapikan ejaan', desc: 'Cek kembali kalimat pembuka dan penutupnya, serta pastikan ejaan sudah sesuai kaidah bahasa Indonesia.' }
+        ],
+        sources: [
+          { label: 'SIBI Kemendikdasmen — Panduan Menulis Esai', url: 'https://buku.kemendikdasmen.go.id/' }
         ]
       },
       {
         id: 'es-8',
         num: '08',
         title: 'Contoh Esai',
-        lead: 'Berikut cuplikan esai bertema literasi digital (versi utuh beserta analisis strukturnya dapat dibaca pada Flipbook Esai di bawah):',
+        lead: 'Berikut cuplikan esai ringan tentang kebiasaan membaca di era gawai (versi lengkap dan ulasannya ada di Flipbook di bawah):',
         excerpt: {
-          kicker: 'Contoh Esai Reflektif · Literasi Modern',
-          title: 'Membaca di Tengah Arus Digital',
+          kicker: 'Contoh Esai Reflektif · Literasi Sehari-hari',
+          title: 'Membaca Pelan di Tengah Layar yang Serba Cepat',
           paragraphs: [
-            'Setiap pagi, layar ponsel kita menyuguhkan ratusan potongan informasi sebelum secangkir teh sempat mendingin. Kita merasa telah membaca banyak hal, padahal yang sering terjadi hanyalah memindai judul demi judul dalam hitungan detik. Di tengah arus notifikasi yang tak pernah tidur, kemampuan membaca secara perlahan dan mendalam menjadi kemewahan baru yang diam-diam terancam.',
-            'Membaca buku atau esai panjang bukanlah tindakan melawan zaman digital, melainkan cara menjaga kejernihan nalar agar tidak terseret oleh kecepatan semata. Ketika mata kita beristirahat sejenak dari guliran layar tanpa ujung dan berpindah ke paragraf yang utuh, pikiran mendapatkan ruang untuk menimbang, meragukan, dan memahami. Barangkali, di era informasi berlimpah, kecerdasan tidak lagi diukur dari seberapa cepat kita mengakses berita, melainkan seberapa tenang kita mampu mencerna maknanya.'
+            'Setiap pagi, sebelum sarapan habis, jari kita sudah menggulir puluhan berita dan video pendek di layar ponsel. Kita merasa sudah tahu banyak hal. Padahal, sering kali kita cuma membaca judulnya sekilas tanpa sempat mencerna isinya.',
+            'Membaca buku atau esai panjang bukan berarti menolak teknologi digital. Justru itu cara sederhana untuk memberi otak waktu beristirahat dari arus informasi yang terus mengejar. Saat kita membaca satu bacaan utuh dengan tenang, pikiran punya ruang untuk menimbang, bertanya, dan memahami makna dengan lebih jernih.'
           ]
-        }
+        },
+        sources: [
+          { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }
+        ]
       }
     ];
 
@@ -1314,37 +1427,43 @@
       id: 'criticismBook',
       coverTheme: 'criticism',
       coverTitle: 'Kritik Sastra',
-      coverSubtitle: 'Seni Menilai Karya Sastra',
-      editionLabel: 'EDISI KLASIK · KAJIAN SASTRA',
+      coverSubtitle: 'Menilai Karya dengan Adil',
+      editionLabel: 'EDISI KLASIK · CONTOH KRITIK',
       pages: [
-        { pageNumber: 1, isCover: true, title: 'Kritik Sastra', subtitle: 'Seni Menilai Karya Sastra' },
+        { pageNumber: 1, isCover: true, title: 'Kritik Sastra', subtitle: 'Menilai Karya dengan Adil' },
         {
-          pageNumber: 2, runningHead: 'Daftar Isi', title: 'Daftar Isi Antologi Kritik', subtitle: 'Panduan Pembacaan & Analisis Karya',
-          html: `<p>Buku ringkas ini mempraktikkan langsung teori kritik sastra pada dua karya kanonik Indonesia.</p><ul><li><strong>Hal. 03</strong> — Pengenalan Karya yang Dikritik</li><li><strong>Hal. 04</strong> — Kritik Cerpen “Robohnya Surau Kami” (A.A. Navis)</li><li><strong>Hal. 05</strong> — Analisis Unsur Intrinsik Cerpen</li><li><strong>Hal. 06</strong> — Analisis Kelebihan &amp; Kekurangan Karya</li><li><strong>Hal. 07</strong> — Kesimpulan Kritik Sastra</li><li><strong>Hal. 08</strong> — Contoh Kritik Puisi “Aku” (Chairil Anwar)</li></ul>`
+          pageNumber: 2, runningHead: 'Daftar Isi', title: 'Daftar Isi Buku Mini', subtitle: 'Contoh Nyata Kritik Cerpen dan Puisi',
+          html: `<p>Buku ringkas ini menunjukkan cara menilai dua karya sastra Indonesia yang terkenal dengan bahasa yang mudah diikuti.</p><ul><li><strong>Hal. 03</strong> — Mengenal Cerpen “Robohnya Surau Kami”</li><li><strong>Hal. 04</strong> — Isi Kritik: Sindiran Sosial A.A. Navis</li><li><strong>Hal. 05</strong> — Bedah Unsur Intrinsik Cerpen</li><li><strong>Hal. 06</strong> — Kelebihan dan Kekurangan Karya</li><li><strong>Hal. 07</strong> — Kesimpulan Akhir Kritik</li><li><strong>Hal. 08</strong> — Contoh Kritik Puisi “Aku” (Chairil Anwar)</li></ul>`,
+          sources: [{ label: 'Ensiklopedia Sastra Indonesia', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' }]
         },
         {
-          pageNumber: 3, runningHead: 'Pengantar Objek Kajian', title: 'Pengenalan Karya yang Dikritik', subtitle: 'Cerpen “Robohnya Surau Kami” — A.A. Navis (1955)',
-          html: `<p><strong>Identitas Karya:</strong> Pertama kali dimuat di majalah sastra <em>Kisah</em> tahun 1955, kemudian menjadi judul buku kumpulan cerpen A.A. Navis.</p><p><strong>Ringkasan Isi:</strong> Cerpen ini mengisahkan seorang kakek penjaga surau (garin) yang hidup menyendiri dengan mengandalkan belas kasihan warga. Suatu hari, Ajo Sidi menceritakan kisah Haji Saleh di akhirat yang masuk neraka karena hanya mementingkan ibadah pribadi dan melupakan tanggung jawab sosial.</p><p>Kisah satir tersebut menghantam batin sang Kakek hingga berujung pada tragedi kematiannya di surau.</p>`
+          pageNumber: 3, runningHead: 'Pengenalan Karya', title: 'Cerpen “Robohnya Surau Kami”', subtitle: 'Karya A.A. Navis (Majalah Kisah, 1955)',
+          html: `<p><strong>Identitas Karya:</strong> Pertama kali terbit di majalah <em>Kisah</em> tahun 1955, lalu dibukukan oleh Penerbit NV Nusantara, Bukittinggi pada 1956.</p><p><strong>Ringkasan Cerita:</strong> Cerpen ini bercerita tentang seorang kakek penjaga surau (garin) yang tekun beribadah, tetapi hidup menyendiri dari urusan dunia dan keluarga. Suatu hari, tokoh Ajo Sidi bercerita tentang Haji Saleh yang rajin beribadah, namun masuk neraka karena tidak bekerja, tidak mengurus anak cucu, dan membiarkan negerinya melarat.</p><p>Cerita sindiran itu membuat sang Kakek terpukul hingga berakhir tragis di suraunya.</p>`,
+          sources: [{ label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }]
         },
         {
-          pageNumber: 4, runningHead: 'Praktik Kritik Cerpen', title: 'Kritik “Robohnya Surau Kami”', subtitle: 'Evaluasi Awal & Makna Satir Sosial',
-          html: `<p>Karya A.A. Navis berdiri sebagai tonggak kritik sosial dalam sastra Indonesia. Alih-alih menyerang keyakinan beragama, Navis membela esensi spiritualitas yang seimbang antara kesalehan ritual dan tanggung jawab kemanusiaan.</p><p>Melalui kalimat tajam Tuhan kepada Haji Saleh: <em>“Apakah engkau kira Aku ini suka pujian, mabuk disembah saja?”</em>, pengarang menelanjangi sikap egoisme spiritual yang mengabaikan kemiskinan di sekitar.</p>`
+          pageNumber: 4, runningHead: 'Analisis & Tafsiran', title: 'Makna Satir A.A. Navis', subtitle: 'Keseimbangan Ibadah dan Kerja Nyata',
+          html: `<p>Melalui cerpen ini, A.A. Navis tidak sedang mengejek orang yang rajin beribadah. Ia justru mengkritik sikap egois: beribadah hanya demi keselamatan diri sendiri sambil melupakan tanggung jawab sosial di masyarakat.</p><p>Lewat kisah Haji Saleh, Navis menyentil pembaca dengan pesan sederhana: agama seharusnya membuat manusia rajin bekerja, peduli pada sesama, dan ikut memajukan lingkungannya.</p><p>Kekuatan ide seperti inilah yang membuat cerpen pendek ini terus dibaca dan didiskusikan puluhan tahun setelah terbit.</p>`,
+          sources: [{ label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }]
         },
         {
-          pageNumber: 5, runningHead: 'Bedah Teks', title: 'Analisis Unsur Intrinsik', subtitle: 'Menelisik Bangunan Cerita A.A. Navis',
-          html: `<ul><li><strong>Tema:</strong> Kritik terhadap kesalehan individual yang melupakan kewajiban sosial dan keluarga.</li><li><strong>Alur:</strong> Alur campuran dengan teknik <em>cerita dalam cerita</em> melalui penuturan Ajo Sidi.</li><li><strong>Penokohan:</strong> Kakek (pasrah, sensitif), Ajo Sidi (kritis, jenaka, penggerak konflik), Haji Saleh (simbol ironi).</li><li><strong>Gaya Bahasa:</strong> Satir, ironis, dan dialogis sehingga pesan filosofis terasa hidup.</li></ul>`
+          pageNumber: 5, runningHead: 'Bedah Unsur', title: 'Unsur Intrinsik Cerpen', subtitle: 'Melihat Cara Cerita Dibangun',
+          html: `<ul><li><strong>Tema:</strong> Pentingnya keseimbangan antara ibadah pribadi, kerja keras, dan kepedulian sosial.</li><li><strong>Alur:</strong> Menggunakan alur campuran dengan teknik cerita di dalam cerita melalui kisah Ajo Sidi.</li><li><strong>Tokoh:</strong> Kakek (polos dan mudah terpukul), Ajo Sidi (kritis dan jenaka), Haji Saleh (gambaran sindiran).</li><li><strong>Gaya Bahasa:</strong> Banyak memakai kalimat sindiran (satir) dan dialog yang terasa alami.</li></ul>`,
+          sources: [{ label: 'SIBI Kemendikdasmen — Unsur Intrinsik', url: 'https://buku.kemendikdasmen.go.id/' }]
         },
         {
-          pageNumber: 6, runningHead: 'Penilaian Seimbang', title: 'Kelebihan & Kekurangan Karya', subtitle: 'Pertimbangan Estetika & Keterbacaan',
-          html: `<p><strong>Kelebihan:</strong></p><ul><li>Premis sangat orisinal dan berani menggugat kemunafikan sosial dengan humor gelap yang elegan.</li><li>Akhir cerita meninggalkan ruang tafsir terbuka yang menggugah pembaca untuk berdiskusi.</li></ul><p><strong>Kekurangan:</strong></p><ul><li>Pengenalan latar surau di awal terkesan sedikit lambat bagi pembaca muda masa kini.</li><li>Beberapa kosakata daerah tahun 1950-an memerlukan catatan kaki agar maknanya tidak terlewat.</li></ul>`
+          pageNumber: 6, runningHead: 'Penilaian Seimbang', title: 'Kelebihan & Kekurangan', subtitle: 'Menilai Karya Tanpa Memihak',
+          html: `<ul><li><strong>Kelebihan 1:</strong> Ide ceritanya berani dan disampaikan lewat humor sindiran yang halus, bukan ceramah.</li><li><strong>Kelebihan 2:</strong> Konflik batin tokohnya kuat dan memancing pembaca untuk merenung setelah selesai membaca.</li><li><strong>Kekurangan 1:</strong> Bagian awal cerita bergerak agak pelan sebelum masuk ke kisah Haji Saleh.</li><li><strong>Kekurangan 2:</strong> Beberapa kata serapan atau istilah lokal tahun 1950-an butuh penjelasan singkat untuk pembaca muda.</li></ul>`
         },
         {
-          pageNumber: 7, runningHead: 'Penegasan Ulang', title: 'Kesimpulan Kritik', subtitle: 'Relevansi Lintas Generasi',
-          html: `<p>Secara keseluruhan, “Robohnya Surau Kami” adalah mahakarya prosa pendek yang berhasil memadukan kekuatan estetika bahasa dengan kedalaman pesan moral.</p><p>Kekurangan minor pada tempo pembuka sama sekali tidak mengurangi bobot konfliknya. Cerpen ini sangat layak dibaca oleh pelajar dan penikmat sastra sebagai cermin tentang makna kerja, kepedulian sosial, dan keikhlasan beragama.</p>`
+          pageNumber: 7, runningHead: 'Penegasan Ulang', title: 'Kesimpulan Kritik Cerpen', subtitle: 'Layak Dibaca Lintas Generasi',
+          html: `<p>Secara keseluruhan, “Robohnya Surau Kami” adalah salah satu cerpen terbaik Indonesia karena berhasil menyatukan cerita yang memikat dengan pesan kehidupan yang dalam.</p><p>Tempo awal yang agak lambat sama sekali tidak mengurangi kekuatan pesannya. Cerpen ini sangat pas dibaca siswa SMA untuk belajar melihat cara sastrawan mengkritik masalah sosial lewat fiksi.</p>`,
+          sources: [{ label: 'Ensiklopedia Sastra: Robohnya Surau Kami', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Robohnya_Surau_Kami' }]
         },
         {
-          pageNumber: 8, runningHead: 'Praktik Kritik Puisi', title: 'Kritik Puisi “Aku” (Chairil Anwar)', subtitle: 'Vitalitas Ekspresionisme Angkatan 45',
-          html: `<p>Puisi “Aku” (1943) karya Chairil Anwar menandai pergeseran radikal dari diksi mendayu Pujangga Baru menuju bahasa yang padat, berontak, dan individualistis.</p><p>Larik <em>“Aku ini binatang jalang / Dari kumpulannya terbuang”</em> memperlihatkan keberanian metafora yang jujur akan kebebasan batin. Kelemahannya bagi pembaca awam ialah nada egosentris yang kerap disalahartikan sebagai kesombongan, padahal itu seruan kemerdekaan jiwa.</p>`
+          pageNumber: 8, runningHead: 'Kritik Puisi', title: 'Kritik Puisi “Aku” (Chairil Anwar)', subtitle: 'Ditulis Maret 1943 · Semangat Angkatan ’45',
+          html: `<p>Puisi “Aku” karya Chairil Anwar (1943) membawa napas baru dalam puisi Indonesia. Chairil meninggalkan gaya bahasa lama yang mendayu-dayu dan memilih kata-kata pendek yang tegas dan penuh tenaga.</p><p>Larik <em>“Aku ini binatang jalang / Dari kumpulannya terbuang”</em> menunjukkan keberanian dan tekad hidup yang bebas, dipertegas lagi oleh penutup <em>“Aku mau hidup seribu tahun lagi”</em>.</p><p>Bagi sebagian pembaca awam, nada puisinya kadang terkesan terlalu mementingkan diri sendiri. Namun dalam konteks masa penjajahan tahun 1943, puisi ini justru menyuarakan semangat merdeka yang menyala-nyala.</p>`,
+          sources: [{ label: 'Ensiklopedia Sastra: Chairil Anwar', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/artikel/Chairil_Anwar' }]
         }
       ]
     };
@@ -1354,64 +1473,67 @@
       id: 'essayBook',
       coverTheme: 'essay',
       coverTitle: 'Seni Menulis Esai',
-      coverSubtitle: 'Gagasan, Opini, dan Perspektif',
-      editionLabel: 'SERI PERSPEKTIF · PENULISAN ESAI',
+      coverSubtitle: 'Berbagi Gagasan yang Jernih',
+      editionLabel: 'SERI PERSPEKTIF · CONTOH ESAI',
       pages: [
-        { pageNumber: 1, isCover: true, title: 'Seni Menulis Esai', subtitle: 'Gagasan, Opini, dan Perspektif' },
+        { pageNumber: 1, isCover: true, title: 'Seni Menulis Esai', subtitle: 'Berbagi Gagasan yang Jernih' },
         {
-          pageNumber: 2, runningHead: 'Pengantar', title: 'Pengantar Seni Menulis Esai', subtitle: 'Mengubah Pengamatan Menjadi Gagasan',
-          html: `<p>Menulis esai adalah seni bercakap-cakap dengan pembaca melalui pikiran yang tertata. Penulis esai tidak dituntut menjawab semua pertanyaan dunia; ia cukup mengajak pembaca menengok satu persoalan dari sudut yang jernih.</p><p>Di buku mini ini, kita menelusuri bagaimana esai dibangun dari tesis hingga diuji pada dua contoh esai tematik masa kini.</p>`
+          pageNumber: 2, runningHead: 'Pengantar', title: 'Mengenal Esai Lebih Dekat', subtitle: 'Mengubah Pengamatan Menjadi Tulisan',
+          html: `<p>Menulis esai itu mirip seperti mengobrol secara tertib dengan pembaca. Penulis tidak wajib membahas segala hal dari A sampai Z; cukup pilih satu hal menarik di sekitar kita lalu ceritakan sudut pandangmu dengan alasan yang jelas.</p><p>Di buku mini ini, kamu akan melihat struktur esai dan dua contoh esai ringan yang dekat dengan kehidupan sehari-hari.</p>`,
+          sources: [{ label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' }]
         },
         {
-          pageNumber: 3, runningHead: 'Kerangka Bangunan', title: 'Struktur Esai yang Utuh', subtitle: 'Tesis · Pengembangan · Simpulan',
-          html: `<ul><li><strong>1. Pembuka &amp; Tesis:</strong> Mengikat perhatian lewat pengamatan konkret lalu memancangkan satu pernyataan sikap yang jelas.</li><li><strong>2. Tubuh Argumen:</strong> Setiap paragraf membawa satu gagasan penjelas yang diperkuat oleh fakta atau analogi.</li><li><strong>3. Penutup Reflektif:</strong> Menarik benang merah argumen tanpa terasa kaku, menyisakan gema pemikiran bagi pembaca.</li></ul>`
+          pageNumber: 3, runningHead: 'Struktur', title: 'Susunan Esai yang Rapi', subtitle: 'Pembuka · Isi · Penutup',
+          html: `<ul><li><strong>1. Pembuka &amp; Tesis:</strong> Mulai dengan pengamatan sehari-hari atau pertanyaan menarik, lalu nyatakan pendapat utamamu.</li><li><strong>2. Isi Argumen:</strong> Tiap paragraf membahas satu alasan pendukung yang dilengkapi contoh nyata atau fakta.</li><li><strong>3. Penutup:</strong> Tarik kesimpulan singkat dengan kalimat penutup yang membuat pembaca ikut berpikir.</li></ul>`,
+          sources: [{ label: 'SIBI Kemendikdasmen — Struktur Esai', url: 'https://buku.kemendikdasmen.go.id/' }]
         },
         {
-          pageNumber: 4, runningHead: 'Contoh Esai I', title: 'Membaca di Tengah Arus Digital', subtitle: 'Esai Reflektif tentang Kebiasaan Literasi',
-          html: `<p>Setiap hari jemari kita menempuh jarak puluhan meter di atas layar gawai, melompat dari satu judul berita ke cuplikan video berdurasi lima belas detik. Ironisnya, waktu kita untuk membaca gagasan secara utuh justru menyusut.</p><p>Membaca buku dan esai panjang kembali menjadi latihan kesabaran: memberi kesempatan bagi pikiran untuk duduk tenang, menguji kebenaran, dan merumuskan pendapat yang tidak tergesa-gesa.</p>`
+          pageNumber: 4, runningHead: 'Contoh Esai 1', title: 'Membaca Pelan di Era Gawai', subtitle: 'Tentang Kebiasaan Membaca Sehari-hari',
+          html: `<p>Setiap hari jari kita menempuh jarak puluhan meter di layar ponsel, melompat dari satu judul berita ke video singkat berdurasi lima belas detik. Sayangnya, waktu kita untuk membaca gagasan secara utuh makin berkurang.</p><p>Terbiasa membaca cepat membuat kita ingin jawaban serba instan, tetapi mudah lelah saat menghadapi bacaan yang agak panjang. Padahal, meluangkan waktu sebentar untuk membaca buku atau esai utuh membantu pikiran kita jadi lebih tenang dan tidak mudah terpancing kabar sepintas.</p>`
         },
         {
-          pageNumber: 5, runningHead: 'Teknik Penulisan', title: 'Pengembangan Argumentasi', subtitle: 'Menjaga Logika Tetap Tajam dan Mengalir',
-          html: `<p>Argumen dalam esai tidak boleh sekadar mengulang opini. Gunakan tiga strategi berikut:</p><ul><li><strong>Bukti Konkret:</strong> Data kebiasaan harian atau fenomena yang mudah diverifikasi pembaca.</li><li><strong>Kontras &amp; Analogi:</strong> Bandingkan kecepatan gulir layar dengan ketenangan membaca buku.</li><li><strong>Antisipasi Sanggahan:</strong> Akui sisi positif teknologi sebelum menegaskan pentingnya membaca mendalam.</li></ul>`
+          pageNumber: 5, runningHead: 'Tips Argumen', title: 'Cara Memperkuat Pendapat', subtitle: 'Agar Esai Tidak Sekadar Curhat',
+          html: `<p>Supaya pendapatmu di dalam esai lebih meyakinkan, coba pakai tiga cara sederhana ini:</p><ul><li><strong>Pakai contoh nyata:</strong> Sertakan kejadian sehari-hari yang mudah dibayangkan dan dirasakan oleh pembaca.</li><li><strong>Buat perbandingan:</strong> Bandingkan dua hal yang akrab—misalnya menggulir layar cepat vs membaca buku dengan tenang.</li><li><strong>Akui sisi lain:</strong> Akui manfaat teknologi sebelum menjelaskan alasanmu, sehingga tulisan terasa adil dan dewasa.</li></ul>`
         },
         {
-          pageNumber: 6, runningHead: 'Contoh Esai II', title: 'Kebiasaan Kecil untuk Bumi', subtitle: 'Esai Sosial-Lingkungan dalam Skala Harian',
-          html: `<p>Krisis iklim kerap dibicarakan melalui angka emisi raksasa dan perjanjian internasional yang terasa jauh dari ruang makan kita. Akibatnya, banyak orang merasa tindakan individu terlalu kecil untuk berarti.</p><p>Padahal, perubahan budaya selalu berawal dari kebiasaan sunyi di rumah: membawa botol minum sendiri, memilah sampah organik, dan menolak kemasan sekali pakai yang tak perlu.</p>`
+          pageNumber: 6, runningHead: 'Contoh Esai 2', title: 'Kebiasaan Kecil untuk Bumi', subtitle: 'Lingkungan Hidup Dimulai dari Rumah',
+          html: `<p>Isu perubahan iklim sering dibahas lewat angka-angka besar dan konferensi dunia yang terasa jauh dari hidup kita. Akibatnya, banyak orang merasa usaha satu orang tidak akan ada artinya.</p><p>Padahal, perubahan kebiasaan selalu dimulai dari langkah kecil di rumah: membawa botol minum sendiri, menghabiskan makanan di piring, atau mengurangi plastik sekali pakai. Hal-hal sederhana itu memang tidak langsung mengubah dunia dalam sehari, tetapi perlahan membentuk budaya hidup yang lebih peduli.</p>`
         },
         {
-          pageNumber: 7, runningHead: 'Bedah Contoh', title: 'Analisis Struktur dan Isi Esai', subtitle: 'Memeriksa Kekuatan Dua Esai Sebelumnya',
-          html: `<p><strong>1. Ketajaman Tesis:</strong> Pada esai pertama, tesis menegaskan bahwa membaca mendalam bukanlah sikap anti-teknologi, melainkan penyeimbang nalar.</p><p><strong>2. Kekuatan Pembuka:</strong> Esai kedua langsung mengontraskan skala krisis global dengan kebiasaan sehari-hari di ruang makan agar pembaca merasa terlibat.</p><p><strong>3. Gaya Bahasa:</strong> Keduanya menggunakan bahasa Indonesia baku namun luwes.</p>`
+          pageNumber: 7, runningHead: 'Ulasan Contoh', title: 'Mengapa Dua Esai Ini Bekerja?', subtitle: 'Melihat Kekuatan Struktur & Gaya',
+          html: `<ul><li><strong>1. Pendapat utamanya jelas:</strong> Esai pertama langsung menegaskan bahwa membaca pelan bukan menolak teknologi, melainkan menjaga fokus pikiran.</li><li><strong>2. Pembuka langsung mengena:</strong> Esai kedua mengontraskan isu besar dunia dengan kebiasaan di meja makan sehingga terasa dekat.</li><li><strong>3. Bahasanya ringan namun baku:</strong> Keduanya memakai bahasa Indonesia yang baik tanpa istilah yang terlalu berat.</li></ul>`
         },
         {
-          pageNumber: 8, runningHead: 'Penutup Buku', title: 'Kesimpulan: Suara dalam Esai', subtitle: 'Merawat Keberanian Berpikir Mandiri',
-          html: `<p>Esai yang berkesan tidak lahir dari hafalan kalimat rumit, melainkan dari kejujuran mengamati dunia dan kedisiplinan menyusun argumen.</p><p>Teruslah membaca dengan kritis, mencatat kegelisahan kecil, dan merangkainya menjadi tulisan yang bermakna.</p>`
+          pageNumber: 8, runningHead: 'Penutup Buku', title: 'Menemukan Suaramu Sendiri', subtitle: 'Siapa Pun Bisa Menulis Esai',
+          html: `<p>Esai yang bagus tidak harus memakai kata-kata yang sulit dipahami. Justru esai yang paling berkesan lahir dari pengamatan yang jujur dan alur pikiran yang rapi.</p><p>Mulailah dari hal kecil yang sering kamu pikirkan, tuliskan pendapatmu dengan jelas, dan dukung dengan alasan yang masuk akal.</p>`,
+          sources: [{ label: 'Stanford Encyclopedia: Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' }]
         }
       ]
     };
 
     /* DATA 6: PERBANDINGAN LENGKAP */
     const comparisonData = [
-      { id: 'pengertian', aspect: 'Pengertian', criticismTitle: 'Penilaian Karya Sastra', criticismText: 'Tulisan analitis yang menimbang baik dan buruk suatu karya sastra secara objektif disertai alasan logis dan bukti teks.', essayTitle: 'Karangan Prosa Reflektif', essayText: 'Karangan prosa singkat yang membahas suatu masalah atau fenomena secara sepintas lalu dari sudut pandang pribadi penulisnya.', criticismWeight: 70 },
-      { id: 'tujuan', aspect: 'Tujuan', criticismTitle: 'Menilai Mutu & Membimbing Apresiasi', criticismText: 'Memberi pertimbangan nilai atas karya sastra agar pembaca memahami maknanya dan pengarang memperoleh umpan balik.', essayTitle: 'Meyakinkan & Berbagi Perspektif', essayText: 'Menyampaikan pandangan personal, menggugah kesadaran pembaca, serta mengajak berpikir ulang tentang suatu isu.', criticismWeight: 62 },
-      { id: 'fokus', aspect: 'Fokus Pembahasan', criticismTitle: 'Terpusat pada Karya Sastra', criticismText: 'Objek kajiannya spesifik berupa puisi, cerpen, novel, atau naskah drama beserta unsur pembangunnya.', essayTitle: 'Bebas & Lintas Fenomena', essayText: 'Dapat membahas sastra, budaya, pendidikan, lingkungan, teknologi, maupun pengalaman sosial sehari-hari.', criticismWeight: 78 },
-      { id: 'sifat', aspect: 'Sifat Tulisan', criticismTitle: 'Objektif dan Sistematis', criticismText: 'Menuntut kejujuran analitis berdasarkan data tekstual karya, tidak semata-mata selera pribadi.', essayTitle: 'Subjektif dan Personal', essayText: 'Menonjolkan suara khas, kepekaan rasa, serta gaya bertutur pribadi penulis meski tetap logis.', criticismWeight: 80 },
-      { id: 'struktur', aspect: 'Struktur', criticismTitle: 'Evaluasi · Deskripsi · Penegasan', criticismText: 'Dimulai dari pengenalan & penilaian awal, diikuti deskripsi sinopsis serta analisis unsur, lalu ditutup simpulan.', essayTitle: 'Pendahuluan · Isi · Penutup', essayText: 'Dimulai dari latar masalah dan tesis, dikembangkan melalui paragraf argumen, dan diakhiri simpulan reflektif.', criticismWeight: 55 },
-      { id: 'pendekatan', aspect: 'Pendekatan', criticismTitle: 'Berbasis Teori & Unsur Sastra', criticismText: 'Memanfaatkan pendekatan intrinsik-ekstrinsik (mimetik, pragmatik, ekspresif, atau objektif) untuk membedah karya.', essayTitle: 'Berbasis Penalaran & Ilustrasi', essayText: 'Memanfaatkan pengamatan empiris, analogi, fakta populer, dan refleksi filosofis tanpa terikat teori sastra baku.', criticismWeight: 72 },
-      { id: 'hasil', aspect: 'Hasil Akhir', criticismTitle: 'Putusan Kualitas Karya', criticismText: 'Menghasilkan peta kelebihan, kekurangan, serta rekomendasi nilai estetis suatu karya sastra.', essayTitle: 'Gagasan & Wawasan Baru', essayText: 'Menghasilkan sudut pandang segar atau sikap intelektual penulis terhadap persoalan yang diangkat.', criticismWeight: 66 }
+      { id: 'pengertian', aspect: 'Pengertian', criticismTitle: 'Menilai Karya Sastra', criticismText: 'Menurut KBBI, kritik sastra adalah pertimbangan baik dan buruk terhadap hasil karya sastra secara objektif dan beralasan.', essayTitle: 'Karangan Prosa Personal', essayText: 'Menurut KBBI, esai adalah karangan prosa yang membahas suatu masalah secara sepintas lalu dari sudut pandang pribadi penulisnya.', criticismWeight: 70, source: { label: 'KBBI VI Daring (Kritik Sastra & Esai)', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' } },
+      { id: 'tujuan', aspect: 'Tujuan', criticismTitle: 'Menilai Mutu & Membantu Pembaca', criticismText: 'Menimbang kelebihan dan kekurangan karya secara adil agar pembaca paham maknanya dan pengarang mendapat masukan.', essayTitle: 'Berbagi Sudut Pandang', essayText: 'Menyampaikan opini atau refleksi penulis untuk meyakinkan pembaca maupun mengajak mereka melihat suatu isu dari sisi baru.', criticismWeight: 62, source: { label: 'SIBI Kemendikdasmen — Modul SMA', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 'fokus', aspect: 'Objek Bahasan', criticismTitle: 'Khusus Karya Sastra', criticismText: 'Selalu membahas karya sastra—seperti puisi, cerpen, novel, atau naskah drama—beserta unsur di dalamnya.', essayTitle: 'Bebas dan Luas', essayText: 'Bisa membahas topik apa saja: kebiasaan harian, pendidikan, budaya, teknologi, lingkungan, hingga persoalan sastra.', criticismWeight: 78, source: { label: 'Wikipedia Bahasa Indonesia: Kritik Sastra', url: 'https://id.wikipedia.org/wiki/Kritik_sastra' } },
+      { id: 'sifat', aspect: 'Sudut Pandang', criticismTitle: 'Lebih Objektif', criticismText: 'Harus berpegang pada bukti isi karya dan tidak boleh semata-mata ikut selera pribadi penulis kritik.', essayTitle: 'Lebih Subjektif', essayText: 'Menonjolkan suara, perasaan, dan cara pandang khas penulis, meskipun tetap perlu alasan yang masuk akal.', criticismWeight: 80, source: { label: 'SIBI Kemendikdasmen — Kaidah Kritik & Esai', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 'struktur', aspect: 'Struktur', criticismTitle: 'Tesis · Deskripsi & Analisis · Simpulan', criticismText: 'Diawali pengenalan karya dan pendapat awal, dilanjutkan sinopsis serta bedah unsur dengan bukti kutipan, lalu ditutup simpulan.', essayTitle: 'Pendahuluan · Isi · Penutup', essayText: 'Diawali latar masalah dan tesis, dikembangkan lewat paragraf argumen atau contoh nyata, lalu ditutup penegasan ulang.', criticismWeight: 55, source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 'pendekatan', aspect: 'Cara Membahas', criticismTitle: 'Memakai Teori & Unsur Sastra', criticismText: 'Menggunakan pisau analisis sastra—seperti pendekatan mimetik, pragmatik, ekspresif, atau objektif (M.H. Abrams).', essayTitle: 'Memakai Pengamatan & Logika', essayText: 'Mengandalkan pengamatan sekitar, contoh konkret, perbandingan, dan renungan penulis tanpa terikat teori sastra baku.', criticismWeight: 72, source: { label: 'M.H. Abrams — The Mirror and the Lamp', url: 'https://en.wikipedia.org/wiki/The_Mirror_and_the_Lamp' } },
+      { id: 'hasil', aspect: 'Hasil Akhir', criticismTitle: 'Penilaian Kualitas Karya', criticismText: 'Menghasilkan gambaran jelas mengenai kekuatan, kelemahan, dan mutu karya sastra yang dibahas.', essayTitle: 'Gagasan atau Perspektif Baru', essayText: 'Menghasilkan pemahaman baru atau bahan renungan segar bagi pembaca tentang persoalan yang dibicarakan.', criticismWeight: 66, source: { label: 'Wikipedia Bahasa Indonesia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' } }
     ];
 
     /* DATA 7: FAQ DATA */
     const faqData = [
-      { id: 1, category: 'Kritik Sastra', question: 'Apa yang dimaksud dengan kritik sastra?', answer: 'Kritik sastra adalah analisis, penafsiran, dan penilaian terhadap baik atau buruknya suatu karya sastra secara objektif. Penilaian tersebut tidak boleh asal-asalan, melainkan harus didukung bukti dari isi karya (seperti kutipan dialog, karakter tokoh, alur, atau diksi) serta pengetahuan sastra yang memadai.' },
-      { id: 2, category: 'Esai', question: 'Apa yang dimaksud dengan esai?', answer: 'Esai adalah karangan prosa nonfiksi yang membahas suatu topik atau permasalahan secara ringkas dari sudut pandang pribadi penulisnya. Topik esai sangat luas—mulai dari fenomena sosial, pendidikan, budaya, hingga isu sastra—yang disajikan dengan argumen runtut dan gaya bahasa khas.' },
-      { id: 3, category: 'Perbandingan', question: 'Apa perbedaan utama kritik sastra dan esai?', answer: 'Perbedaan utamanya terletak pada objek dan sifatnya. Kritik sastra selalu berfokus menilai sebuah karya sastra (novel, cerpen, puisi, drama) secara objektif beserta kelebihan dan kekurangannya. Sementara itu, esai membahas gagasan atau fenomena umum dari sudut pandang subjektif-reflektif penulisnya tanpa wajib membedah suatu karya sastra.' },
-      { id: 4, category: 'Kritik Sastra', question: 'Apa tujuan dibuatnya kritik sastra?', answer: 'Kritik sastra bertujuan membantu pembaca memahami nilai estetika dan makna mendalam di balik karya sastra, memberikan umpan balik yang adil bagi pengarang untuk mengembangkan kualitas karyanya, serta memperkaya perkembangan sejarah dan teori kesusastraan.' },
-      { id: 5, category: 'Kritik Sastra', question: 'Apa saja struktur kritik sastra?', answer: 'Struktur kritik sastra terdiri atas tiga bagian utama: (1) Evaluasi atau pernyataan pendapat awal mengenai identitas dan mutu karya; (2) Deskripsi teks dan tafsiran yang memuat ringkasan karya serta analisis unsur intrinsik maupun ekstrinsik lengkap dengan bukti kutipan; dan (3) Penegasan ulang atau kesimpulan penilaian.' },
-      { id: 6, category: 'Esai', question: 'Apa saja struktur esai?', answer: 'Esai tersusun dari tiga bagian: (1) Pendahuluan, yang memperkenalkan konteks masalah serta pernyataan tesis (gagasan utama penulis); (2) Isi atau pembahasan, yang mengembangkan tesis melalui argumen, fakta, dan ilustrasi; serta (3) Penutup, yang merangkum inti pemikiran secara reflektif.' },
-      { id: 7, category: 'Kritik Sastra', question: 'Apakah kritik sastra harus selalu membahas kekurangan karya?', answer: 'Tidak harus selalu berpusat pada kekurangan. Kritik sastra yang sehat dan objektif justru menimbang kekuatan maupun keterbatasan karya secara proporsional. Jika sebuah karya sangat kuat dari sisi penokohan dan gaya bahasa, kritik sastra mengungkap keunggulan itu secara terperinci, sambil mencatat celah perbaikan secara santun jika memang ada.' },
-      { id: 8, category: 'Esai', question: 'Apakah esai harus menggunakan bahasa formal?', answer: 'Esai umumnya menggunakan bahasa baku yang efektif agar argumen mudah dipahami secara luas, namun nadanya tidak sekaku laporan penelitian ilmiah. Penulis esai bebas memilih gaya bahasa yang lebih cair, personal, dan ekspresif selama tetap komunikatif, logis, dan sesuai konteks pembaca.' },
-      { id: 9, category: 'Penulisan', question: 'Bagaimana cara membuat kritik sastra yang baik?', answer: 'Mulailah dengan membaca karya sastra secara utuh dan berulang. Catat identitas karya, analisis unsur pembangunnya (alur, tokoh, latar, tema, gaya bahasa), lalu kumpulkan kutipan langsung sebagai bukti. Susun tulisan dengan memaparkan keunggulan dan kekurangan secara adil, objektif, serta menggunakan bahasa yang santun dan argumentatif.' },
-      { id: 10, category: 'Penulisan', question: 'Bagaimana cara membuat esai yang menarik?', answer: 'Pilih topik spesifik yang dekat dengan pengamatan nyata, lalu rumuskan satu tesis yang tajam dan tidak klise. Buka esai dengan pengamatan konkret atau pertanyaan yang memancing rasa ingin tahu, perkuat isi dengan contoh serta analogi yang segar, dan tutup dengan kalimat reflektif yang membekas di benak pembaca.' }
+      { id: 1, category: 'Kritik Sastra', question: 'Apa itu kritik sastra?', answer: 'Menurut KBBI, kritik sastra adalah pertimbangan baik dan buruk terhadap suatu karya sastra (seperti cerpen, novel, puisi, atau drama). Penilaian ini harus objektif dan didukung bukti kutipan langsung dari isi karya tersebut.', source: { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' } },
+      { id: 2, category: 'Esai', question: 'Apa itu esai, dan mana ejaan yang baku: esai atau essay?', answer: 'Ejaan baku bahasa Indonesia adalah "esai". Menurut KBBI, esai adalah karangan prosa yang membahas suatu masalah secara sepintas lalu dari sudut pandang pribadi penulisnya. Topiknya bebas—bisa tentang budaya, pendidikan, teknologi, maupun sastra.', source: { label: 'KBBI VI Daring: Esai', url: 'https://kbbi.kemendikdasmen.go.id/entri/esai' } },
+      { id: 3, category: 'Perbandingan', question: 'Apa bedanya kritik sastra dan esai?', answer: 'Bedanya ada pada objek dan cara pandangnya. Kritik sastra fokus menilai satu karya sastra secara objektif lengkap dengan kelebihan, kekurangan, dan bukti kutipan. Sedangkan esai bebas membahas isu atau fenomena apa saja dari sudut pandang pribadi penulis.', source: { label: 'SIBI Kemendikdasmen — Modul SMA', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 4, category: 'Kritik Sastra', question: 'Untuk apa kritik sastra dibuat?', answer: 'Kritik sastra membantu pembaca memahami pesan dan keindahan sebuah karya, sekaligus memberi masukan yang adil supaya pengarang bisa membuat karya yang lebih baik lagi.', source: { label: 'Ensiklopedia Sastra Indonesia', url: 'https://ensiklopedia.kemendikdasmen.go.id/sastra/' } },
+      { id: 5, category: 'Kritik Sastra', question: 'Apa saja struktur teks kritik sastra?', answer: 'Dalam pelajaran Bahasa Indonesia SMA, struktur kritik sastra terdiri atas tiga bagian: (1) Pernyataan pendapat awal (tesis) tentang karya; (2) Rangkaian argumen berupa ringkasan isi dan analisis unsur beserta bukti kutipan; serta (3) Penegasan ulang atau simpulan penilaian.', source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 6, category: 'Esai', question: 'Apa saja struktur teks esai?', answer: 'Esai juga tersusun dari tiga bagian: (1) Pendahuluan, berisi latar masalah dan pendapat utama (tesis); (2) Isi, berisi alasan, fakta, atau contoh yang mendukung tesis; dan (3) Penutup, berisi kesimpulan singkat yang berkesan.', source: { label: 'SIBI Kemendikdasmen — Bahasa Indonesia XII', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 7, category: 'Kritik Sastra', question: 'Apakah kritik sastra selalu mencari kekurangan karya?', answer: 'Tidak. Kritik sastra yang baik justru menilai secara seimbang. Jika sebuah karya memang unggul pada penokohan atau bahasanya, hal itu dijelaskan dengan bukti teks, sambil mencatat kekurangannya secara sopan bila memang ada.', source: { label: 'KBBI VI Daring: Kritik Sastra', url: 'https://kbbi.kemendikdasmen.go.id/entri/kritik%20sastra' } },
+      { id: 8, category: 'Esai', question: 'Apakah menulis esai harus memakai bahasa yang kaku?', answer: 'Tidak harus kaku seperti laporan ilmiah. Esai tetap memakai bahasa Indonesia yang baik dan benar agar mudah dipahami, tetapi gaya penyampaiannya boleh lebih santai, akrab, dan mencerminkan karakter penulisnya.', source: { label: 'Wikipedia: Esai', url: 'https://id.wikipedia.org/wiki/Esai' } },
+      { id: 9, category: 'Penulisan', question: 'Bagaimana cara mulai menulis kritik sastra?', answer: 'Baca karya sastra sampai selesai, catat identitas bukunya, lalu perhatikan unsur pembangunnya (tokoh, alur, latar, tema, atau gaya bahasa). Kumpulkan kutipan yang mendukung pendapatmu, lalu tulis kelebihan dan kekurangannya dengan bahasa yang adil.', source: { label: 'SIBI Kemendikdasmen', url: 'https://buku.kemendikdasmen.go.id/' } },
+      { id: 10, category: 'Penulisan', question: 'Bagaimana cara membuat esai yang enak dibaca?', answer: 'Pilih topik yang spesifik dan dekat dengan pengalaman nyata, tentukan satu pendapat utama (tesis) yang jelas, buka dengan pengamatan menarik, dukung dengan contoh sehari-hari, lalu tutup dengan kalimat renungan yang ringkas.', source: { label: 'Stanford Encyclopedia: Montaigne', url: 'https://plato.stanford.edu/entries/montaigne/' } }
     ];
 
     /* APPLICATION LOGIC */
@@ -1559,7 +1681,7 @@
             <div class="reader-frame__body" data-frame-body></div>
             <div class="reader-frame__foot">
               <button type="button" class="reader-frame__navbtn" data-prev>← Sebelumnya</button>
-              <span class="reader-frame__hint">Gulir di dalam panel ini untuk membaca detail materi</span>
+              <span class="reader-frame__hint">Gulir di kotak ini untuk membaca materi sampai selesai</span>
               <button type="button" class="reader-frame__navbtn" data-next>Berikutnya →</button>
             </div>
           </div>
@@ -1607,6 +1729,16 @@
                 <div class="editorial-excerpt__header">${item.excerpt.kicker}</div>
                 <h4>${item.excerpt.title}</h4>
                 ${item.excerpt.paragraphs.map((p) => `<p>${p}</p>`).join('')}
+              </div>
+            `;
+          }
+          if (item.sources && item.sources.length) {
+            html += `
+              <div class="reader-sources">
+                <div class="reader-sources__label">Sumber Rujukan Valid</div>
+                <div class="reader-sources__list">
+                  ${item.sources.map((src) => `<a class="reader-source-chip" href="${src.url}" target="_blank" rel="noopener noreferrer"><span>${src.label}</span><span aria-hidden="true">↗</span></a>`).join('')}
+                </div>
               </div>
             `;
           }
@@ -1661,6 +1793,16 @@
               </div>
             `;
           }
+          const sourcesHtml = page.sources && page.sources.length
+            ? `
+              <div class="page-parchment__sources">
+                <div class="page-parchment__sources-label">Sumber Rujukan</div>
+                <div class="page-parchment__sources-list">
+                  ${page.sources.map((src) => `<a class="page-parchment__source-link" href="${src.url}" target="_blank" rel="noopener noreferrer">${src.label} ↗</a>`).join('')}
+                </div>
+              </div>
+            `
+            : '';
           return `
             <div class="page-parchment">
               <div>
@@ -1668,7 +1810,7 @@
                 <div class="page-parchment__body">
                   <h4 class="page-parchment__title">${page.title}</h4>
                   ${page.subtitle ? `<div class="page-parchment__subtitle">${page.subtitle}</div>` : ''}
-                  <div class="page-parchment__text">${page.html}</div>
+                  <div class="page-parchment__text">${page.html}${sourcesHtml}</div>
                 </div>
               </div>
               <div class="page-parchment__foot"><span>${side === 'front' ? 'Halaman Kanan' : 'Halaman Kiri'}</span><span>Hal. 0${page.pageNumber} / 0${totalPages}</span></div>
@@ -1702,6 +1844,9 @@
             const leaf = document.createElement('div');
             leaf.className = 'book-leaf';
             leaf.innerHTML = `<div class="book-face book-face--front">${renderPageFace(page, 'front')}</div><div class="book-face book-face--back"><div class="page-parchment"></div></div>`;
+            leaf.querySelectorAll('.page-parchment__source-link').forEach((link) => {
+              link.addEventListener('click', (e) => e.stopPropagation());
+            });
             leaf.addEventListener('click', () => { if (mobilePage < totalPages - 1) goNext(); });
             bookEl.appendChild(leaf); leafEls.push(leaf);
           });
@@ -1710,6 +1855,9 @@
             const leaf = document.createElement('div');
             leaf.className = 'book-leaf';
             leaf.innerHTML = `<div class="book-face book-face--front">${renderPageFace(pair.front, 'front')}</div><div class="book-face book-face--back">${renderPageFace(pair.back, 'back')}</div>`;
+            leaf.querySelectorAll('.page-parchment__source-link').forEach((link) => {
+              link.addEventListener('click', (e) => e.stopPropagation());
+            });
             leaf.addEventListener('click', () => { if (idx >= desktopLeaf) goNext(); else goPrev(); });
             bookEl.appendChild(leaf); leafEls.push(leaf);
           });
@@ -1804,6 +1952,7 @@
       const spectrumLabelRight = document.getElementById('spectrumLabelRight');
       const spectrumLeft = document.getElementById('spectrumLeft');
       const spectrumRight = document.getElementById('spectrumRight');
+      const compSourceLink = document.getElementById('compSourceLink');
       const compDots = document.getElementById('compDots');
 
       let activeCompIdx = 0;
@@ -1891,10 +2040,14 @@
         if (compCritHint) compCritHint.textContent = activeLens === 'criticism' ? 'Sedang disorot · Klik untuk bandingkan' : 'Klik kartu untuk menyorot';
         if (compEssayHint) compEssayHint.textContent = activeLens === 'essay' ? 'Sedang disorot · Klik untuk bandingkan' : 'Klik kartu untuk menyorot';
 
-        if (spectrumLabelLeft) spectrumLabelLeft.textContent = `Orientasi Objektif · Analisis Karya (${current.criticismWeight}%)`;
-        if (spectrumLabelRight) spectrumLabelRight.textContent = `Orientasi Subjektif · Refleksi Gagasan (${essayWeight}%)`;
+        if (spectrumLabelLeft) spectrumLabelLeft.textContent = `Fokus pada Karya · Objektif (${current.criticismWeight}%)`;
+        if (spectrumLabelRight) spectrumLabelRight.textContent = `Fokus pada Penulis · Subjektif (${essayWeight}%)`;
         if (spectrumLeft) spectrumLeft.style.width = current.criticismWeight + '%';
         if (spectrumRight) spectrumRight.style.width = essayWeight + '%';
+        if (compSourceLink && current.source) {
+          compSourceLink.href = current.source.url;
+          compSourceLink.textContent = `Sumber: ${current.source.label} ↗`;
+        }
 
         if (compDots) {
           compDots.innerHTML = '';
@@ -1936,12 +2089,15 @@
           const isOpen = openFaqIds.has(item.id);
           const itemEl = document.createElement('div');
           itemEl.className = 'faq-item' + (isOpen ? ' is-open' : '');
+          const faqSourceHtml = item.source
+            ? `<div class="faq-source-wrap"><a class="faq-source-link" href="${item.source.url}" target="_blank" rel="noopener noreferrer">Sumber rujukan: ${item.source.label} ↗</a></div>`
+            : '';
           itemEl.innerHTML = `
             <button type="button" class="faq-trigger" aria-expanded="${isOpen ? 'true' : 'false'}">
               <div><span class="faq-trigger__cat">${item.category}</span><span class="faq-trigger__question">${item.question}</span></div>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-panel"><div class="faq-panel__inner"><div class="faq-panel__content">${item.answer}</div></div></div>
+            <div class="faq-panel"><div class="faq-panel__inner"><div class="faq-panel__content"><p>${item.answer}</p>${faqSourceHtml}</div></div></div>
           `;
           itemEl.querySelector('.faq-trigger').addEventListener('click', () => {
             if (openFaqIds.has(item.id)) openFaqIds.delete(item.id); else openFaqIds.add(item.id);
@@ -1964,6 +2120,13 @@
         });
       }
       renderFaq();
+
+      const footerSourcesList = document.getElementById('footerSourcesList');
+      if (footerSourcesList) {
+        footerSourcesList.innerHTML = primarySources
+          .map((src) => `<a class="footer__source-link" href="${src.url}" target="_blank" rel="noopener noreferrer">${src.label} ↗</a>`)
+          .join('');
+      }
     })();
   </script>
 </body>

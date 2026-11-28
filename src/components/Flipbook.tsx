@@ -165,6 +165,27 @@ export const Flipbook: React.FC<FlipbookProps> = ({ book }) => {
                   ))}
                 </ul>
               )}
+              {page.sources && page.sources.length > 0 && (
+                <div className="pt-2.5 mt-3 border-t border-[#5A4837]/20">
+                  <div className="font-ui text-[0.6rem] tracking-[0.14em] uppercase text-[#5A4837] mb-1">
+                    Sumber Rujukan
+                  </div>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1">
+                    {page.sources.map((src) => (
+                      <a
+                        key={src.url}
+                        href={src.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="font-ui text-[0.72rem] text-[#6b4423] underline decoration-[#6b4423]/45 hover:text-[#1c130d] transition-colors"
+                      >
+                        {src.label} ↗
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
